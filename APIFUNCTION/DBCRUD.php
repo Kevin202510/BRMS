@@ -1,5 +1,5 @@
 <?php 
-    class BDCRUD{
+    class DBCRUD{
         public $que;
         private $servername='localhost';
         private $username='root';
