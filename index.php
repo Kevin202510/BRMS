@@ -11,37 +11,37 @@
     <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
             <li class="text-center">
-                <img src="images/banner-01.jpg" alt="">
+                <img src="images/bolero0.png" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <h1 class="m-b-20" style="font-family: Papyrus; font-size:7rem;"><strong>Welcome To <br> Gil's Creation</strong></h1>
+                            <p class="m-b-40"> WEB-BASED BOUTIQUE RENTAL SYSTEM</p>
+                            <p><a class="btn hvr-hover" style="color:black; border-radius: 25px;font-weight:Bold;"  href="#">Shop New</a></p>
                         </div>
                     </div>
                 </div>
             </li>
             <li class="text-center">
-                <img src="images/banner-02.jpg" alt="">
+                <img src="images/cos.jpg" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <h1 class="m-b-20"style="font-family: Papyrus; font-size:7rem;"><strong>Welcome To <br> Gil's Creation</strong></h1>
+                            <p class="m-b-40"> WEB-BASED BOUTIQUE RENTAL SYSTEM</p>
+                            <p><a class="btn hvr-hover" style="color:black; border-radius: 25px; font-weight:Bold;" href="#">Shop New</a></p>
                         </div>
                     </div>
                 </div>
             </li>
             <li class="text-center">
-                <img src="images/banner-03.jpg" alt="">
+                <img src="images/bolero.jpg" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <h1 class="m-b-20"style="font-family: Papyrus; font-size:7rem;"><strong>Welcome To <br> Gil's Creation</strong></h1>
+                            <p class="m-b-40"> WEB-BASED BOUTIQUE RENTAL SYSTEM</p>
+                            <p><a class="btn hvr-hover" style="color:black; border-radius: 25px; font-weight:Bold;"  href="#">Shop New</a></p>
                         </div>
                     </div>
                 </div>

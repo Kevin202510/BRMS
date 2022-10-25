@@ -147,18 +147,18 @@
      bottom: 40px;
      right: 40px;
      z-index: 9999;
-     width: 32px;
-     height: 32px;
+     width: 70px;
+     height: 70px;
      text-align: center;
      line-height: 5px;
-     background: #b0b435;
+     background: #f8cab3;
      color: #ffffff;
      cursor: pointer;
      border: 0;
-     border-radius: 0px;
+     border-radius: 25px;
      text-decoration: none;
      transition: opacity 0.2s ease-out;
-     font-size: 28px;
+     font-size: 50px;
 }
 /*------------------------------------------------------------------ HEADER -------------------------------------------------------------------*/
  .main-top{
@@ -312,6 +312,7 @@
 	font-size: 13px;
 }
 
+
  .main-header{
 }
  .search a{
@@ -323,6 +324,7 @@
  nav.navbar.bootsnav ul.nav > li > a{
      margin: 0px;
 }
+.
 /* Navbar Adjusment =========================== */
 /* Navbar Atribute ------*/
  .attr-nav > ul > li > a{
@@ -375,7 +377,7 @@
     /* Navbar Transparent & Fixed ------*/
      nav.navbar.bootsnav.navbar-transparent.white{
          background-color: rgba(255,255,255,0.3);
-         border-bottom: solid 1px #bbb;
+         border-bottom: solid 1px #bbbbbb;
     }
      nav.navbar.navbar-inverse.bootsnav.navbar-transparent.dark, nav.navbar.bootsnav.navbar-transparent.dark{
          background-color: rgba(0,0,0,0.3);
@@ -591,7 +593,7 @@
     }
 }
  .arrow::before{
-     font-family: 'FontAwesome';
+     font-family: 'poppins';
      content: "\f0d7";
      margin-left: 5px;
      margin-top: 2px;
@@ -644,9 +646,9 @@
      vertical-align: middle;
      -webkit-transform: perspective(1px) translateZ(0);
      transform: perspective(1px) translateZ(0);
-     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+     box-shadow: 0 0 1px #000000;
      position: relative;
-     background: #b0b435;
+     background: rgb(255, 255, 255);
      -webkit-transition-property: color;
      transition-property: color;
      -webkit-transition-duration: 0.3s;
@@ -662,7 +664,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #000000;
+	background: #f8cab3;
 	border-radius: 100%;
 	-webkit-transform: scale(0);
 	transform: scale(0);
@@ -742,14 +744,15 @@
      height: 100vh;
 }
  .slides-navigation a {
-     background: #b0b435;
+     background: #ffffff;
      position: absolute;
      height: 70px;
      width: 70px;
+     border-radius: 25px;
      top: 50%;
      font-size: 20px;
      display: block;
-     color: #fff;
+     color: rgb(10, 10, 10);
      line-height: 90px;
      text-align: center;
      transition: all .3s ease-in-out;
@@ -758,12 +761,13 @@
      font-size: 40px;
 }
  .slides-navigation a:hover {
-     background: #000000;
+     background: #f8cab3;
 }
  .cover-slides .container{
      height: 100%;
      position: relative;
      z-index: 2;
+     font-family: poppins;
 }
  .cover-slides .container > .row {
      -webkit-box-align: center;
