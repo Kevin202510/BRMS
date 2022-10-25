@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2022 at 07:59 AM
+-- Generation Time: Oct 25, 2022 at 08:55 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -75,6 +75,13 @@ CREATE TABLE `checkout` (
   `checkout_time` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `checkout`
+--
+
+INSERT INTO `checkout` (`checkout_id`, `checkout_cart_id`, `checkout_user_id`, `checkout_date`, `checkout_time`) VALUES
+(1, 1, 1, '2', '4');
+
 -- --------------------------------------------------------
 
 --
@@ -145,6 +152,13 @@ CREATE TABLE `tracking_orders` (
   `to_time_back` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tracking_orders`
+--
+
+INSERT INTO `tracking_orders` (`tracking_orders_id`, `to_checkout_id`, `status`, `to_date_back`, `to_time_back`) VALUES
+(1, 1, '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -193,7 +207,8 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `checkout`
   ADD PRIMARY KEY (`checkout_id`),
-  ADD KEY `co_user_id` (`checkout_user_id`);
+  ADD KEY `co_user_id` (`checkout_user_id`),
+  ADD KEY `co_cart_id` (`checkout_cart_id`);
 
 --
 -- Indexes for table `permissions`
@@ -218,7 +233,8 @@ ALTER TABLE `sales`
 -- Indexes for table `tracking_orders`
 --
 ALTER TABLE `tracking_orders`
-  ADD PRIMARY KEY (`tracking_orders_id`);
+  ADD PRIMARY KEY (`tracking_orders_id`),
+  ADD KEY `to_checkout_id` (`to_checkout_id`);
 
 --
 -- Indexes for table `users`
@@ -249,7 +265,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -273,7 +289,7 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT for table `tracking_orders`
 --
 ALTER TABLE `tracking_orders`
-  MODIFY `tracking_orders_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `tracking_orders_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -296,6 +312,7 @@ ALTER TABLE `cart`
 -- Constraints for table `checkout`
 --
 ALTER TABLE `checkout`
+  ADD CONSTRAINT `co_cart_id` FOREIGN KEY (`checkout_cart_id`) REFERENCES `cart` (`cart_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `co_user_id` FOREIGN KEY (`checkout_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -303,6 +320,12 @@ ALTER TABLE `checkout`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tracking_orders`
+--
+ALTER TABLE `tracking_orders`
+  ADD CONSTRAINT `to_checkout_id` FOREIGN KEY (`to_checkout_id`) REFERENCES `checkout` (`checkout_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users`
