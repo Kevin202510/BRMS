@@ -42,8 +42,8 @@
                             </thead>
                             <tbody>
                             <?php
-                                include('APIFUNCTION/DBCRUD.php');
-                                $newDBCRUD = new DBCRUD();
+                                // include('APIFUNCTION/DBCRUD.php');
+                                // $newDBCRUD = new DBCRUD();
                                 $newDBCRUD->selectleftjoin3();
                                 $userLists = $newDBCRUD->sql;
                         
@@ -53,7 +53,7 @@
                                 <tr>
                                     <td class="thumbnail-img">
                                         <a href="#">
-									<img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
+									<img class="img-fluid" src="images/sut1.jpg" alt="" />
 								</a>
                                     </td>
                                     <td class="name-pr">
@@ -70,7 +70,7 @@
                                     </td>
                                     <td class="remove-pr">
                                         <a href="#">
-									<i class="fas fa-times"></i>
+                                        <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['cart_id']; ?>);">Delete</button>
 								</a>
                                     </td>
                                 </tr>
@@ -85,10 +85,8 @@
                 <div class="col-lg-6 col-sm-6">
                     <div class="coupon-box">
                         <div class="input-group input-group-sm">
-                            <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
-                            <div class="input-group-append">
-                                <button class="btn btn-theme" type="button">Apply Coupon</button>
-                            </div>
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -132,7 +130,7 @@
                         </div>
                         <hr> </div>
                 </div>
-                <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
+                <div class="col-12 d-flex shopping-box"><a href="checkout.php" class="ml-auto btn hvr-hover">Checkout</a> </div>
             </div>
 
         </div>
@@ -144,7 +142,7 @@
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-01.jpg" alt="" />
+                    <img src="images/access2.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -152,7 +150,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-02.jpg" alt="" />
+                    <img src="images/barongw.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -160,7 +158,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-03.jpg" alt="" />
+                    <img src="images/5.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -168,7 +166,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-04.jpg" alt="" />
+                    <img src="images/gown2.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -176,7 +174,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
+                    <img src="images/barong.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -184,47 +182,17 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-06.jpg" alt="" />
+                    <img src="images/1.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-07.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-08.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-09.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </div>
     <!-- End Instagram Feed  -->
+
 
      <!-- Start Footer  -->
      <?php include('layouts/footer.php');?>

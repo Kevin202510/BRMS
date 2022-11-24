@@ -5,10 +5,10 @@
 
 
     if(isset($_POST['addcategories'])){
-        $name = $_POST["name"];
+        $cat_name = $_POST["cat_name"];
 
         $newDBCRUD->insert('categories',[
-        'name'=>$name]);
+        'cat_name'=>$cat_name]);
 
         if($newDBCRUD){
             return 1;
@@ -19,9 +19,9 @@
     }else if(isset($_POST['updatecategories'])){
         
         $category_id = $_POST['category_id'];
-        $name = $_POST["name"];
+        $cat_name = $_POST["cat_name"];
 
-        $newDBCRUD->update('categories',['name'=>$name],"category_id='$category_id'");
+        $newDBCRUD->update('categories',['cat_name'=>$cat_name],"category_id='$category_id'");
 
         if($newDBCRUD){
             return 1;

@@ -17,7 +17,15 @@
         </div>
         <div class="form-group">
             <label > Enter Category</label>
-            <input type="text" class="form-control" id="category_id" name="category_id" placeholder="Enter Category">
+            <select name="category_id" id="category_id">
+                <?php  $newDBCRUD->select("categories","*");
+                    $userLists = $newDBCRUD->sql;
+            
+                    $index = 1;
+                    while ($data = mysqli_fetch_assoc($userLists)){ ?>
+                    <option value="<?php echo $data['category_id']; ?>"><?php echo $data['cat_name']; ?></option>
+                    <?php }?>
+            </select>
         </div>
         <div class="form-group">
             <label >Enter Price</label>

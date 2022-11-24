@@ -55,9 +55,9 @@
         }else{
             return 0;
         }
-    }else if(isset($_POST['deleteproduct'])){
+    }else if(isset($_POST['deleteproducts'])){
         
-        $id = $_POST['product_id'];
+        $id = $_POST['product_idsss'];
 
         $newDBCRUD->delete('products',"product_id='$id'");
 

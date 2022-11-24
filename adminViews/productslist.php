@@ -32,7 +32,7 @@
                 <?php
                     include('../APIFUNCTION/DBCRUD.php');
                     $newDBCRUD = new DBCRUD();
-                    $newDBCRUD->select("products","*");
+                    $newDBCRUD->selectleftjoin("products","categories","category_id","category_id");
                     $productsLists = $newDBCRUD->sql;
             
                     $index = 1;
@@ -42,7 +42,7 @@
                     <th scope="row"><?php echo $index; ?></th>
                     <td><img style="width:150px;" src="../images/<?php echo $data["image"]; ?>" class="img-thumbnail"></td>
                     <td><?php echo $data["name"]; ?></td>
-                    <td><?php echo $data["category_id"]; ?></td>
+                    <td><?php echo $data["cat_name"]; ?></td>
                     <td><?php echo $data["price"]; ?></td>
                     <td><?php echo $data["stocks"]; ?></td>
                     <td><?php echo $data["description"]; ?></td>
@@ -99,11 +99,13 @@ function showformdelete(ids){
 }
 
 $("#deleteproducts").click(function(e){
+    // alert(id);
     $.ajax({
         type: "POST",
         url: "functions/productscrud.php",
-        data: {product_id:id,deleteproducts:"deleteproducts"},
+        data: {product_idsss:id,deleteproducts:"deleteproducts"},
         success: function(datas){
+            $("#productsModalDelete").modal("hide");
             alert("Work Saved Successfully");
             location.reload();
         },

@@ -54,14 +54,32 @@
             $this->sql = $result = $this->mysqli->query($sql);
         }
 
-        public function selectleftjoin($table,$table1,$attributename,$attributename1){
-            $sql = "SELECT * FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename";
+        public function selectsss(){
+            $sql ="SELECT * FROM customer_walkin ORDER BY cw_id DESC LIMIT 1";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
+
+
+        public function selectleftjoin($table,$table1,$attributename,$attributename1,$where = null){
+
+            if ($where != null) {
+                $sql = "SELECT * FROM $table LEFT JOIN $table1 ON $table1.$attributename=$table.$attributename1 WHERE $where";
+            }else{
+                $sql = "SELECT * FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename";
+            }
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
+
+        public function selectleftjoins($table,$table1,$table2,$attributename,$attributename1,$attributename2,$attributename3){
+            $sql = "SELECT * FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename LEFT JOIN $table2 ON $table2.$attributename2=$table.$attributename3";
 
             $this->sql = $result = $this->mysqli->query($sql);
         }
 
         public function selectleftjoin3(){
-            $sql = "SELECT * FROM `cart` LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id WHERE cart_user_id=1";
+            $sql = "SELECT * FROM `cart` LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id LEFT JOIN categories ON categories.category_id = products.category_id WHERE cart_user_id=1;";
 
             $this->sql = $result = $this->mysqli->query($sql);
         }

@@ -34,7 +34,7 @@
                 ?>
                     <tr>
                     <th scope="row"><?php echo $index; ?></th>
-                    <td><?php echo $data["name"]; ?></td>
+                    <td><?php echo $data["cat_name"]; ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['category_id']; ?>);">Edit</button>

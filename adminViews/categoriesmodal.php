@@ -13,7 +13,7 @@
         <input type="hidden" id="category_id" name="category_id">
         <div class="form-group">
             <label >Category Name</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Category Name">
+            <input type="text" class="form-control" id="cat_name" name="cat_name" placeholder="Enter Category Name">
         </div>
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <input type="hidden" name="addcategories" id="addcategories">
