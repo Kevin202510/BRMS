@@ -944,9 +944,11 @@
     right: 0; }
 
   .sidebar-menu > li > a, .sidebar-menu li > ul > li > a {
-    border-1px solid #efefef: bottom;
-    display: flex !important;
-    align-items: center; }
+    border: 1px; 
+    
+    display : flex ! important;
+    align-items: center; 
+  }
 
   .sidebar-menu li > a > .icon-arrow-down, .sidebar-menu li > ul > li > a > .icon-arrow-down {
     margin-top: 0; }

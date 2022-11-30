@@ -5,13 +5,14 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: "functions/productscrud.php",
-            data: $("#productsForm").serialize(),
+            url: "functions/rentcrud.php",
+            data: $("#rentForm").serialize(),
             success: function(datas){
-                alert("Work Saved Successfully");
+                //alert("Work Saved Successfully");
                 location.reload();
             },
           });
         
-    }); 
+    });
+    
 });

@@ -8,7 +8,7 @@ $(document).ready(function(){
             url: "functions/categoriescrud.php",
             data: $("#categoriesForm").serialize(),
             success: function(datas){
-                alert("Work Saved Successfully");
+                //alert("Work Saved Successfully");
                 location.reload();
             },
           });
