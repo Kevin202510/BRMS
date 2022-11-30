@@ -37,7 +37,7 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th>Remove</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,6 +50,8 @@
                                 $index = 1;
                                 while ($data = mysqli_fetch_assoc($userLists)){
                             ?>
+                           
+                    
                                 <tr>
                                     <td class="thumbnail-img">
                                         <a href="#">
@@ -68,10 +70,9 @@
                                     <td class="total-pr">
                                     <?php echo $data['price']?>
                                     </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-                                        <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['cart_id']; ?>);">Delete</button>
-								</a>
+                                    <td>
+                                        <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['category_id']; ?>);">Update Cart</button>
+                                        <button type="button" class="btn btn-danger" onclick="showform(<?php echo $data['cart_id']; ?>);">Delete</button>
                                     </td>
                                 </tr>
                                 <?php $index++; }?>
@@ -81,22 +82,7 @@
                 </div>
             </div>
 
-            <div class="row my-5">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="coupon-box">
-                        <div class="input-group input-group-sm">
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="update-box">
-                        <input value="Update Cart" type="submit">
-                    </div>
-                </div>
-            </div>
-
+            
             <div class="row my-5">
                 <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-lg-4 col-sm-12">
@@ -110,22 +96,9 @@
                             <h4>Discount</h4>
                             <div class="ml-auto font-weight-bold"> $ 40 </div>
                         </div>
-                        <hr class="my-1">
-                        <div class="d-flex">
-                            <h4>Coupon Discount</h4>
-                            <div class="ml-auto font-weight-bold"> $ 10 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Tax</h4>
-                            <div class="ml-auto font-weight-bold"> $ 2 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Shipping Cost</h4>
-                            <div class="ml-auto font-weight-bold"> Free </div>
-                        </div>
                         <hr>
                         <div class="d-flex gr-total">
-                            <h5>Grand Total</h5>
+                            <h5>Final Total</h5>
                             <div class="ml-auto h5"> $ 388 </div>
                         </div>
                         <hr> </div>

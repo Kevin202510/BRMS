@@ -53,10 +53,10 @@
                             </div>
                         </div>
 
-                        <div class="product-categorie-box">
+                        <div class="product-categories-box">
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                    <div class="row">
+                                    <div class="row" id="productss">
                                     <?php
                                             // include('APIFUNCTION/DBCRUD.php');
                                             // $newDBCRUD = new DBCRUD();
@@ -69,22 +69,14 @@
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <!-- <p class="sale">Accessories</p> -->
-                                                    </div>
                                                     <img src="images/1.jpeg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            
-                                                           
+                                                            <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                         </ul>
                                                         <div class= "pointed">
-                                                        <a type="button" class="cart" data-id="<?php echo $data['product_id']; ?>" id="addtc">Add to Cart</a>
-                                                        <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#categoriesModal">
-                                                        Add New Data
-                                                        </button> -->
-                                            </div>
+                                                            <a type="button" class="cart" data-id="<?php echo $data['product_id']; ?>" id="addtc">Add to Cart</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -121,11 +113,15 @@
 								</a>
                                     <div class="collapse show" id="sub-men1" data-parent="#list-group-men">
                                         <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action active">Costumes<small class="text-muted"></small></a>
-                                            <a href="#" class="list-group-item list-group-item-action"> Gowns<small class="text-muted"></small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Suits<small class="text-muted"></small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Barongs<small class="text-muted"></small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Accessories<small class="text-muted"></small></a>
+                                            <?php  
+                                                $newDBCRUD->select("categories","*");
+                                                $catlist = $newDBCRUD->sql;
+                                        
+                                                $index = 1;
+                                                while ($data = mysqli_fetch_assoc($catlist)){
+                                            ?>
+                                            <a data-id="<?php echo $data['category_id'] ?>" id="prodcat" class="list-group-item list-group-item-action active"><?php echo strtoupper($data['cat_name']) ?><small class="text-muted"></small></a>
+                                        <?php } ?>
                                         </div>
                                     </div>
                                 </div>
@@ -211,5 +207,56 @@
 
             $("#categoriesModal").modal("show");
         });
+
+        $("body").on('click',"#prodcat",function(e){
+            let dataid = $(e.currentTarget).data("id");
+            // alert(dataid);
+            $.post("selectproductcat.php",{PRODUCT_ID:dataid},function(data,status){
+                console.log(data);
+                let newdata = JSON.parse(data);
+
+                if(newdata.length!=0){
+                $("#productss").empty();
+
+                    let datasss = '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">'+
+                                    '<div class="products-single fix">'+
+                                        '<div class="box-img-hover">'+
+                                            '<img src="images/1.jpeg" class="img-fluid" alt="Image">'+
+                                            '<div class="mask-icon">' +
+                                                '<ul>' +
+                                                    '<li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>'+ 
+                                                '</ul>'+
+                                                '<div class= "pointed">'+
+                                                    '<a type="button" class="cart" data-id="'+newdata.image+'" id="addtc">Add to Cart</a>'+
+                                                '</div>'+
+                                            '</div>'+
+                                        '</div>'+
+                                        '<div class="why-text">'+
+                                            '<h4>Name: '+newdata.name+'</h4>'+
+                                            '<h4>Stocks: '+newdata.stocks+'</h4>'+
+                                            '<h4>Category: '+newdata.cat_name+'</h4>'+
+                                            '<h5>₱ '+newdata.price+'</h5>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>';
+                    $("#productss").append(datasss);
+                }else{
+                    $("#productss").empty();
+                    let datasss = '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">'+
+                                    '<div class="products-single fix">'+
+                                        '<div class="why-text">'+
+                                            '<h4>No Available Products To show For That Category</h4>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>';
+                    $("#productss").append(datasss);
+                }
+
+            });
+
+            // $("#categoriesModal").modal("show");
+        });
     });
+
+    
 </script>

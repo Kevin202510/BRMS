@@ -1,3 +1,7 @@
+
+ <link rel="stylesheet" href="css/loginmodal.css">
+ 
+
 <div class="main-top">
         <div class="container-fluid">
             <div class="row">
@@ -13,13 +17,18 @@
                             <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> 
                 <div class="col-lg-6">
                     
 					<div class="login-box" style="width: 200px" >
-                        <a href="loginreg.php"style=" margin-right: 20px"><i class="fa fa-user s_color"></i> Register</a> 
-                        <a  href="login.php" ><i class="fa fa-user s_color"></i>Login</a>
+                     <div class = "container">
+                        <button class = "btn btn-primary btn-lg" data-toggle = "modal"
+                         data-target="#loginsModal">Sign In/Register</button>
+</div>
+<?php include('loginmodal.php');?>
+    
 					</div>
+                    
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
 </div>
@@ -53,14 +62,13 @@
                        
                         
                     <li class="home">
-                    <a style="color: black;" href="#"  data-toggle="dropdown">HOME</a>
+                    <a style="color: black;" href="shop.php"  data-toggle="dropdown">HOME</a>
 </li>
 </ul>
                         <li class="dropdown"> 
                             <a style="color: white;" href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
 								<li><a href="shop.php">Products</a></li>
-								<li><a href="shop-detail.html">Shop Detail</a></li>
                                 <li><a href="cart.php">Cart</a></li>
                                 <li><a href="checkout.php">Checkout</a></li>
                                 <li><a href="my-account.html">My Account</a></li>
@@ -126,3 +134,5 @@
         </nav>
         <!-- End Navigation -->
     </header>
+   
+   

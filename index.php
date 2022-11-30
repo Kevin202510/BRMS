@@ -17,7 +17,7 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20" style="font-family: poppins; font-size:4.5rem;"><strong>Welcome To <br> Gil's Creation</strong></h1>
                             <p class="m-b-40"> WEB-BASED BOUTIQUE RENTAL SYSTEM</p>
-                            <p><a class="btn hvr-hover" style="color:white; border-radius: 25px;font-weight:Bold;"  href="#">Rent Now</a></p>
+                            <p><a class="btn hvr-hover" style="color:white; border-radius: 25px;font-weight:Bold;"  href="shop.php">Rent Now</a></p>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20"style="font-family: poppins; font-size:4.5rem;"><strong>Welcome To <br> Gil's Creation</strong></h1>
                             <p class="m-b-40"> WEB-BASED BOUTIQUE RENTAL SYSTEM</p>
-                            <p><a class="btn hvr-hover" style="color:white; border-radius: 25px; font-weight:Bold;" href="#">Rent Now</a></p>
+                            <p><a class="btn hvr-hover" style="color:white; border-radius: 25px; font-weight:Bold;" href="shop.php">Rent Now</a></p>
                         </div>
                     </div>
                 </div>

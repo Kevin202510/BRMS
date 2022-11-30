@@ -828,7 +828,7 @@
 }
  .slides-pagination {
  
-     border:  #f8cab3;
+     border:  #8d7252;
 }
  .cover-slides p a{
      font-size: 24px;
@@ -938,7 +938,7 @@
      font-size: 18px;
 }
  .filter-button-group button.active{
-     background: #000000;
+     background: #8d7252;
 }
  .filter-button-group button{
 }
@@ -971,7 +971,7 @@
      text-transform: uppercase;
 }
  .type-lb .new{
-     background: #000000;
+     background: #8d7252;
      color: #FEF9F8;
      padding: 2px 10px;
      font-weight: 700;
