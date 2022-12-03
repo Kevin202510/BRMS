@@ -74,26 +74,8 @@
                     </div>
                 </div>
                 
-                                    <?php
-                                            // include('APIFUNCTION/DBCRUD.php');
-                                            // $newDBCRUD = new DBCRUD();
-                                            $newDBCRUD->select("products","*");
-                                            $userLists = $newDBCRUD->sql;
-                                    
-                                            $index = 1;
-                                            while ($data = mysqli_fetch_assoc($userLists)){
-                                        ?>
-                <div class="col-xl-7 col-lg-7 col-md-6">
-                    <div class="single-product-details">
-                    <div class="why-text">
-                                                    <h4>Name: <?php echo $data['name']; ?></h4>
-                                                    <h4>Stocks: <?php echo $data['stocks']; ?></h4>
-                                                    <h4>Category: <?php echo $data['category_id']; ?></h4>
-                                                    <h5>₱ <?php echo $data['price']; ?></h5>
-                                                </div>
-                                                <?php } ?>
-                                            </div>
-                                            </div>
+                                   
+                
 						<ul>
 							<li>
 								<div class="form-group quantity-box">

@@ -142,17 +142,28 @@
      margin: 0px;
 }
 .dropdown{
-    background: #EF9273;
-    border-radius: 20px;
+    
+    
     float: right;
     padding-right: 20px;
     margin-right: 20px;
    
 }
+.dropdown a{
+    
+    font-weight: bold;
+   
+}
 .dropdown:hover{
-    background-color: black;
+    
     border-radius: 20px;
 }
+p {
+    border-radius: 10%;  
+    font-weight: bold;
+   
+}
+
  .bootstrap-select .dropdown-toggle:focus{
      outline: none !important;
 }
@@ -295,7 +306,7 @@
     font-weight: bold;
     border: 10px;
     border-color: #000;
-    border-radius: ;
+    
     
 }
 

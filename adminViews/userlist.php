@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include('layouts/head.php'); ?>
    <div class="loader-bg">
       <div class="loader-bar">
@@ -17,7 +18,7 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-                  <h2>User List</h2>
+                  <h2  style=" font-family:poppins; color:#8d7252;">User List</h2>
                </div>
             </div>
 

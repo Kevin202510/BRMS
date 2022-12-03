@@ -1,5 +1,5 @@
 <header class="main-header-top hidden-print">
-         <a href="index.html" class="logo" style="background-color:#EF9273;"><img class="img-fluid able-logo" src="assets/images/logo.png" alt="logo"></a>
+         <a href="index.php" class="logo" style="background-color:#EF9273;"><img class="img-fluid able-logo" src="assets/images/logo.jpg" alt="logo"></a>
          <nav class="navbar navbar-static-top" style="background-color:#EF9273;">
             <!-- Sidebar toggle button-->
             <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
@@ -55,14 +55,7 @@
                         </li>
                      </ul>
                   </li>
-                  <!-- chat dropdown -->
-                  <li class="pc-rheader-submenu ">
-                     <a href="#!" class="drop icon-circle displayChatbox">
-                        <i class="icon-bubbles"></i>
-                        <span class="badge badge-danger header-badge">5</span>
-                     </a>
-
-                  </li>
+           
                   <!-- window screen -->
                   <li class="pc-rheader-submenu">
                      <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
@@ -71,11 +64,20 @@
 
                   </li>
                   <!-- User Menu-->
+                  <div>
                   <li class="dropdown">
                      <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                       
-                        <span>ADMIN <i class=" icofont icofont-simple-down"></i></span>
-
+                     <?php if(isset($_SESSION['PERMISSION_ID'])){
+                       ?>
+                         <form method="post">
+                                    <input type="submit" name="logout" class="btn btn-primary btn-sm" style="width:100%" class="nav-link" value="Logout">
+                                </form>
+               
+                        <span><?php echo $_SESSION['FULLNAME'];?> <i class=" icofont icofont-simple-down"></i></span>
+                        <?php }else{?>
+                           <a href="../index.php">Home Page</a>
+                        </a>
+                           <?php }?>
                      </a>
                      <ul class="dropdown-menu settings-menu">
                         <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
@@ -85,8 +87,7 @@
                            <div class="dropdown-divider m-0"></div>
                         </li>
                       
-                        <li><a href="login1.html"><i class="icon-logout"></i> Logout</a></li>
-
+                        
                      </ul>
                   </li>
                </ul>

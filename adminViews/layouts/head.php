@@ -1,8 +1,31 @@
+<?php
+
+    if(isset($_POST['logout'])){
+        session_destroy();
+        $_SESSION['PERMISSION_ID'] = 0;
+        $_SESSION['FULLNAME'] = 0;
+        header("location:index.php");
+    }
+
+?>
+
+<!doctype html>
+<html lang="en">
+<script language='javascript' type='text/javascript'>
+function DisableBackButton() {
+window.history.forward()
+}
+DisableBackButton();
+window.onload = DisableBackButton;
+window.onpageshow = function(evt) { if (evt.persisted) DisableBackButton() }
+window.onunload = function() { void (0) }
+</script>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-   <title>Quantum Able Bootstrap 4 Admin Dashboard Template</title>
+   <title>ADMIN</title>
    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
    <!--[if lt IE 9]>
@@ -14,7 +37,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
    <!-- Favicon icon -->
-   
+   <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
    <!-- Google font-->

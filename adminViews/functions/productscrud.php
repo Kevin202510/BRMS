@@ -3,9 +3,13 @@
     include('../../APIFUNCTION/DBCRUD.php');
     $newDBCRUD = new DBCRUD();
 
-
     if(isset($_POST['addproducts'])){
-        $image = "sample.jpeg";
+        $target_dir = "../uploads/";
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        
+        $image = $_FILES["fileToUpload"]["name"];
         $name = $_POST["name"];
         $category_id = $_POST["category_id"];
         $price = $_POST["price"];
@@ -14,7 +18,7 @@
         $variation = $_POST["variation"];
 
 
-        $newDBCRUD->insert('products',['product_id'=>$product_id,
+        $newDBCRUD->insert('products',[
         'image'=>$image,
         'name'=>$name,
         'category_id'=>$category_id,
@@ -22,18 +26,20 @@
         'stocks'=>$stocks,
         'description'=>$description,
         'variation'=>$variation]);
+
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+          } else {
+            echo "Sorry, there was an error uploading your file.";
+          }
         
 
-        if($newDBCRUD){
-            return 1;
-        }else{
-            return 0;
-        }
+        header("location: ../productslist.php");
 
     }else if(isset($_POST['updateproducts'])){
         
         $product_id = $_POST['product_id'];
-        $image = "sample.jpeg";
+        $image = $_POST["image"];
         $name = $_POST["name"];
         $category_id = $_POST["category_id"];
         $price = $_POST["price"];

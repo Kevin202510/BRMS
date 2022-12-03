@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include('layouts/head.php'); ?>
    <div class="loader-bg">
       <div class="loader-bar">
@@ -17,7 +18,7 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-               <h2>Products List</h2><br>
+               <h2  style=" font-family:poppins; color:#8d7252; ">Products List</h2><br>
                </div>
             </div>
         <div class="card">
@@ -54,7 +55,7 @@
                 ?>
                     <tr>
                     <th scope="row"><?php echo $index; ?></th>
-                    <td><img style="width:150px;" src="../images/<?php echo $data["image"]; ?>" class="img-thumbnail"></td>
+                    <td><img style="width:150px;" src="./uploads/<?php echo $data["image"]; ?>" class="img-thumbnail"></td>
                     <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["cat_name"]; ?></td>
                     <td><?php echo $data["price"]; ?></td>

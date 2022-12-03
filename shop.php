@@ -1,4 +1,6 @@
+<?php session_start(); ?>
 <?php include('layouts/head.php');?>
+
     <!-- Start Main Top -->
     <?php include('layouts/header.php');?>
     <!-- End Main Top -->
@@ -10,7 +12,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+               
                     <h2>Our Products</h2>
+                   
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active">Our Products</li>
@@ -69,7 +73,7 @@
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
-                                                    <img src="images/1.jpeg" class="img-fluid" alt="Image">
+                                                <img style="width:200px; height:250px;" src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-thumbnail">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -82,7 +86,6 @@
                                                 <div class="why-text">
                                                     <h4>Name: <?php echo $data['name']; ?></h4>
                                                     <h4>Stocks: <?php echo $data['stocks']; ?></h4>
-                                                    <h4>Category: <?php echo $data['category_id']; ?></h4>
                                                     <h5>₱ <?php echo $data['price']; ?></h5>
                                                 </div>
                                             </div>
@@ -112,8 +115,9 @@
                                     <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">CHOOSE <small class="text-muted"></small>
 								</a>
                                     <div class="collapse show" id="sub-men1" data-parent="#list-group-men">
-                                        <div class="list-group">
-                                            <?php  
+                                        <div style = "cursor:pointer" class="list-group">
+                                            <?php
+                                              
                                                 $newDBCRUD->select("categories","*");
                                                 $catlist = $newDBCRUD->sql;
                                         
@@ -146,7 +150,16 @@
       <div class="modal-body">
       <form method="POST" action="addtocart.php">
         <input type="hidden" id="product_id" name="product_id">
-        <input type="hidden" id="cart_user_id" name="cart_user_id" value="1">
+
+        <?php 
+        if(isset($_SESSION['PERMISSION_ID'])){
+            $id=$_SESSION['ID'];
+             $newDBCRUD->select("users","*",$id);
+                            $userLists = $newDBCRUD->sql;
+                            while ($data = mysqli_fetch_assoc($userLists)){
+                            ?>
+        <input type="hidden" id="cart_user_id" name="cart_user_id" value="<?php echo $id;?>">
+        <?php }}?>
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
@@ -199,6 +212,7 @@
                 // console.log(data);
                 let newdata = JSON.parse(data);
                 $("#product_id").val(newdata.product_id);
+                $("#image").val(newdata.image);
                 $("#name").val(newdata.name);
                 $("#price").val(newdata.price);
                 $("#variation").val(newdata.variation);
@@ -221,7 +235,7 @@
                     let datasss = '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">'+
                                     '<div class="products-single fix">'+
                                         '<div class="box-img-hover">'+
-                                            '<img src="images/1.jpeg" class="img-fluid" alt="Image">'+
+                                            '<img style="width:200px; height:250px;" src="adminViews/uploads/'+newdata.image+'" class="img-fluid" alt="Image">'+
                                             '<div class="mask-icon">' +
                                                 '<ul>' +
                                                     '<li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>'+ 

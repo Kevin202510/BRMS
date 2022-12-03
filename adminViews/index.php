@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include('layouts/head.php'); ?>
    <div class="loader-bg">
       <div class="loader-bar">
@@ -17,8 +18,12 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-                  <h4>Dashboard</h4>
+               <?php if(isset($_SESSION['PERMISSION_ID'])){
+                       ?>
+                  <h3  style=" font-family:poppins; color:#8d7252;"><?php echo $_SESSION['FULLNAME'];?></h3>
+                  <h3  style=" font-family:poppins; color:#8d7252;">Dashboard</h3>
                </div>
+               <?php }?>
             </div>
            
 

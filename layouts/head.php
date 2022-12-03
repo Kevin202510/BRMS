@@ -1,5 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+
+    if(isset($_POST['logoutnako'])){
+        session_destroy();
+
+        header("location: index.php");
+    }
+
+?>
+
 <!-- Basic -->
 
 <head>

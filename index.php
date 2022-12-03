@@ -1,3 +1,64 @@
+<?php
+ session_start();
+    include('APIFUNCTION/DBCRUD.php');
+    $newDBCRUD = new DBCRUD();
+
+    if(isset($_POST["signin"])){
+        $whereclause = "email = '".$_POST["email"]."' AND password = '".$_POST["password"]."'";
+        $newDBCRUD->select("users","*",$whereclause);
+        $catlist = $newDBCRUD->sql;
+
+        $index = 1;
+        while ($data = mysqli_fetch_assoc($catlist)){
+            if($data["user_permission_id"]==1 || $data['user_permission_id']==3){
+                $_SESSION['PERMISSION_ID'] = $data['user_permission_id'];
+                $_SESSION['FULLNAME'] = $data['fname']." ".$data['lname'];
+                header("location: adminViews/index.php");
+            }
+        else{
+            $_SESSION['PERMISSION_ID'] = $data['user_permission_id'];
+            $_SESSION['FULLNAME'] = $data['fname']." ".$data['lname'];
+            $_SESSION['ID'] = $data['user_id'];
+
+            header("location: shop.php");
+        }
+    }
+ 
+        
+    }
+?>
+<?php
+
+if(isset($_POST['adduser'])){
+    $fname = $_POST["fname"];
+    $lname = $_POST["lname"];
+    $address = $_POST["address"];
+    $contact_num = $_POST["contact_num"];
+    $email = $_POST["email"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $user_permission_id = $_POST["user_permission_id"];
+
+    $newDBCRUD->insert('users',['user_permission_id'=>$user_permission_id,
+    'fname'=>$fname,
+    'lname'=>$lname,
+    'address'=>$address,
+    'contact_num'=>$contact_num,
+    'email'=>$email,
+    'username'=>$username,'password'=>$password]);
+
+    if($newDBCRUD){
+        // echo "<script>alert('Succes');</script>";
+        header("location:index.php");
+    }else{
+        return 0;
+    }
+
+}
+
+
+?>
+
 <?php include('layouts/head.php');?>
     <!-- Start Main Top -->
     <?php include('layouts/header.php');?>

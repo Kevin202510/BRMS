@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include('layouts/head.php'); ?>
    <div class="loader-bg">
       <div class="loader-bar">
@@ -17,14 +18,14 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-               <h2>Rent List</h2><br>
+               <h2  style=" font-family:poppins; color:#8d7252;">Rent List</h2><br>
                </div>
             </div>
 
             <div class="card">
         <div class="card-header">
             
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#rentModal" id="rentbtn">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#rentprodModal" id="rentbtn">
             Rent New
             </button>
         </div>

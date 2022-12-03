@@ -19,15 +19,22 @@
                     </div>
                 </div> 
                 <div class="col-lg-6">
-                    
+                <?php if(isset($_SESSION['PERMISSION_ID'])){
+                       ?>
+    
+              <form method="post">
+                                    <input type="submit" name="logoutnako" class="btn btn-primary btn-sm" style="width:100%" class="nav-link" value="Logout">
+                                </form>
+                                <?php }else{?>
 					<div class="login-box" style="width: 200px" >
                      <div class = "container">
                         <button class = "btn btn-primary btn-lg" data-toggle = "modal"
                          data-target="#loginsModal">Sign In/Register</button>
-</div>
-<?php include('loginmodal.php');?>
-    
+                </div>
+                <?php include('loginmodal.php');?>
+                  
 					</div>
+                    <?php }?>
                     
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
@@ -60,19 +67,17 @@
                     
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                        
-                        
-                    <li class="home">
-                    <a style="color: black;" href="shop.php"  data-toggle="dropdown">HOME</a>
+                     <li>   
+                    <a href="index.php" class="ml-auto btn ">HOME</a>
 </li>
-</ul>
                         <li class="dropdown"> 
-                            <a style="color: white;" href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                            <a style="color: black;" href="#" class="ml-auto btn" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
 								<li><a href="shop.php">Products</a></li>
                                 <li><a href="cart.php">Cart</a></li>
                                 <li><a href="checkout.php">Checkout</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-
+                                <li><a href="myaccount.php">My Account</a></li>
+                                
                             </ul>
 </li>
                     
@@ -81,39 +86,50 @@
                 <!-- Start Atribute Navigation -->
                 
                 
+               
+<div class="attr-nav">
+                        <li class="side-menu">
+							<a href="#">
+                            
+								<i class="fa fa-shopping-bag"> </i>
+								<p>CART</p>
+							</a>
+						</li>
+                    </ul>
                     
+                </div>
+                <div class="attr-nav">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
      
                         <li class="search"><a style="color: #EF9273; ;" href="#"><i class="fa fa-search"></i></a></li>
 </ul>
-
-<div class="attr-nav">
-                        <li class="side-menu">
-							<a href="#">
-								<i class="fa fa-shopping-bag"> </i>
-								<p>My Cart</p>
-							</a>
-						</li>
-                    </ul>
-                </div>
+</div>
+<?php if(isset($_SESSION['PERMISSION_ID'])){
+                       ?>
+                  <h3  style=" font-family:poppins; color:#8d7252;"><?php echo $_SESSION['FULLNAME'];?></h3>
+               </div>
+               <?php }?>
                 <!-- End Atribute Navigation -->
             </div>
+            
             <!-- Start Side Menu -->
             <div class="side">
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
                 <li class="cart-box">
                     <ul class="cart-list">
                     <?php
-                                include('APIFUNCTION/DBCRUD.php');
+                                include_once('APIFUNCTION/DBCRUD.php');
                                 $newDBCRUD = new DBCRUD();
-                                $newDBCRUD->selectleftjoin3();
+                                if(isset($_SESSION['PERMISSION_ID'])){
+                                    $ids=$_SESSION['ID'];
+                                $newDBCRUD->selectleftjoin3($ids);
                                 $userLists = $newDBCRUD->sql;
                         
                                 $index = 1;
                                 while ($data = mysqli_fetch_assoc($userLists)){
                             ?>
                         <li>
-                            <a href="#" class="photo"><img class="img-fluid" src="images/sut1.jpg" alt="" class="cart-thumb" alt="" /></a>
+                        <img style="width:150px;" src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-thumbnail">
                             <h6><a href="#"><?php echo $data['name']?></a></h6>
                             <p><?php echo $data['quantity']?>x- <span class="price"><?php echo $data['price']?></span></p>
                             
@@ -122,7 +138,7 @@
                             
                         </li> 
                                 </li>
-                        <?php } ?>
+                        <?php } }?>
                         <li class="total">
                             <a href="cart.php" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
                         </li>

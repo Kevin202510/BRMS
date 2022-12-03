@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include('layouts/head.php');?>
     <!-- Start Main Top -->
     <?php include('layouts/header.php');?>
@@ -42,22 +43,27 @@
                             </thead>
                             <tbody>
                             <?php
-                                // include('APIFUNCTION/DBCRUD.php');
-                                // $newDBCRUD = new DBCRUD();
-                                $newDBCRUD->selectleftjoin3();
+                                 include_once('APIFUNCTION/DBCRUD.php');
+                                 $newDBCRUD = new DBCRUD();
+                                if(isset($_SESSION['PERMISSION_ID'])){
+                                $ids=$_SESSION['ID'];
+                                $newDBCRUD->selectleftjoin3($ids);
                                 $userLists = $newDBCRUD->sql;
+
+                                // var_dump($userLists);
                         
                                 $index = 1;
                                 while ($data = mysqli_fetch_assoc($userLists)){
+                                  
                             ?>
                            
                     
                                 <tr>
                                     <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="images/sut1.jpg" alt="" />
-								</a>
+                                        <img style="width:65px; height: 70px" src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-thumbnail">
+								
                                     </td>
+                                    
                                     <td class="name-pr">
                                         <a href="#">
 									<?php echo $data['name']?>
@@ -72,16 +78,16 @@
                                     </td>
                                     <td>
                                         <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['category_id']; ?>);">Update Cart</button>
-                                        <button type="button" class="btn btn-danger" onclick="showform(<?php echo $data['cart_id']; ?>);">Delete</button>
+                                        <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['cart_id']; ?>);">Delete</button>
                                     </td>
                                 </tr>
-                                <?php $index++; }?>
+                                <?php $index++; }}?>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-
+            <?php include('loginmodal.php');?>
             
             <div class="row my-5">
                 <div class="col-lg-8 col-sm-12"></div>

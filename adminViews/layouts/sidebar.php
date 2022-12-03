@@ -5,7 +5,7 @@
             <!-- Sidebar Menu-->
             
             <ul class="sidebar-menu">
-            <li class="nav-level" style="color:#8d7252;">------ GIL'S CREATION</li>
+            <li class="nav-level" style="color:#8d7252;">----------------------ADMIN------------------------</li>
                 <li class="treeview">
 
                 <a class="waves-effect waves-dark" href="index.php" style="color: black">
