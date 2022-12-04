@@ -1,105 +1,148 @@
-
-
-</head>
-
 <!-- Modal -->
 <div class="modal fade bs-modal-sm log-sign" id="loginsModal" tabindex="-1" role="dialog" aria-labelledby="loginsModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
         
         <div class="bs-example bs-example-tabs">
             <ul id="myTab" class="nav nav-tabs">
-              <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" class="active show" data-toggle="tab">Log In</a></li>
-              <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Sign Up</a></li>
+              <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" class="active show" data-toggle="tab">LOGIN</a></li>
+              <li id="tab2" class=" tab-style signup-shadow"><a href="#signup" data-toggle="tab">REGISTER</a></li>
               
             </ul>
         </div>
       <div class="modal-body">
         <div id="myTabContent" class="tab-content">
-       
         <div class="tab-pane fade active show in" id="signin">
 
-    <form method="POST" action="index.php">
+    <form method="POST" action="index.php" autocomplete="off">
+      
            
             <!-- Sign In Form -->
             <!-- Text input-->
           <fieldset>
                <div class="group">
-        <input class="input" name="email" type="text">
-        <i class="fas fa-envelope prefix grey-text"></i>
-
-            <label   class="label" for="date">Email address</label></div>
-                      
-              
+               <div class="col-12">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+              </div>
+             <input  class="input form-control" name="email" type="text" placeholder="Email" required="true" aria-label="Email" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        
             <!-- Password input-->
             <div class="group">
-        <input class="input" name="password" type="password">
-            <label class="label" for="date">Password</label>
+            <div class="col-12">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+              </div>
+              <input name="password" type="password" value="" class="input form-control" id="password" placeholder="Password" required="true" aria-label="password" aria-describedby="basic-addon1" />
+              <div class="input-group-append">
+                <span class="input-group-text" onclick="password_show_hide();">
+                  <i class="fas fa-eye" id="show_eye"></i>
+                  <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                </span>
+              </div>
             </div>
+          </div>
         <em>minimum 6 characters</em>
-
+        <div class="col">
            <div class="forgot-link">
             <a href="#forgot-password" data-toggle="modal" data-target="#forgot-password"> I forgot my password</a>
             </div>
+</div>
             
 
             <!-- Button -->
             <div class="control-group">
               <label class="control-label" for="signin"></label>
               <div class="controls">
-                <button id="signin" name="signin" class="btn btn-primary btn-block">Log In</button>
+              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">CANCEL</button>
+              <center> <button id="signin" name="signin" class="btn btn-primary btn-block " style = "width: 100px;">LOGIN</button></center>
               </div>
             </div>
 </fieldset>
 </form>
         </div>
-          
-          
+
+       
         <div class="tab-pane fade" id="signup">
  <form method="POST" action="">
+  <fieldset>
  <input type="hidden" id="user_id" name="user_id">
         <div class="form-group">
-            <h5  hidden style="color:#8d7252;  font-family:poppins;">Permission:</h5>
-            <select hidden class="form-control" name="user_permission_id" id="user_permission_id">
+            <label  hidden style="color:#8d7252;  font-family:poppins;">Permission:</label>
+            <select hidden class="input" name="user_permission_id" id="user_permission_id">
               <option  value="2">Customer</option>
             </select>
         </div>
 
-        <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Firstname:</h5>
-            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter Firstname">
-        </div>
-        <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Lastname:</h5>
-            <input type="text" class="form-control" id="lname" name="lname"  placeholder="Enter Lastname">
-        </div>
-        <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;" for="Address" >Address:</h5>
-            <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address">
-        </div>
-        <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Contact:</h5>
-            <input type="number" class="form-control" id="contact_num" name="contact_num" placeholder="Enter Contact">
-        </div>
-        <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Email:</h5>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
-        </div>
-        <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Username:</h5>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
-        </div>
-        <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Password:</h5>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
-        </div>
-        <div class="controls">
-                <button name="adduser" class="btn btn-primary btn-block">Create Account</button>
-              </div>
-        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         
-</form>
+        <div class="row">
+        <div class="col">
+        <div class="group">
+        <input  type="text" class="input" id="fname" name="fname" required="true">
+        <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Firstname:</label></div>
+        </div>
+       
+        
+        <div class="col">
+        <div class="group">
+        <input  type="text" class="input" id="lname" name="lname" required="true">
+        <label  class="label" for="date" style="color:#8d7252;  font-family:poppins;">Lastname:</label></div> 
+        </div>
+</div>
+<br>
+        <div class="row">
+        <div class="col">
+        <div class="group">
+           <input type="text" class="input" id="address" name="address" required="true">
+        <label class="label"for="date" style="color:#8d7252;  font-family:poppins;">Address:</label></div>
+
+        </div>
+         <div class="col">
+         <div class="group">
+         <input type="number" class="input" id="contact_num" name="contact_num" required="true" >
+        <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Contact:</label> </div>
+
+        </div>
+</div>
+<br>
+
+<div class="row">
+        <div class="col">
+        <div class="group">
+        <input type="email" class="input" id="email" name="email"required="true" >
+        <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Email:</label></div>
+            
+        </div>
+</div>
+        <div class="row">
+        <div class="col">
+        <div class="group">
+        <input type="text" class="input" id="username" name="username" required="true" >
+        <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Username:</label>
+            </div>
+        </div>
+        <div class="col">
+         <div class="group">
+         <input type="password" class="input" id="password" name="password" required="true" >
+        <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Password:</label> </div>
+            
+        </div>
+</div>
+        <br>
+        <br>
+
+
+          
+                <center><button name="adduser" class="btn btn-primary btn-block" style = "width: 100px; float:right;">REGISTER</button></center>
+
+        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 </fieldset>
+</form>
+
       </div>
     </div>
       </div>

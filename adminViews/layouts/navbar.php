@@ -1,3 +1,4 @@
+
 <header class="main-header-top hidden-print">
          <a href="index.php" class="logo" style="background-color:#EF9273;"><img class="img-fluid able-logo" src="assets/images/logo.jpg" alt="logo"></a>
          <nav class="navbar navbar-static-top" style="background-color:#EF9273;">
@@ -48,7 +49,7 @@
                            <a href="javascript:;" class="media"><span class="media-left media-icon">
                     <img class="img-circle" src="assets/images/.png" alt="User Image">
                   </span>
-                                    <div class="media-body"><span class="block">Transaction xyz complete</span><span class="text-muted block-time">3 hours ago</span></div></a>
+                                    <div class="media-body"><span class="block">Transaction xyz complete</span><span class="text-muted block-time">3 hours ago</span></div>
                         </li>
                         <li class="not-footer">
                            <a href="#!">See all notifications.</a>
@@ -70,15 +71,13 @@
                      <?php if(isset($_SESSION['PERMISSION_ID'])){
                        ?>
                          <form method="post">
-                                    <input type="submit" name="logout" class="btn btn-primary btn-sm" style="width:100%" class="nav-link" value="Logout">
+                                    <button type="submit" name="logout" class="btn btn-primary btn-sm" style="width:100%" class="nav-link" value="Logout">LOGOUT</button>
                                 </form>
                
                         <span><?php echo $_SESSION['FULLNAME'];?> <i class=" icofont icofont-simple-down"></i></span>
-                        <?php }else{?>
-                           <a href="../index.php">Home Page</a>
-                        </a>
+                       
                            <?php }?>
-                     </a>
+                    
                      <ul class="dropdown-menu settings-menu">
                         <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
                         <li><a href="#"><i class="icon-user"></i> Profile</a></li>
@@ -91,7 +90,7 @@
                      </ul>
                   </li>
                </ul>
-
+                     </a>
                <!-- search -->
                <div id="morphsearch" class="morphsearch">
                   <form class="morphsearch-form">

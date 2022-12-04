@@ -20,7 +20,7 @@
                        ?>
     
               <form method="post">
-                                    <input type="submit" name="logoutnako" class="btn btn-primary btn-sm" style="width:100%" class="nav-link" value="Logout">
+                                    <input type="submit" name="logoutnako" class="btn btn-primary btn-sm" style="width:100px; border-radius:7rem; float:right;"   class="nav-link" value="Logout">
                                 </form>
                                 <?php }else{?>
 					<div class="login-box" style="width: 200px" >

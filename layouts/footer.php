@@ -100,6 +100,9 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/loginmodal.js"></script>
+    <script src="js/showpassword.js"></script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>

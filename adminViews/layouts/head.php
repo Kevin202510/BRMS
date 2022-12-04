@@ -4,7 +4,7 @@
         session_destroy();
         $_SESSION['PERMISSION_ID'] = 0;
         $_SESSION['FULLNAME'] = 0;
-        header("location:index.php");
+        header("location:../index.php");
     }
 
 ?>
