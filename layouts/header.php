@@ -1,7 +1,4 @@
 
- <link rel="stylesheet" href="css/loginmodal.css">
- 
-
 <div class="main-top">
         <div class="container-fluid">
             <div class="row">

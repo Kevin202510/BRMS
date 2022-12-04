@@ -1,4 +1,7 @@
 
+
+</head>
+
 <!-- Modal -->
 <div class="modal fade bs-modal-sm log-sign" id="loginsModal" tabindex="-1" role="dialog" aria-labelledby="loginsModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -6,7 +9,7 @@
         
         <div class="bs-example bs-example-tabs">
             <ul id="myTab" class="nav nav-tabs">
-              <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Log In</a></li>
+              <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" class="active show" data-toggle="tab">Log In</a></li>
               <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Sign Up</a></li>
               
             </ul>
@@ -14,16 +17,18 @@
       <div class="modal-body">
         <div id="myTabContent" class="tab-content">
        
-        <div class="tab-pane fade active in" id="signin">
+        <div class="tab-pane fade active show in" id="signin">
 
     <form method="POST" action="index.php">
-            <fieldset>
+           
             <!-- Sign In Form -->
             <!-- Text input-->
-              
+          <fieldset>
                <div class="group">
         <input class="input" name="email" type="text">
-            <label class="label" for="date">Email address</label></div>
+        <i class="fas fa-envelope prefix grey-text"></i>
+
+            <label   class="label" for="date">Email address</label></div>
                       
               
             <!-- Password input-->
@@ -45,7 +50,7 @@
                 <button id="signin" name="signin" class="btn btn-primary btn-block">Log In</button>
               </div>
             </div>
-            </fieldset>
+</fieldset>
 </form>
         </div>
           

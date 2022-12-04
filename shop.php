@@ -224,48 +224,50 @@
 
         $("body").on('click',"#prodcat",function(e){
             let dataid = $(e.currentTarget).data("id");
-            // alert(dataid);
+            alert(dataid);
             $.post("selectproductcat.php",{PRODUCT_ID:dataid},function(data,status){
-                console.log(data);
                 let newdata = JSON.parse(data);
 
+                let htm="";
                 if(newdata.length!=0){
-                $("#productss").empty();
-
-                    let datasss = '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">'+
+                    $("#productss").empty();
+                $.each( newdata, function( key, value ) {
+                    console.log(value);
+                    htm += '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">'+
                                     '<div class="products-single fix">'+
                                         '<div class="box-img-hover">'+
-                                            '<img style="width:200px; height:250px;" src="adminViews/uploads/'+newdata.image+'" class="img-fluid" alt="Image">'+
+                                            '<img style="width:200px; height:250px;" src="adminViews/uploads/'+value.image+'" class="img-fluid" alt="Image">'+
                                             '<div class="mask-icon">' +
                                                 '<ul>' +
                                                     '<li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>'+ 
                                                 '</ul>'+
                                                 '<div class= "pointed">'+
-                                                    '<a type="button" class="cart" data-id="'+newdata.image+'" id="addtc">Add to Cart</a>'+
+                                                    '<a type="button" class="cart" data-id="'+value.image+'" id="addtc">Add to Cart</a>'+
                                                 '</div>'+
                                             '</div>'+
                                         '</div>'+
                                         '<div class="why-text">'+
-                                            '<h4>Name: '+newdata.name+'</h4>'+
-                                            '<h4>Stocks: '+newdata.stocks+'</h4>'+
-                                            '<h4>Category: '+newdata.cat_name+'</h4>'+
-                                            '<h5>₱ '+newdata.price+'</h5>'+
+                                            '<h4>Name: '+value.name+'</h4>'+
+                                            '<h4>Stocks: '+value.stocks+'</h4>'+
+                                            '<h4>Category: '+value.cat_name+'</h4>'+
+                                            '<h5>₱ '+value.price+'</h5>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
-                    $("#productss").append(datasss);
-                }else{
-                    $("#productss").empty();
-                    let datasss = '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">'+
-                                    '<div class="products-single fix">'+
+            });
+            $("#productss").append(htm);
+        }else{
+            
+            $("#productss").empty();
+            $("#productss").append('<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">'+
                                         '<div class="why-text">'+
-                                            '<h4>No Available Products To show For That Category</h4>'+
+                                            '<h5>No Available Data</h5>'+
                                         '</div>'+
                                     '</div>'+
-                                '</div>';
-                    $("#productss").append(datasss);
-                }
+                                '</div>');
+        }
 
+                    $("#productss").append(htm);
             });
 
             // $("#categoriesModal").modal("show");
