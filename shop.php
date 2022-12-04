@@ -224,7 +224,7 @@
 
         $("body").on('click',"#prodcat",function(e){
             let dataid = $(e.currentTarget).data("id");
-            alert(dataid);
+            // alert(dataid);
             $.post("selectproductcat.php",{PRODUCT_ID:dataid},function(data,status){
                 let newdata = JSON.parse(data);
 
@@ -233,7 +233,7 @@
                     $("#productss").empty();
                 $.each( newdata, function( key, value ) {
                     console.log(value);
-                    htm += '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">'+
+                    $("#productss").append('<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">'+
                                     '<div class="products-single fix">'+
                                         '<div class="box-img-hover">'+
                                             '<img style="width:200px; height:250px;" src="adminViews/uploads/'+value.image+'" class="img-fluid" alt="Image">'+
@@ -253,9 +253,8 @@
                                             '<h5>₱ '+value.price+'</h5>'+
                                         '</div>'+
                                     '</div>'+
-                                '</div>';
+                                '</div>');
             });
-            $("#productss").append(htm);
         }else{
             
             $("#productss").empty();
