@@ -55,16 +55,15 @@
             
 
             <!-- Button -->
-            <div class="control-group">
-              <label class="control-label" for="signin"></label>
-              <div class="controls">
-              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">CANCEL</button>
-              <center> <button id="signin" name="signin" class="btn btn-primary btn-block " style = "width: 100px;">LOGIN</button></center>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+             <button id="signin" name="signin" class="btn btn-primary " style = "width: 100px;">LOGIN</button>
               </div>
-            </div>
+              
 </fieldset>
 </form>
         </div>
+        
 
        
         <div class="tab-pane fade" id="signup">
