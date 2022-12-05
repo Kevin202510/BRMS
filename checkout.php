@@ -48,17 +48,17 @@
                             <div class="row">
                                 <div class="col-md-12 mb-3">
                                     <label for="firstName">Fullname</label>
-                                    <input type="text" class="form-control" id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" required>
+                                    <input type="text" style="text-align:center;" class="form-control" readonly id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" required>
                                 </div>
                             </div>
                     
                             <div class="mb-3">
                                 <label for="address">Address *</label>
-                                <input type="text" class="form-control" id="address" value="<?php echo $data['address'] ?>" required>
+                                <input type="text" style="text-align:center;" class="form-control" readonly id="address" value="<?php echo $data['address'] ?>" required>
                             </div>
                             <div class="mb-3">
                                 <label for="address2">Contact Number *</label>
-                                <input type="text" class="form-control" id="address2" value="<?php echo $data['contact_num'] ?>"> </div>
+                                <input type="text" style="text-align:center;" class="form-control" readonly id="address2" value="<?php echo $data['contact_num'] ?>"> </div>
                             <?php } ?>
                         </form>
                             
