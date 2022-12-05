@@ -80,7 +80,7 @@
                     
                      <ul class="dropdown-menu settings-menu">
                         <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
-                        <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+                        <li><a href="editprofile.php"><i class="icon-user"></i> Profile</a></li>
                         <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
                         <li class="p-0">
                            <div class="dropdown-divider m-0"></div>

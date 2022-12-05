@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php include('layouts/head.php'); ?>
    <div class="loader-bg">
-      <div class="loader-bar">
+      <div class="loader-circle">
       </div>
    </div>
    <div class="wrapper">
