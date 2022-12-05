@@ -103,7 +103,7 @@
 </div>
 <?php if(isset($_SESSION['PERMISSION_ID'])){
                        ?>
-                  <h3  style=" font-family:poppins; color:#8d7252;"><?php echo $_SESSION['FULLNAME'];?></h3>
+                  <a href = "customerprofile.php"><h3  style=" font-family:poppins; color:#8d7252;"><?php echo $_SESSION['FULLNAME'];?></h3></a>
                </div>
                <?php }?>
                 <!-- End Atribute Navigation -->

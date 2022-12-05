@@ -6,9 +6,9 @@
    </div>
    <div class="wrapper">
       <!-- Navbar-->
-      <?php include('layouts/navbar.php'); ?>
+      <?php include('layouts/header.php'); ?>
       <!-- Side-Nav-->
-      <?php include('layouts/sidebar.php'); ?>      
+            
 
     <!-- Start Content  -->
 
@@ -18,7 +18,7 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-               <h2  style=" font-family:poppins; color:#8d7252; ">Edit Profile</h2><br>
+
                </div>
             </div>
             <div class="container">
@@ -57,57 +57,37 @@
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="fullName">Full Name</label>
-					<input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+					<label for="firstname">First Name</label>
+					<input type="text" name = "fname" class="form-control" id="firstname">
 				</div>
 			</div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label for="lastname">Last Name</label>
+					<input type="text" name = "lname" class="form-control" id="lastname">
+				</div>
+			</div>
+
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="eMail">Email</label>
-					<input type="email" class="form-control" id="eMail" placeholder="Enter email ID">
+					<label for="Adress">Address</label>
+					<input type="text" name = "address" class="form-control" id="Address" >
 				</div>
 			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="phone">Phone</label>
-					<input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+					<input type="text" name = "contact_num" class="form-control" id="phone" >
 				</div>
 			</div>
+		
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="website">Website URL</label>
-					<input type="url" class="form-control" id="website" placeholder="Website url">
+					<label for="Email">Email</label>
+					<input type="email" name = "email" class="form-control" id="Email" >
 				</div>
 			</div>
-		</div>
-		<div class="row gutters">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-				<h6 class="mt-3 mb-2 text-primary">Address</h6>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="Street">Street</label>
-					<input type="name" class="form-control" id="Street" placeholder="Enter Street">
-				</div>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="ciTy">City</label>
-					<input type="name" class="form-control" id="ciTy" placeholder="Enter City">
-				</div>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="sTate">State</label>
-					<input type="text" class="form-control" id="sTate" placeholder="Enter State">
-				</div>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="zIp">Zip Code</label>
-					<input type="text" class="form-control" id="zIp" placeholder="Zip Code">
-				</div>
-			</div>
+			
 		</div>
 		<div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">

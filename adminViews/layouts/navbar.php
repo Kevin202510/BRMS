@@ -79,6 +79,7 @@
                            <?php }?>
                     
                      <ul class="dropdown-menu settings-menu">
+                        <li><a href="index.php"><i class="icon-home"></i> Home</a></li>
                         <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
                         <li><a href="editprofile.php"><i class="icon-user"></i> Profile</a></li>
                         <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
