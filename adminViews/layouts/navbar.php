@@ -70,25 +70,29 @@
                      <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
                      <?php if(isset($_SESSION['PERMISSION_ID'])){
                        ?>
-                         <form method="post">
-                                    <button type="submit" name="logout" class="btn btn-primary btn-sm" style="width:100%" class="nav-link" value="Logout">LOGOUT</button>
-                                </form>
+                         <!-- <form method="post">
+                           <button type="submit" name="logout" class="btn btn-primary btn-sm" style="width:100%" class="nav-link" value="Logout">LOGOUT</button>
+                        </form> -->
                
                         <span><?php echo $_SESSION['FULLNAME'];?> <i class=" icofont icofont-simple-down"></i></span>
-                       
-                           <?php }?>
-                    
-                     <ul class="dropdown-menu settings-menu">
+                        <ul class="dropdown-menu settings-menu">
                         <li><a href="index.php"><i class="icon-home"></i> Home</a></li>
                         <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
                         <li><a href="editprofile.php"><i class="icon-user"></i> Profile</a></li>
                         <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
-                        <li class="p-0">
+                        <li>
+                        <form method="post">
+                           <button type="submit" name="logout"><i class="icon-logout"></i>Logout</button></li>
+                        </form>
+                           <li class="p-0">
                            <div class="dropdown-divider m-0"></div>
                         </li>
                       
                         
                      </ul>
+                           <?php }?>
+                    
+                     
                   </li>
                </ul>
                      </a>
