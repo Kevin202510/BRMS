@@ -177,14 +177,14 @@ p {
 /*------------------------------------------------------------------ LOADER -------------------------------------------------------------------*/
  #back-to-top {
      position: fixed;
-     bottom: 40px;
+     bottom: 45px;
      right: 40px;
      z-index: 9999;
      width: 70px;
      height: 70px;
      text-align: center;
      line-height: 5px;
-     background: #f8cab3;
+     background: #8d7252;
      color: #ffffff;
      cursor: pointer;
      border: 0;

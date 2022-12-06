@@ -70,7 +70,7 @@
                         <li class="dropdown"> 
                             <a style="color: black;" href="#" class="ml-auto btn" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-								<li><a href="shop.php">Products</a></li>
+								<li><a href="shop.php">Apparel</a></li>
                                 <li><a href="cart.php">Cart</a></li>
                                 <li><a href="checkout.php">Checkout</a></li>
                                 <li><a href="myaccount.php">My Account</a></li>

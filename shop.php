@@ -13,11 +13,11 @@
             <div class="row">
                 <div class="col-lg-12">
                
-                    <h2>Our Products</h2>
+                    <h2>Apparel</h2>
                    
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Our Products</li>
+                        <li class="breadcrumb-item active">Our Apparel</li>
                     </ul>
                 </div>
             </div>
@@ -141,8 +141,8 @@
 <div class="modal fade" id="categoriesModal" tabindex="-1" role="dialog" aria-labelledby="categoriesModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="categoriesModalLabel">Categories</h5>
+      <div class="modal-header" style="background-color:#EF9273;">
+    <center><h2 class="modal-title" id="categoriesModalLabel" style="color:white;">Categories</h2></center>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -163,36 +163,36 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
-                    <label >Product Name</label>
+                    <h4 style="color:#8d7252; font-family:poppins">Product Name</h4>
                     <input type="text" class="form-control" id="name"readonly>
                 </div>
                 <div class="col-md-6">
-                    <label >Product price</label>
+                <h4 style="color:#8d7252; font-family:poppins">Product price</h4>
                     <input type="text" class="form-control" id="price" readonly>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <label >Product variation</label>
+                <h4 style="color:#8d7252; font-family:poppins">Product variation</h4>
                     <input type="text" class="form-control" id="variation" readonly>
                 </div>
             </div>
             <div class="row">
             <div class="col-md-6">
-                    <label >Product description</label>
+            <h4 style="color:#8d7252; font-family:poppins">Product description</h4>
                     <textarea id="description" cols="12" rows="5" readonly></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <label >Quantity</label>
+                <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
                     <input type="number" class="form-control" id="quantity" name="quantity">
                 </div>
             </div>
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <input type="submit" class="btn btn-primary" name="addtocartthis" value="Add To Cart">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-success" name="addtocartthis" value="Add To Cart">
       </div>
         </form>
       </div>
