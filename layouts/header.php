@@ -68,8 +68,8 @@
                     <a href="index.php" class="ml-auto btn ">HOME</a>
 </li>
                         <li class="dropdown"> 
-                            <a style="color: black;" href="#" class="ml-auto btn" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
-                            <ul class="dropdown-menu">
+                            <a style="color: #8d7252;" href="#" class="ml-auto btn" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                            <ul class="dropdown-menu" style="background-color: #8d7252;" >
 								<li><a href="shop.php">Apparel</a></li>
                                 <li><a href="cart.php">Cart</a></li>
                                 <li><a href="checkout.php">Checkout</a></li>
@@ -88,7 +88,7 @@
                         <li class="side-menu">
 							<a href="#">
                             
-								<i class="fa fa-shopping-bag"> </i>
+								<i class="fa fa-shopping-bag"style="color: #8d7252;" > </i>
 								<p>CART</p>
 							</a>
 						</li>
@@ -103,7 +103,7 @@
 </div>
 <?php if(isset($_SESSION['PERMISSION_ID'])){
                        ?>
-                  <h3  style=" font-family:poppins; color:#8d7252;"><?php echo $_SESSION['FULLNAME'];?></h3>
+                  <a href = "customerprofile.php"><h3  style=" font-family:poppins; color:#8d7252;"><?php echo $_SESSION['FULLNAME'];?></h3></a>
                </div>
                <?php }?>
                 <!-- End Atribute Navigation -->

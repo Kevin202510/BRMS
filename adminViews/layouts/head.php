@@ -20,7 +20,6 @@ window.onload = DisableBackButton;
 window.onpageshow = function(evt) { if (evt.persisted) DisableBackButton() }
 window.onunload = function() { void (0) }
 </script>
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,6 +66,7 @@ window.onunload = function() { void (0) }
 
    <!-- Responsive.css-->
    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/profile.css">
 
 </head>
 

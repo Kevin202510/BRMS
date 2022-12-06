@@ -172,8 +172,13 @@
                 </div>
             </div>
             <div class="row">
+<<<<<<< HEAD
                 <div class="col-md-12">
                 <h4 style="color:#8d7252; font-family:poppins">Product variation</h4>
+=======
+                <div class="col-md-12"> 
+                    <label >Product variation</label>
+>>>>>>> 6cbca48564250c87de5b3a026480de73609bc074
                     <input type="text" class="form-control" id="variation" readonly>
                 </div>
             </div>
