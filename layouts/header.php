@@ -20,13 +20,13 @@
                        ?>
     
               <form method="post">
-                                    <input type="submit" name="logoutnako" class="btn btn-primary btn-sm" style="width:100px; border-radius:7rem; float:right;"   class="nav-link" value="Logout">
+                                    <input type="submit" name="logoutnako" class="btn btn btn-sm" style="background-color:#8d7252; color:white; width:100px; border-radius:7rem; float:right;"   class="nav-link" value="Logout">
                                 </form>
                                 <?php }else{?>
-					<div class="login-box" style="width: 200px" >
+					<div class="login-box" style="width: 200px;" >
                      <div class = "container">
-                        <button class = "btn btn-primary btn-lg" data-toggle = "modal"
-                         data-target="#loginsModal">Sign In/Register</button>
+                        <button class = "btn" data-toggle = "modal"
+                         data-target="#loginsModal" style=" background-color:#8d7252; color:white;">Sign In/Register</button>
                 </div>
                 <?php include('loginmodal.php');?>
                   
@@ -65,26 +65,17 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                        
                      <li>   
-                    <a href="index.php" class="ml-auto btn ">HOME</a>
+                    <a href="shop.php" class="ml-auto btn " style="color:#8d7252;">Apparel</a>
+                    <a href="cart.php" class="ml-auto btn "style="color:#8d7252;">Cart</a>
+                    <a href="checkout.php" class="ml-auto btn "style="color:#8d7252;">Checkout</a>
+                    <a href="myaccount.php" class="ml-auto btn "style="color:#8d7252;">My Account</a>
 </li>
-                        <li class="dropdown"> 
-                            <a style="color: #8d7252;" href="#" class="ml-auto btn" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
-                            <ul class="dropdown-menu" style="background-color: #8d7252;" >
-								<li><a href="shop.php">Apparel</a></li>
-                                <li><a href="cart.php">Cart</a></li>
-                                <li><a href="checkout.php">Checkout</a></li>
-                                <li><a href="myaccount.php">My Account</a></li>
-                                
-                            </ul>
-</li>
-                    
+                       
                 </div>
                 <!-- /.navbar-collapse -->
+
                 <!-- Start Atribute Navigation -->
-                
-                
-               
-<div class="attr-nav">
+                    <div class="attr-nav">
                         <li class="side-menu">
 							<a href="#">
                             
@@ -110,7 +101,7 @@
             </div>
             
             <!-- Start Side Menu -->
-            <div class="side">
+            <div class="side"style="background-color:#8d7252;">
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
                 <li class="cart-box">
                     <ul class="cart-list">
@@ -128,11 +119,7 @@
                         <li>
                         <img style="width:150px;" src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-thumbnail">
                             <h6><a href="#"><?php echo $data['name']?></a></h6>
-                            <p><?php echo $data['quantity']?>x- <span class="price"><?php echo $data['price']?></span></p>
-                            
-                        
-                        
-                            
+                            <p><?php echo $data['quantity']?>x- <span class="price"><?php echo $data['price']?></span></p>  
                         </li> 
                                 </li>
                         <?php } }?>
@@ -140,7 +127,6 @@
                             <a href="cart.php" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
                         </li>
                     </ul>
-                    
             </div>
             
             <!-- End Side Menu -->

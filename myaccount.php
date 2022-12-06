@@ -16,10 +16,22 @@
 
 <body>
     
-    <!-- End Main Top -->
-
-    <!-- Start Main Top -->
    
+
+   <!-- Start All Title Box -->
+   <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>My Account</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item active" style="color:white;"> Account</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End All Title Box -->
 
     <!-- Start My Account  -->
@@ -30,8 +42,9 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="account-box">
                             <div class="service-box">
+                                
                                 <div class="service-icon">
-                                    <a href="#"> <i class="fa fa-gift"></i> </a>
+                                <a href="#"><i class="fa fa-gift"></i> </a>
                                 </div>
                                 <div class="service-desc">
                                     <h4>Your Orders</h4>
@@ -220,7 +233,11 @@
 </div>
 <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">
+    <br>
+    <br>
+    <br>
+    <br>&uarr;</a>
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>

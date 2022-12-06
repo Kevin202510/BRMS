@@ -127,13 +127,13 @@ if(isset($_POST['adduser'])){
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/costume.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Costumes</a>
+                        <a class="btn hvr-hover" href="#">Costumes & Barongs</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/gown.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Gowns</a>
+                        <a class="btn hvr-hover" href="#">Gowns & Suits</a>
                     </div>
 
                     
@@ -203,7 +203,7 @@ if(isset($_POST['adduser'])){
                         </div>
                         <div class="why-text">
                             <h4>Peruvian Alpaca Costume</h4>
-                            <h5> ₱1200.00</h5>
+                            <h5  style="color:white; "> ₱ 1200</h5>
                         </div>
                     </div>
                 </div>
@@ -214,7 +214,7 @@ if(isset($_POST['adduser'])){
                             <div class="type-lb">
                               
                             </div>
-                            <img src="images/sut1.jpg" class="img-fluid" alt="Image">
+                            <img src="images/suit3.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -225,8 +225,8 @@ if(isset($_POST['adduser'])){
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Men - White Cocoon Calado <br>Barong Tagalog</h4>
-                            <h5> ₱950.00</h5>
+                            <h4>Mens Suit Tan Check Classic <br>Peaky Tweed Vintage</h4>
+                            <h5  style="color:white; "> ₱ 950</h5>
                         </div>
                     </div>
                 </div>
@@ -250,7 +250,7 @@ if(isset($_POST['adduser'])){
                         <div class="why-text">
                             
                             <h4> Hanbok Korean Costume</h4>
-                            <h5> ₱1300.00</h5>
+                            <h5  style="color:white; "> ₱ 1300</h5>
                         </div>
                     </div>
                 </div>
@@ -261,7 +261,7 @@ if(isset($_POST['adduser'])){
                             <div class="type-lb">
                                
                             </div>
-                            <img src="images/womenn.jpg" class="img-fluid" alt="Image">
+                            <img src="images/hg.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -271,8 +271,8 @@ if(isset($_POST['adduser'])){
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Women - Tagalog Barong Creme</h4>
-                            <h5> ₱1000.00</h5>
+                            <h4>Filipiniana Handmade Pinilian</h4>
+                            <h5 style="color:white; "> ₱ 1150</h5>
                         </div>
                     </div>
                 </div>
@@ -287,7 +287,7 @@ if(isset($_POST['adduser'])){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                         <h1 class="heading"> Latest<span>Blog</span> </h1>
+                         <h1 class="heading"style="color:#8d7252;"> Latest<span>Blog</span> </h1>
                         
                     </div>
                 </div>
@@ -300,8 +300,7 @@ if(isset($_POST['adduser'])){
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                               
                             </div>
                            
                         </div>
@@ -314,8 +313,7 @@ if(isset($_POST['adduser'])){
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                               
                             </div>
                           
                         </div>
@@ -328,8 +326,7 @@ if(isset($_POST['adduser'])){
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                
                             </div>
                            
                         </div>

@@ -80,9 +80,13 @@
     <div class="footer-copyright">
         <p class="footer-company">Copyright © 2022 BoutiqueRentalSystem </a>  All rights reserved</a></p>
     </div>
-    <!-- End copyright  -->
+    <!-- End copyright -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <a href="#" id="back-to-top" title="Back to top" style="display:none;">
+    <br>
+    <br>
+    <br>
+    <br>&uarr;</a>
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>

@@ -532,7 +532,7 @@ p {
      border: solid 1px #8d7252;
 }
  nav.navbar.navbar-inverse ul.cart-list > li.total{
-     background-color: #8d7252;;
+     background-color: #8d7252;
 }
  nav.navbar.navbar-inverse .share ul > li > a{
      background-color: #8d7252;
@@ -689,6 +689,7 @@ p {
 }
 .side-menu p{
 	display: inline-block;
+    
 }
  .col-menu .title{
      font-size: 20px;
@@ -785,14 +786,17 @@ p {
 }
  .main-header.fixed-menu {
      padding: 0px;
-     box-shadow: 0 0 8px 0 rgba(0,0,0,.12);
+     box-shadow: 0 0 8px 0 rgba(202, 148, 148, 0.12);
      border-radius: 0;
 }
  .top-search .input-group-addon{
      line-height: 40px;
+     
 }
  .top-search input.form-control{
      color: #ffffff;
+     background-color: #EF9273;
+    
 }
 /*------------------------------------------------------------------ Slider -------------------------------------------------------------------*/
  .cover-slides{
@@ -1800,7 +1804,7 @@ p {
      position: relative;
 }
  .search-product input[type="text"] {
-     background: #333333;
+     background: #EF9273;
      border: 0;
      box-shadow: none;
      border-radius: 0;
@@ -1821,7 +1825,7 @@ p {
      opacity: 1;
 }
  .search-product button {
-     background: #000000;
+     background: #EF9273;
      color: #ffffff;
      font-size: 18px;
      position: absolute;
@@ -2287,6 +2291,7 @@ p {
      color: #8d7252;
 }
  .service-icon i{
+    padding: 23px;
      font-size: 34px;
 }
  .my-account-page a:hover i{
@@ -2300,7 +2305,7 @@ p {
      font-weight: 700;
 }
  .service-icon a{
-     background: rgba(0, 0, 0, 0.9);
+     background: #8d7252;
      -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
      -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
      transition: transform ease-out 0.1s, background 0.2s;

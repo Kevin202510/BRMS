@@ -16,25 +16,25 @@
                     <h2>Apparel</h2>
                    
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Our Apparel</li>
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item active"  style="color:white; ">Our Apparel</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End All Title Box -->
+    <!--End All Title Box-->
 
-    <!-- Start Shop Page  -->
+    <!--Start Shop Page-->
     <div class="shop-box-inner">
         <div class="container">
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
                     <div class="right-product-box">
-                        <div class="product-item-filter row">
+                        <div class="product-item-filter row" style="color:#8d7252;">
                             <div class="col-12 col-sm-8 text-center text-sm-left">
                                 <div class="toolbar-sorter-right">
-                                    <span>Sort by </span>
+                                    <span>Sort by</span>
                                     <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
 									<option data-display="Select">Nothing</option>
 									<option value="1">Popularity</option>
@@ -84,9 +84,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4>Name: <?php echo $data['name']; ?></h4>
+                                                    <h4><?php echo $data['name']; ?></h4>
                                                     <h4>Stocks: <?php echo $data['stocks']; ?></h4>
-                                                    <h5>₱ <?php echo $data['price']; ?></h5>
+                                                    <h5  style="color:white; ">₱ <?php echo $data['price']; ?></h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,6 +98,8 @@
                         </div>
                     </div>
                 </div>
+
+                
 				<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
                     <div class="product-categori">
                         <div class="search-product">
@@ -138,6 +140,67 @@
     </div>
 
     
+<!-- Start Instagram Feed  -->
+<div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/access2.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/barongw.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/5.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/gown2.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/barong.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/1.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+
+
+        <!-- Start Footer  -->
+        <?php include('layouts/footer.php');?>
+        <!-- end footer -->
+    
 <div class="modal fade" id="categoriesModal" tabindex="-1" role="dialog" aria-labelledby="categoriesModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -172,13 +235,13 @@
                 </div>
             </div>
             <div class="row">
-<<<<<<< HEAD
+
                 <div class="col-md-12">
                 <h4 style="color:#8d7252; font-family:poppins">Product variation</h4>
-=======
+
                 <div class="col-md-12"> 
                     <label >Product variation</label>
->>>>>>> 6cbca48564250c87de5b3a026480de73609bc074
+
                     <input type="text" class="form-control" id="variation" readonly>
                 </div>
             </div>
@@ -204,10 +267,6 @@
     </div>
   </div>
 </div>
-
-        <!-- Start Footer  -->
-        <?php include('layouts/footer.php');?>
-        <!-- end footer -->
 
 <script>
     $(document).ready(function(){
@@ -280,3 +339,6 @@
 
     
 </script>
+
+
+    
