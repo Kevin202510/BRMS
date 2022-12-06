@@ -19,11 +19,11 @@
                     </a>    
 
                     <a class="waves-effect waves-dark" href="productslist.php" >
-                        <i class="icon-list"></i><span> Products List</span>
+                        <i class="icon-list"></i><span> Apparel List</span>
                     </a>    
 
                     <a class="waves-effect waves-dark" href="rentproduct.php">
-                        <i class="icon-bag"></i><span> Rent Product</span>
+                        <i class="icon-bag"></i><span> Rent Apparel</span>
                     </a>    
                    
                                       
