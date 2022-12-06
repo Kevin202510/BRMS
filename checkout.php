@@ -29,7 +29,7 @@
         <div class="container">
             
             <div class="row">
-                <div class="col-sm-6 col-lg-6 mb-3">
+                <div class="col-sm-6 col-lg-6 mb-3"> 
                     <div class="checkout-address">
                         <div class="title-left">
                             <h3>Customer Information</h3>

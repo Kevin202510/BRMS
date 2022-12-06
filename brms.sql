@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2022 at 11:58 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Generation Time: Dec 06, 2022 at 10:31 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `quantity`, `status`) VALUES
-(1, 1, 1, 3, '1');
+(57, 28, 54, 2, '0'),
+(58, 28, 54, 1, '0');
 
 -- --------------------------------------------------------
 
@@ -50,16 +51,19 @@ INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `quantity`, `s
 
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `cat_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`category_id`, `name`) VALUES
-(1, 'barong'),
-(2, 'dress');
+INSERT INTO `categories` (`category_id`, `cat_name`) VALUES
+(10, 'Barongs'),
+(12, 'Costumes'),
+(14, 'Gowns'),
+(15, 'Suit'),
+(16, 'accessories');
 
 -- --------------------------------------------------------
 
@@ -75,12 +79,30 @@ CREATE TABLE `checkout` (
   `checkout_time` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `checkout`
+-- Table structure for table `customer_walkin`
 --
 
-INSERT INTO `checkout` (`checkout_id`, `checkout_cart_id`, `checkout_user_id`, `checkout_date`, `checkout_time`) VALUES
-(1, 1, 1, '2', '4');
+CREATE TABLE `customer_walkin` (
+  `cw_id` int(11) NOT NULL,
+  `customer_fname` varchar(255) NOT NULL,
+  `customer_lname` varchar(255) NOT NULL,
+  `customer_address` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer_walkin`
+--
+
+INSERT INTO `customer_walkin` (`cw_id`, `customer_fname`, `customer_lname`, `customer_address`) VALUES
+(1, 'kevins', 'felix', 'bago'),
+(2, 'vin', 'dasdasd', 'asdasdasd'),
+(3, 'kevz', 'sdasdasd', 'asdasdasd'),
+(4, 'sdfdgg', 'gsfdgf', 'dgsfdgfh'),
+(5, 'zdbfnd', 'zdbfn', 'dgbfndg'),
+(6, 'cxvzcbxv', 'Bzcnxv', 'xvcbvncmbv');
 
 -- --------------------------------------------------------
 
@@ -110,6 +132,7 @@ INSERT INTO `permissions` (`permission_id`, `diplay_name`) VALUES
 
 CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
+  `image` varchar(50) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `variation` varchar(255) NOT NULL,
@@ -122,8 +145,26 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `name`, `price`, `variation`, `stocks`, `category_id`, `description`) VALUES
-(1, 'barong tgalog', 490, 'small', 3, 1, 'barong tgalog 2022');
+INSERT INTO `products` (`product_id`, `image`, `name`, `price`, `variation`, `stocks`, `category_id`, `description`) VALUES
+(54, 'logo5.jpg', 'sgesg', 56, 'M', 4, 12, 'sadfsgfd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rents`
+--
+
+CREATE TABLE `rents` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `rents`
+--
+
+INSERT INTO `rents` (`id`, `customer_id`) VALUES
+(23, 6);
 
 -- --------------------------------------------------------
 
@@ -152,13 +193,6 @@ CREATE TABLE `tracking_orders` (
   `to_time_back` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tracking_orders`
---
-
-INSERT INTO `tracking_orders` (`tracking_orders_id`, `to_checkout_id`, `status`, `to_date_back`, `to_time_back`) VALUES
-(1, 1, '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -182,7 +216,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_permission_id`, `fname`, `lname`, `address`, `contact_num`, `email`, `username`, `password`) VALUES
-(1, 1, 'tricia', 'gadiaza', 'san pedro', '09261364720', 'tricia@gmail.com', 'tricia22', 'password');
+(27, 1, 'Gil', 'Bulacan', 'Concepcion', '09261364720', 'gilscreation@gmail.com', 'hi', 'admin'),
+(28, 2, 'john', 'javier', 'concepcion', '09261364720', 'jp145572@gmail.com', 'paulo28', 'customer'),
+(29, 2, 'Gymbert', 'Busalpa', 'Concepcion', '09876543211', 'gymbert@gmail.com', 'gym', 'customer'),
+(30, 2, 'hhhh', 'Busalpa', 'Concepcion', '098765432', 'gadiazatrisha@gmail.com', 'dg', '123456');
 
 --
 -- Indexes for dumped tables
@@ -211,6 +248,12 @@ ALTER TABLE `checkout`
   ADD KEY `co_cart_id` (`checkout_cart_id`);
 
 --
+-- Indexes for table `customer_walkin`
+--
+ALTER TABLE `customer_walkin`
+  ADD PRIMARY KEY (`cw_id`);
+
+--
 -- Indexes for table `permissions`
 --
 ALTER TABLE `permissions`
@@ -222,6 +265,13 @@ ALTER TABLE `permissions`
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`),
   ADD KEY `products_category_id` (`category_id`);
+
+--
+-- Indexes for table `rents`
+--
+ALTER TABLE `rents`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `rent_customer_id` (`customer_id`);
 
 --
 -- Indexes for table `sales`
@@ -253,19 +303,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
   MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `customer_walkin`
+--
+ALTER TABLE `customer_walkin`
+  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -277,7 +333,13 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `rents`
+--
+ALTER TABLE `rents`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -295,7 +357,7 @@ ALTER TABLE `tracking_orders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Constraints for dumped tables
@@ -320,6 +382,12 @@ ALTER TABLE `checkout`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rents`
+--
+ALTER TABLE `rents`
+  ADD CONSTRAINT `rent_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer_walkin` (`cw_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `tracking_orders`
