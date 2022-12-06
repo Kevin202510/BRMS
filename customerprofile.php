@@ -38,11 +38,11 @@
                         <span><?php echo $_SESSION['FULLNAME'];?></span>
                        
                            <?php }?>
-				<h6 class="user-email">yuki@Maxwell.com</h6>
+				<h6 class="user-email"></h6>
 			</div>
 			<div class="about">
 				<h5>About</h5>
-				<p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+				<p></p>
 			</div>
 		</div>
 	</div>
@@ -55,6 +55,7 @@
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<h6 class="mb-2 text-primary">Personal Details</h6>
 			</div>
+            
 			<?php  $whereclause = "user_id =" . $_SESSION["ID"];
                             $newDBCRUD->select("users","*",$whereclause);
                             $userLists = $newDBCRUD->sql;

@@ -65,7 +65,7 @@
 
                   </li>
                   <!-- User Menu-->
-                  <div>
+                  
                   <li class="dropdown">
                      <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
                      <?php if(isset($_SESSION['PERMISSION_ID'])){
