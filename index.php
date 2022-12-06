@@ -13,6 +13,7 @@
             if($data["user_permission_id"]==1 || $data['user_permission_id']==3){
                 $_SESSION['PERMISSION_ID'] = $data['user_permission_id'];
                 $_SESSION['FULLNAME'] = $data['fname']." ".$data['lname'];
+                $_SESSION['ID'] = $data['user_id'];
                 header("location: adminViews/index.php");
             }
         else{
