@@ -9,7 +9,7 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
+                    
                             <li><a href="#"><i class="fas fa-location-arrow"></i>location</a></li>
                             <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
@@ -68,7 +68,7 @@
                     <a href="shop.php" class="ml-auto btn " style="color:#8d7252;">Apparel</a>
                     <a href="cart.php" class="ml-auto btn "style="color:#8d7252;">Cart</a>
                     <a href="checkout.php" class="ml-auto btn "style="color:#8d7252;">Checkout</a>
-                    <a href="myaccount.php" class="ml-auto btn "style="color:#8d7252;">My Account</a>
+                    
 </li>
                        
                 </div>

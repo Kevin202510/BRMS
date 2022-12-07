@@ -38,11 +38,11 @@
                         <span><?php echo $_SESSION['FULLNAME'];?></span>
                        
                            <?php }?>
-				<h6 class="user-email">yuki@Maxwell.com</h6>
+				<h6 class="user-email"> </h6>
 			</div>
 			<div class="about">
 				<h5>About</h5>
-				<p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+				<p></p>
 			</div>
 		</div>
 	</div>
