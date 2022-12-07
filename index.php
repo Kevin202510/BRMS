@@ -168,7 +168,7 @@ if(isset($_POST['adduser'])){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                    <h1 class="heading"><span>Products</span> </h1>
+                    <h1 class="heading"><span>Apparel</span> </h1>
                        <p>Web-Based Boutique Rental System</p>
                     </div>
                 </div>

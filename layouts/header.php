@@ -117,7 +117,7 @@
                                 while ($data = mysqli_fetch_assoc($userLists)){
                             ?>
                         <li>
-                        <img style="width:150px;" src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-thumbnail">
+                        <img style="height:5rem; width:10rem;" src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-thumbnail">
                             <h6><a href="#"><?php echo $data['name']?></a></h6>
                             <p><?php echo $data['quantity']?>x- <span class="price"><?php echo $data['price']?></span></p>  
                         </li> 

@@ -6,34 +6,15 @@
     <!-- Start Top Search -->
     <?php include('layouts/searchbar.php');?>   
 <!-- Basic -->
-
-
-
-    
-    <!-- End Main Top -->
-
-
-    <!-- Start Main Top -->
-   
-                <!-- /.navbar-collapse -->
-
-                <!-- Start Atribute Navigation -->
-               
-    <!-- End Main Top -->
-
-    <!-- Start Top Search -->
-    
-    <!-- End Top Search -->
-
     <!-- Start All Title Box -->
     <div class="all-title-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Product Details</h2>
+                    <h2>Apparel  Overview</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active">Products Details </li>
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item active" style="color:white;">Apparel  Overview</li>
                     </ul>
                 </div>
             </div>
@@ -73,9 +54,16 @@
                         </ol>
                     </div>
                 </div>
-                
-                                   
-                
+                <div class="col-xl-7 col-lg-7 col-md-6">
+                    <div class="single-product-details">
+                        <h2> Mens Suit Oak Brown Vintage</h2>
+                        <h5> <del>₱1300.00</del> ₱1200.00</h5>
+
+                        <h4>Fit to: MEDIUM</h4>
+						
+						<h4>Description:</h4>
+						<p>Oak Textured Wool Blend Waistcoat & Blazer Jacket With Brown Contrasting Trim
+                            Great For Both Smart & Casual Wear, Tailored Fit (inbetween slim & regular)</p>
 						<ul>
 							<li>
 								<div class="form-group quantity-box">
@@ -102,11 +90,16 @@
                 </div>
             </div>
 			
+			<br>
+            <br>
+            <br>
+            <br>
+			
 			
             <div class="row my-5">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <h1 class="heading"> Featured<span>Products</span> </h1>
+                        <h1 class="heading" style="color:#8d7252;"> Featured<span>Apparel</span> </h1>
                         <p>Web-Based Boutique Rental System</p>
                     </div>
                     <div class="featured-products-box owl-carousel owl-theme">
@@ -114,9 +107,9 @@
                             <div class="products-single fix">
                                 <div class="box-img-hover">
                                     <div class="type-lb">
-                                        <p class="sale">Costume</p>
+                                        
                                     </div>
-                                    <img src="images/cc1.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/bar10.jpg" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                        
                                         <ul>
@@ -128,8 +121,8 @@
                                     </div>
                                 </div>
                                 <div class="why-text">
-                                    <h4>Peruvian Alpaca Costume</h4>
-                                    <h5> ₱1200.00</h5>
+                                    <h4>Filipiniana Handmade Pinilian Yellow Jumpsuit</h4>
+                                    <h5 style="color:white;"> ₱1000</h5>
                                 </div>
                             </div>
                         </div>
@@ -137,9 +130,9 @@
                             <div class="products-single fix">
                                 <div class="box-img-hover">
                                     <div class="type-lb">
-                                        <p class="sale">Men's Barong</p>
+                                        
                                     </div>
-                                    <img src="images/sut1.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/bar12.jpg" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -149,8 +142,8 @@
                                     </div>
                                 </div>
                                 <div class="why-text">
-                                    <h4>Men - White Cocoon Calado <br>Barong Tagalog</h4>
-                            <h5> ₱950.00</h5>
+                                    <h4>Filipiniana Handmade Pinilian Dress</h4>
+                            <h5 style="color:white;"> ₱900</h5>
                                 </div>
                             </div>
                         </div>
@@ -158,9 +151,9 @@
                             <div class="products-single fix">
                                 <div class="box-img-hover">
                                     <div class="type-lb">
-                                        <p class="sale">Costume</p>
+                                        
                                     </div>
-                                    <img src="images/cc2.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/barong1.jpg" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -170,8 +163,8 @@
                                     </div>
                                 </div>
                                 <div class="why-text">
-                                    <h4> Hanbok Korean Costume</h4>
-                                    <h5> ₱1300.00</h5>
+                                    <h4>Filipiniana Handmade Pinilian Inabel Bolero</h4>
+                                    <h5 style="color:white;"> ₱500</h5>
                                 </div>
                             </div>
                         </div>
@@ -179,9 +172,9 @@
                             <div class="products-single fix">
                                 <div class="box-img-hover">
                                     <div class="type-lb">
-                                        <p class="sale">Women's Barong</p>
+                                        
                                     </div>
-                                    <img src="images/womenn.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/opop.jpg" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -191,8 +184,8 @@
                                     </div>
                                 </div>
                                 <div class="why-text">
-                                    <h4>Women - Tagalog Barong Creme</h4>
-                            <h5> ₱1000.00</h5>
+                                    <h4>Sexy Off-the-shoulder Wedding Dress Pink</h4>
+                            <h5 style="color:white;"> ₱1500</h5>
                                 </div>
                             </div>
                         </div>
@@ -200,9 +193,9 @@
                             <div class="products-single fix">
                                 <div class="box-img-hover">
                                     <div class="type-lb">
-                                        <p class="sale">Women's Barong</p>
+                                       
                                     </div>
-                                    <img src="images/pr1.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/gytu.jpg" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -212,8 +205,8 @@
                                     </div>
                                 </div>
                                 <div class="why-text">
-                                    <h4>Taglog white women Barong</h4>
-                                    <h5> ₱1100.00</h5>
+                                    <h4>Dreamy Deals On Stunning Ice Blue Wedding Dress</h4>
+                                    <h5 style="color:white;"> ₱1100</h5>
                                 </div>
                             </div>
                         </div>
@@ -221,9 +214,9 @@
                             <div class="products-single fix">
                                 <div class="box-img-hover">
                                     <div class="type-lb">
-                                        <p class="sale">Gown</p>
+                                       
                                     </div>
-                                    <img src="images/pr2.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/barong4.jpg" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -233,8 +226,8 @@
                                     </div>
                                 </div>
                                 <div class="why-text">
-                                    <h4>Gown glitters silver</h4>
-                                    <h5>  ₱1800.00</h5>
+                                    <h4>Jusi Green Barong Tagalog</h4>
+                                    <h5 style="color:white;">  ₱450</h5>
                                 </div>
                             </div>
                         </div>
@@ -242,9 +235,9 @@
                             <div class="products-single fix">
                                 <div class="box-img-hover">
                                     <div class="type-lb">
-                                        <p class="sale">Gown</p>
+                                        
                                     </div>
-                                    <img src="images/pr3.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/g1.jpg" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -254,8 +247,8 @@
                                     </div>
                                 </div>
                                 <div class="why-text">
-                                    <h4>Simple Red Gown</h4>
-                                    <h5>  ₱1300.00</h5>
+                                    <h4>Women Off The Shoulder Glitter Sequin Ball Gown</h4>
+                                    <h5 style="color:white;">  ₱1500</h5>
                                 </div>
                             </div>
                         </div>
@@ -263,9 +256,9 @@
                             <div class="products-single fix">
                                 <div class="box-img-hover">
                                     <div class="type-lb">
-                                        <p class="sale">Gown</p>
+                                     
                                     </div>
-                                    <img src="images/pr4.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/barong6.jpg" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -275,8 +268,8 @@
                                     </div>
                                 </div>
                                 <div class="why-text">
-                                    <h4>Gorgeous flower pink Gown</h4>
-                                    <h5>  ₱3000.00</h5>
+                                    <h4>Cocoon Blue Barong Tagalog</h4>
+                                    <h5 style="color:white;">  ₱500</h5>
                                 </div>
                             </div>
                         </div>
@@ -430,7 +423,11 @@
     </div>
     <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">
+    <br>
+    <br>
+    <br>
+    <br>&uarr;</a>
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>

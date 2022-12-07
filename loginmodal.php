@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade bs-modal-sm log-sign" id="loginsModal" tabindex="-1" role="dialog" aria-labelledby="loginsModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color:white;">
         
         <div class="bs-example bs-example-tabs">
             <ul id="myTab" class="nav nav-tabs">
@@ -10,7 +10,7 @@
               
             </ul>
         </div>
-      <div class="modal-body">
+      <div class="modal-body" style="back">
         <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade active show in" id="signin">
 
@@ -24,7 +24,7 @@
                <div class="col-12">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                <span class="input-group-text" id="basic-addon1" style="background-color:#EF9273; color:white;"><i class="fas fa-user"></i></span>
               </div>
              <input  class="input form-control" name="email" type="text" placeholder="Email" required="true" aria-label="Email" aria-describedby="basic-addon1">
             </div>
@@ -35,11 +35,11 @@
             <div class="col-12">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                <span class="input-group-text" id="basic-addon1"style="background-color:#EF9273; color:white;"><i class="fas fa-lock"></i></span>
               </div>
               <input name="password" type="password" value="" class="input form-control" id="password" placeholder="Password" required="true" aria-label="password" aria-describedby="basic-addon1" />
               <div class="input-group-append">
-                <span class="input-group-text" onclick="password_show_hide();">
+                <span class="input-group-text"style="background-color:#EF9273; color:white;" onclick="password_show_hide();">
                   <i class="fas fa-eye" id="show_eye"></i>
                   <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
                 </span>
@@ -49,15 +49,15 @@
         <em>minimum 6 characters</em>
         <div class="col">
            <div class="forgot-link">
-            <a href="#forgot-password" data-toggle="modal" data-target="#forgot-password"> I forgot my password</a>
+            <a href="#forgot-password" data-toggle="modal" data-target="#forgot-password"style="color:#8d7252;"> I forgot my password</a>
             </div>
 </div>
             
 
             <!-- Button -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
-             <button id="signin" name="signin" class="btn btn-primary " style = "width: 100px;">LOGIN</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:#8d7252;">CANCEL</button>
+             <button id="signin" name="signin" class="btn btn-primary " style = "width: 100px; background-color:#8d7252;">LOGIN</button>
               </div>
               
 </fieldset>
@@ -136,7 +136,7 @@
 
 
           
-                <center><button name="adduser" class="btn btn-primary btn-block" style = "width: 100px; float:right;">REGISTER</button></center>
+                <center><button name="adduser" class="btn btn-primary btn-block" style = "width: 100px; float:right; background-color:#EF9273;">REGISTER</button></center>
 
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 </fieldset>

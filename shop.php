@@ -205,7 +205,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background-color:#EF9273;">
-    <center><h2 class="modal-title" id="categoriesModalLabel" style="color:white;">Categories</h2></center>
+   <h2 class="modal-title" id="categoriesModalLabel" style="color:white; text-align:center;">Categories</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -234,23 +234,25 @@
                     <input type="text" class="form-control" id="price" readonly>
                 </div>
             </div>
+            <br>
             <div class="row">
-
                 <div class="col-md-12">
                 <h4 style="color:#8d7252; font-family:poppins">Product variation</h4>
 
-                <div class="col-md-12"> 
-                    <label >Product variation</label>
+               
 
                     <input type="text" class="form-control" id="variation" readonly>
                 </div>
             </div>
+
+            <br>
             <div class="row">
             <div class="col-md-6">
             <h4 style="color:#8d7252; font-family:poppins">Product description</h4>
                     <textarea id="description" cols="12" rows="5" readonly></textarea>
                 </div>
             </div>
+            <br>
             <div class="row">
                 <div class="col-md-12">
                 <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
@@ -259,8 +261,8 @@
             </div>
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-        <input type="submit" class="btn btn-success" name="addtocartthis" value="Add To Cart">
+        <button type="button" class="btn btn-success" data-dismiss="modal" style=" background-color:#8d7252;">Close</button>
+        <input type="submit" class="btn btn-success"  style=" background-color:#8d7252;"name="addtocartthis" value="Add To Cart">
       </div>
         </form>
       </div>
