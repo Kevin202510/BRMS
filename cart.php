@@ -165,20 +165,4 @@
                     </div>
                 </div>
             </div>
-           
-        </div>
-    </div>
-    <!-- End Instagram Feed  -->
-
-
-     <!-- Start Footer  -->
-     <?php include('layouts/footer.php');?>
-     <!-- end footer -->
-
-     <script>
-        $(document).ready(function(){
-            $("body").on('change',"#changequantity",function(e){
-                 
-            });
-        });
-     </script>
+            
