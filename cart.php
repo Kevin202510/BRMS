@@ -38,7 +38,6 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,10 +53,12 @@
                         
                                 $index = 1;
                                 while ($data = mysqli_fetch_assoc($userLists)){
-                                  
+                                   $q=$data['quantity'];
+                                   $p=$data['price'];
+                                   $total= $q* $p;
                             ?>
-                           
-                    
+                            <input type="hidden" id="cart_id" value="<?php echo $data['cart_id']; ?>">
+                            
                                 <tr>
                                     <td class="thumbnail-img">
                                         <img style="width:65px; height: 70px" src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-thumbnail">
@@ -70,15 +71,12 @@
 								</a>
                                     </td>
                                     <td class="price-pr">
-                                    <?php echo $data['price']?>
+                                        <?php echo $data['price']?>
                                     </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="<?php echo $data['quantity']?>" min="0" step="1" class="c-input-text qty text"></td>
+                                    <input type="hidden" id="pricy" value="<?php echo $data['price']?>">
+                                    <td class="quantity-box"><input type="number" size="4" value="<?php echo $data['quantity']?>" min="0" step="1" class="c-input-text qty text" id="changequantity"></td>
                                     <td class="total-pr">
-                                    <?php echo $data['price']?>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['category_id']; ?>);">Update Cart</button>
-                                        <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['cart_id']; ?>);">Delete</button>
+                                    <span id="priceprod"><?php echo $total;?></span>
                                     </td>
                                 </tr>
                                 <?php $index++; }}?>
@@ -176,3 +174,11 @@
      <!-- Start Footer  -->
      <?php include('layouts/footer.php');?>
      <!-- end footer -->
+
+     <script>
+        $(document).ready(function(){
+            $("body").on('change',"#changequantity",function(e){
+                 
+            });
+        });
+     </script>

@@ -211,18 +211,14 @@
         </button>
       </div>
       <div class="modal-body">
-      <form method="POST" action="addtocart.php">
+      <form method="POST" id="addtcart">
         <input type="hidden" id="product_id" name="product_id">
 
         <?php 
         if(isset($_SESSION['PERMISSION_ID'])){
-            $id=$_SESSION['ID'];
-             $newDBCRUD->select("users","*",$id);
-                            $userLists = $newDBCRUD->sql;
-                            while ($data = mysqli_fetch_assoc($userLists)){
-                            ?>
+            $id=$_SESSION['ID']; ?>
         <input type="hidden" id="cart_user_id" name="cart_user_id" value="<?php echo $id;?>">
-        <?php }}?>
+        <?php }?>
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
@@ -260,7 +256,7 @@
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-        <input type="submit" class="btn btn-success" name="addtocartthis" value="Add To Cart">
+        <button type="submit" class="btn btn-success" id="addmotosacart">Add To Cart</button>
       </div>
         </form>
       </div>
@@ -285,6 +281,29 @@
 
             $("#categoriesModal").modal("show");
         });
+
+        $("#addtcart").submit(function(e){
+            let formdata = $("#addtcart").serializeArray();
+            event.preventDefault();
+            $.post("addtocart.php",formdata,function(data,status){
+                location.reload();
+            });
+        });
+
+        // $("body").on('click',"#addmotosacart",function(){
+        //     $.post("addtocart.php",{CART_PRODUCT_ID:$("#product_id").val(),CART_USER_ID:$("#cart_user_id").val()},function(data,status){
+        //         // console.log(data);
+        //         // let newdata = JSON.parse(data);
+        //         // $("#product_id").val(newdata.product_id);
+        //         // $("#image").val(newdata.image);
+        //         // $("#name").val(newdata.name);
+        //         // $("#price").val(newdata.price);
+        //         // $("#variation").val(newdata.variation);
+        //         // $("#description").val(newdata.description);
+        //     })
+
+        //     // $("#categoriesModal").modal("show");
+        // });
 
         $("body").on('click',"#prodcat",function(e){
             let dataid = $(e.currentTarget).data("id");

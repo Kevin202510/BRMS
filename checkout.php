@@ -36,8 +36,9 @@
                         </div>          
                         <form class="needs">
                         <?php
-                            // include('APIFUNCTION/DBCRUD.php');
-                            // $newDBCRUD = new DBCRUD();
+                           if(isset($_SESSION['PERMISSION_ID'])){
+                            include_once('APIFUNCTION/DBCRUD.php');
+                            $newDBCRUD = new DBCRUD();
                             $whereclause = "user_id =" . $_SESSION["ID"];
                             $newDBCRUD->select("users","*",$whereclause);
                             $userLists = $newDBCRUD->sql;
@@ -59,7 +60,7 @@
                             <div class="mb-3">
                                 <label for="address2">Contact Number *</label>
                                 <input type="text" style="text-align:center;" class="form-control" readonly id="address2" value="<?php echo $data['contact_num'] ?>"> </div>
-                            <?php } ?>
+                            <?php }} ?>
                         </form>
                             
                             <div class="row">
@@ -80,6 +81,7 @@
                                 </div>
                                 <div class="rounded p-2 bg-light">
                                 <?php
+                                 if(isset($_SESSION['PERMISSION_ID'])){
                                     $ids=$_SESSION['ID'];
                                     $newDBCRUD->selectleftjoin3($ids);
                                     $userLists = $newDBCRUD->sql;
@@ -96,7 +98,7 @@
                                             <div class="small text-muted">Price: <?php echo $data["price"]; ?> <span class="mx-2">|</span> Qty: <?php echo $data["quantity"]; ?><span class="mx-2">|</span> Subtotal: <?php echo $data["price"] * $data["quantity"]; ?></div>
                                         </div>
                                     </div>
-                                    <?php } ?>
+                                    <?php }} ?>
                                 </div>
                             </div>
                         </div>
