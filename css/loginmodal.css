@@ -166,16 +166,16 @@ box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
 }
 
 
-<<<<<<< HEAD
+
 .modal-body{ 
 	
 	
 background-image:url('');
-=======
 .modal-body{background-image:url('');
->>>>>>> 4804bd50c63d5a6053859ddde59fdd6e64dc42fd
+
 background-size:cover;
-z-inedx:4;}
+z-inedx:4;
+}
 
 em{display:none;}
 
