@@ -24,6 +24,7 @@
             <label >Address</label>
             <input type="text" class="form-control" id="customer_address" name="customer_address" placeholder="Enter ">
         </div>
+       
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <input type="hidden" name="addrentproduct" id="addrentproduct">
         </form>

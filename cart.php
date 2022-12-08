@@ -114,8 +114,8 @@
     </div>
     <!-- End Cart -->
 
-    <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
+   <!-- Start Instagram Feed  -->
+   <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
@@ -165,4 +165,13 @@
                     </div>
                 </div>
             </div>
+           
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+
+
+    <!-- Start Footer  -->
+    <?php include('layouts/footer.php');?>
+    <!-- end footer -->
             

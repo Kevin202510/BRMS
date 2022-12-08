@@ -1,3 +1,36 @@
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close d-flex align-items-center justify-content-center" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="ion-ios-close"></span>
+        </button>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-6 d-flex">
+                <div class="modal-body p-5 img d-flex" style="background-image: url(images/kuyagil.jpeg);">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex">
+                <div class="modal-body p-5 d-flex align-items-center">
+                <div class="text w-100 text-center py-5">
+                    <h2 class="mb-0">50<span>%</span> Off</h2>
+                    <h4 class="mb-4">On all Colorlib Brands</h4>
+                    <form action="#" class="code-form">
+                <div class="form-group d-flex">
+                    <input type="text" class="form-control" placeholder="Enter code">
+                </div>
+                </form>
+                    <a href="#" class="btn btn-primary d-block py-3">Start Shopping</a>
+                </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    </div>
+</div> -->
+
+
 <footer>
         <div class="footer-main">
             <div class="container">
@@ -45,15 +78,15 @@
                             <h4>Information</h4>
                             <ul>
                                 <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact  Us</a></li>
+                                <li><a href="contactpage.php">Contact  Us</a></li>
                                 <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">Our Sitemap</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Delivery Information</a></li>
+                               
                             </ul>
                         </div>
+                      
+                       
                     </div>
+                    
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>Contact Us</h4>
@@ -74,6 +107,7 @@
             </div>
         </div>
     </footer>
+    
     <!-- End Footer  -->
 
     <!-- Start copyright  -->

@@ -37,9 +37,13 @@
         header("location: ../productslist.php");
 
     }else if(isset($_POST['updateproducts'])){
-        
+        $target_dir = "../uploads/";
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
         $product_id = $_POST['product_id'];
-        $image = $_POST["image"];
+        $image = $_FILES["fileToUpload"]["name"];
         $name = $_POST["name"];
         $category_id = $_POST["category_id"];
         $price = $_POST["price"];
@@ -56,11 +60,13 @@
         'description'=>$description,
         'variation'=>$variation],"product_id='$product_id'");
 
-        if($newDBCRUD){
-            return 1;
-        }else{
-            return 0;
-        }
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+          } else {
+            echo "Sorry, there was an error uploading your file.";
+          }
+
+          header("location: ../productslist.php");
     }else if(isset($_POST['deleteproducts'])){
         
         $id = $_POST['product_idsss'];

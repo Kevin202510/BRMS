@@ -11,7 +11,6 @@
       <div class="modal-body">
       <form id="rentForm">
         <input type="hidden" name="cw_id" id="cw_id">
-        <input type="hidden" id="id" name="id">
         <div class="form-group">
             <h5 style="color:#8d7252; font-family:poppins;" >Customer First Name</h5>
             <input type="text" class="form-control" id="customer_fname" name="customer_fname" placeholder="Enter Product Name">
@@ -23,6 +22,22 @@
         <div class="form-group">
             <h5 style="color:#8d7252;  font-family:poppins;">Customer Address</h5>
             <input type="text" class="form-control" id="customer_address" name="customer_address" placeholder="Enter Product Name">
+        </div>
+        <div class="form-group">
+        <h5 style="color:#8d7252;  font-family:poppins;">Product</h5>
+            <select style = "width:350px;" name="customer_product_id" id="customer_product_ids">
+                <?php  $newDBCRUD->select("products","*");
+                    $userLists = $newDBCRUD->sql;
+            
+                    $index = 1;
+                    while ($data = mysqli_fetch_assoc($userLists)){ ?>
+                    <option value="<?php echo $data['product_id']; ?>"><?php echo $data['name']; ?></option>
+                    <?php }?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label >Quantity</label>
+            <input style = "width:100px;" type="number" class="form-control" id="customer_quantity" name="customer_quantity" >
         </div>
         <input type="hidden" name="rentmodal" id="rentmodal">
         </form>

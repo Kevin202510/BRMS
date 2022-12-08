@@ -25,7 +25,7 @@
             <div class="card">
         <div class="card-header">
             
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#rentprodModal" id="rentbtn">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#rentModal" id="rentbtn">
             Rent New
             </button>
         </div>
@@ -37,6 +37,8 @@
                     <th scope="col">First name</th>
                     <th scope="col">Last name</th>
                     <th scope="col">Address</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -44,7 +46,7 @@
                 <?php
                     include('../APIFUNCTION/DBCRUD.php');
                     $newDBCRUD = new DBCRUD();
-                    $newDBCRUD->selectleftjoin("rents","customer_walkin","customer_id","cw_id");
+                    $newDBCRUD->select20();
                     $productsLists = $newDBCRUD->sql;
             
                     $index = 1;
@@ -55,10 +57,12 @@
                     <td><?php echo $data["customer_fname"]; ?></td>
                     <td><?php echo $data["customer_lname"] ; ?></td>
                     <td><?php echo $data["customer_address"]; ?></td>
+                    <td><?php echo $data["name"]; ?></td>
+                    <td><?php echo $data["customer_quantity"]; ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['cw_id']; ?>);">Edit</button>
-                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['id']; ?>);">Delete</button>
+                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['cw_id']; ?>);">Delete</button>
                         </div>
                     </td>
                     </tr>
@@ -78,6 +82,7 @@
          </div> -->
       </div>
    </div>
+                    </div>
    <?php include('cartmodal.php');?>
 <?php include('layouts/footer.php'); ?>
 
@@ -104,19 +109,20 @@ $(document).ready(function(){
     
 function showform(id){
 
-    // alert(id);
+    //alert(id);
     $.ajax({
         type: "POST",
         url: "functions/rentcrud.php",
         data: {rent_id:id},
         success: function(datas){
             var datas = JSON.parse(datas);
-            // console.log(datas);
-            $("#id").val(datas.id);
+            console.log(datas);
             $("#cw_id").val(datas.cw_id);
             $("#customer_fname").val(datas.customer_fname);
             $("#customer_lname").val(datas.customer_lname);
-            $("#customer_address").val(datas.customer_address); 
+            $("#customer_address").val(datas.customer_address);
+            $('#customer_product_ids option[value='+datas.customer_product_id+']').attr("selected", "selected");
+            $("#customer_quantity").val(datas.customer_quantity); 
         },
     });
 
@@ -134,12 +140,13 @@ function showformdelete(ids){
 }
 
 $("#deleteproducts").click(function(e){
-   // alert(id);
+    //alert(id);
     $.ajax({
         type: "POST",
         url: "functions/rentcrud.php",
-        data: {rent_id:id,deleterent:"deleterent"},
+        data: {rent_id:id,deleteproducts:"deleteproducts"},
         success: function(datas){
+              $("#rentModalDelete").modal("hide");
             //alert("Work Saved Successfully");
             location.reload();
         },

@@ -93,5 +93,15 @@
 
             $this->sql = $result = $this->mysqli->query($sql);
         }
+        public function select20(){
+            $sql = "SELECT * FROM `customer_walkin_checkout` LEFT JOIN customer_walkin ON customer_walkin.cw_id = customer_walkin_checkout.cwc_customer_id LEFT JOIN products ON products.product_id = customer_walkin.customer_product_id";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
+        public function select201($id){
+            $sql = "SELECT * FROM `customer_walkin_checkout` LEFT JOIN customer_walkin ON customer_walkin.cw_id = customer_walkin_checkout.cwc_customer_id LEFT JOIN products ON products.product_id = customer_walkin.customer_product_id where customer_walkin.cw_id = $id";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
     }
 ?>

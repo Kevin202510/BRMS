@@ -5,16 +5,19 @@
 
 
     if(isset($_POST['rentmodal'])){
-        $cw_id = $_POST['cw_id'];
         $customer_fname = $_POST["customer_fname"];
         $customer_lname = $_POST["customer_lname"];
         $customer_address = $_POST["customer_address"];
+        $customer_product_id = $_POST["customer_product_id"];
+        $customer_quantity = $_POST["customer_quantity"];
+        $cw_id = $_POST["cw_id"];
+        
 
 
-        $newDBCRUD->insert('customer_walkin',['cw_id'=>$cw_id,'customer_fname'=>$customer_fname,
-        'customer_lname'=>$customer_lname,'customer_address'=>$customer_address]);
+        $newDBCRUD->insert('customer_walkin',['customer_fname'=>$customer_fname,
+        'customer_lname'=>$customer_lname,'customer_address'=>$customer_address,'customer_product_id'=>$customer_product_id,'customer_quantity'=>$customer_quantity]);
 
-        $newDBCRUD->insert('rents',['customer_id'=>$cw_id]);
+        $newDBCRUD->insert('customer_walkin_checkout',['cwc_customer_id'=>$cw_id]);
         
 
         if($newDBCRUD){
@@ -29,22 +32,26 @@
         $customer_fname = $_POST["customer_fname"];
         $customer_lname = $_POST["customer_lname"];
         $customer_address = $_POST["customer_address"];
+        $customer_product_id = $_POST["customer_product_id"];
+        $customer_quantity = $_POST["customer_quantity"];
 
         $newDBCRUD->update('customer_walkin',[
         'customer_fname'=>$customer_fname,
         'customer_lname'=>$customer_lname,
-        'customer_address'=>$customer_address],"cw_id='$cw_id'");
+        'customer_address'=>$customer_address,
+        'customer_product_id'=>$customer_product_id,
+        'customer_quantity'=>$customer_quantity],"cw_id='$cw_id'");
 
         if($newDBCRUD){
             return 1;
         }else{
             return 0;
         }
-    }else if(isset($_POST['deleterent'])){
+    }else if(isset($_POST['deleteproducts'])){
         
         $id = $_POST['rent_id'];
 
-        $newDBCRUD->delete('rents',"id ='$id'");
+        $newDBCRUD->delete('customer_walkin',"cw_id ='$id'");
 
         if($newDBCRUD){
             return 1;
@@ -54,8 +61,8 @@
     }
 
     if(isset($_POST['rent_id'])){
-        $dataid = "cw_id=" . $_POST['rent_id'];
-        $newDBCRUD->selectleftjoin("rents","customer_walkin","cw_id","customer_id",$dataid);
+        $id =$_POST['rent_id'];
+        $newDBCRUD->select201($id);
         $getUser = $newDBCRUD->sql;
         $res = array();
         while($datass = mysqli_fetch_assoc($getUser)){

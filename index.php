@@ -127,13 +127,13 @@ if(isset($_POST['adduser'])){
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/costume.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Costumes</a>
+                        <a class="btn hvr-hover" href="#">Barongs & Costumes</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/gown.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Gowns</a>
+                        <a class="btn hvr-hover" href="#">Suits & Gowns</a>
                     </div>
 
                     
@@ -192,7 +192,7 @@ if(isset($_POST['adduser'])){
                             <div class="type-lb">
                            
                             </div>
-                            <img src="images/cc1.jpg" class="img-fluid" alt="Image">
+                            <img src="images/bar10.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -202,8 +202,8 @@ if(isset($_POST['adduser'])){
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Peruvian Alpaca Costume</h4>
-                            <h5> ₱1200.00</h5>
+                            <h4>Filipiniana Handmade Pinilian Yellow Jumpsuit</h4>
+                            <h5 style="color:white;"> ₱ 1000</h5>
                         </div>
                     </div>
                 </div>
@@ -214,7 +214,7 @@ if(isset($_POST['adduser'])){
                             <div class="type-lb">
                               
                             </div>
-                            <img src="images/sut1.jpg" class="img-fluid" alt="Image">
+                            <img src="images/bar12.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -225,8 +225,8 @@ if(isset($_POST['adduser'])){
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Men - White Cocoon Calado <br>Barong Tagalog</h4>
-                            <h5> ₱950.00</h5>
+                            <h4>Filipiniana Handmade Pinilian Dress</h4>
+                            <h5 style="color:white;"> ₱ 900</h5>
                         </div>
                     </div>
                 </div>
@@ -237,7 +237,7 @@ if(isset($_POST['adduser'])){
                             <div class="type-lb">
                             
                             </div>
-                            <img src="images/cc2.jpg" class="img-fluid" alt="Image">
+                            <img src="images/barong1.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -249,8 +249,8 @@ if(isset($_POST['adduser'])){
                         </div>
                         <div class="why-text">
                             
-                            <h4> Hanbok Korean Costume</h4>
-                            <h5> ₱1300.00</h5>
+                            <h4> Filipiniana Handmade Pinilian Inabel Bolero</h4>
+                            <h5 style="color:white;"> ₱ 500</h5>
                         </div>
                     </div>
                 </div>
@@ -261,7 +261,7 @@ if(isset($_POST['adduser'])){
                             <div class="type-lb">
                                
                             </div>
-                            <img src="images/womenn.jpg" class="img-fluid" alt="Image">
+                            <img src="images/hg.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -271,8 +271,8 @@ if(isset($_POST['adduser'])){
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Women - Tagalog Barong Creme</h4>
-                            <h5> ₱1000.00</h5>
+                            <h4>Filipiniana Handmade Pinilian</h4>
+                            <h5 style="color:white;"> ₱ 1150</h5>
                         </div>
                     </div>
                 </div>
@@ -287,7 +287,7 @@ if(isset($_POST['adduser'])){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                         <h1 class="heading"> Latest<span>Blog</span> </h1>
+                         <h1 class="heading" style="color:#8d7252;"> Latest<span>Blog</span> </h1>
                         
                     </div>
                 </div>
@@ -300,8 +300,7 @@ if(isset($_POST['adduser'])){
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                               
                             </div>
                            
                         </div>
@@ -314,8 +313,7 @@ if(isset($_POST['adduser'])){
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                
                             </div>
                           
                         </div>
@@ -328,8 +326,7 @@ if(isset($_POST['adduser'])){
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                
                             </div>
                            
                         </div>

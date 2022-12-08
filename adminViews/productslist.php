@@ -54,8 +54,8 @@
                     while ($data = mysqli_fetch_assoc($productsLists)){
                 ?>
                     <tr>
-                    <th scope="row"><?php echo $index; ?></th>
-                    <td><img style="width:150px;" src="./uploads/<?php echo $data["image"]; ?>" class="img-thumbnail"></td>
+                    <td><?php echo $index; ?></td>
+                    <td><img style="width:100px;" src="./uploads/<?php echo $data["image"]; ?>" class="img-thumbnail"></td>
                     <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["cat_name"]; ?></td>
                     <td><?php echo $data["price"]; ?></td>

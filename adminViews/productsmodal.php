@@ -17,7 +17,7 @@
         <br>
         <div class="form-group">
             <h5 style="color:#8d7252;  font-family:poppins;">Enter Product Name</h5>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Product Name">
+            <input type="text"  class="form-control" id="name" name="name">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;"> Enter Category</h5>
@@ -36,20 +36,25 @@
         
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Enter Price</h5>
-            <input type="text" class="form-control" id="price" name="price" placeholder="Enter Price">
+            <input type="number" class="form-control" id="price" name="price">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Enter Stocks</h5>
-            <input type="text" class="form-control" id="stocks" name="stocks" placeholder="Enter Stocks">
+            <input type="number"  class="form-control" id="stocks" name="stocks">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Enter Description</h5>
-            <input type="text" class="form-control" id="description" name="description" placeholder="Enter Description">
+            <input type="text" class="form-control" id="description" name="description">
         </div>
         <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Enter Variation</h5>
-            <input type="text" class="form-control" id="variation" name="variation" placeholder="Enter Variation">
-        </div>
+        <h5 style="color:#8d7252;  font-family:poppins;">Pick Variation</h5>
+        <select name = "variation" id = "variation">
+        <option value=""selected disabled hidden>Variation</option>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+                    </div>
         <input type="hidden" name="addproducts" id="addproducts">
         <div class="modal-footer"style="background-color:#EF9273;">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
