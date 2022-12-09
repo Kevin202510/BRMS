@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2022 at 04:01 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Dec 09, 2022 at 07:40 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `cart` (
   `cart_product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
@@ -61,7 +61,7 @@ INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `quantity`, `s
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
   `cat_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `categories`
@@ -86,7 +86,7 @@ CREATE TABLE `checkout` (
   `checkout_user_id` int(11) NOT NULL,
   `checkout_date` varchar(255) NOT NULL,
   `checkout_time` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,7 @@ CREATE TABLE `customer_walkin` (
   `customer_product_id` int(11) NOT NULL,
   `customer_quantity` int(11) NOT NULL,
   `checkout_status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customer_walkin`
@@ -112,7 +112,11 @@ INSERT INTO `customer_walkin` (`cw_id`, `customer_fname`, `customer_lname`, `cus
 (24, 'kevin', 'asdasdasd', 'asdasdasd', 59, 4, 1),
 (25, 'asdasd', 'asdasdas', 'dasdasdasd', 99, 7, 1),
 (29, 'raaaa', 'sisig', 'jampong', 78, 3, 1),
-(32, 'asdas', 'dasdasd', 'asdasdas', 78, 2, 1);
+(32, 'asdas', 'dasdasd', 'asdasdas', 78, 2, 1),
+(33, 'paulo', 'javier', 'Concepcion', 78, 3, 1),
+(34, 'sfadgf', 'sfdgfr', 'efdgfrshg', 77, 6, 1),
+(35, 'adsfdgfht', 'fegrht', 'fesgrht', 77, 5, 1),
+(36, 'wdF', 'WDEFSGR', 'efsrhdt', 59, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -127,7 +131,7 @@ CREATE TABLE `customer_walkin_checkout` (
   `checkout_payment` float NOT NULL,
   `checkout_Date` timestamp NOT NULL DEFAULT current_timestamp(),
   `checkout_Time` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customer_walkin_checkout`
@@ -139,7 +143,11 @@ INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `total_chec
 (16, 25, 2800, 3000, '2022-12-09 14:59:44', '2022-12-09 14:59:44'),
 (17, 29, 1500, 2000, '2022-12-09 15:00:02', '2022-12-09 15:00:02'),
 (18, 29, 1500, 2000, '2022-12-09 15:00:05', '2022-12-09 15:00:05'),
-(19, 32, 1000, 1200, '2022-12-09 15:00:43', '2022-12-09 15:00:43');
+(19, 32, 1000, 1200, '2022-12-09 15:00:43', '2022-12-09 15:00:43'),
+(20, 33, 1500, 1599, '2022-12-09 15:09:53', '2022-12-09 15:09:53'),
+(21, 34, 1200, 1400, '2022-12-09 17:30:58', '2022-12-09 17:30:58'),
+(22, 35, 1000, 1599, '2022-12-09 18:00:59', '2022-12-09 18:00:59'),
+(23, 36, 4000, 15997, '2022-12-09 18:01:46', '2022-12-09 18:01:46');
 
 -- --------------------------------------------------------
 
@@ -150,7 +158,7 @@ INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `total_chec
 CREATE TABLE `permissions` (
   `permission_id` int(11) NOT NULL,
   `diplay_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `permissions`
@@ -176,7 +184,7 @@ CREATE TABLE `products` (
   `stocks` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `description` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products`
@@ -231,7 +239,7 @@ INSERT INTO `products` (`product_id`, `image`, `name`, `price`, `variation`, `st
 CREATE TABLE `rents` (
   `id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -244,7 +252,7 @@ CREATE TABLE `sales` (
   `sales_total` int(11) NOT NULL,
   `sales_date` int(11) NOT NULL,
   `sales_time` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -258,7 +266,7 @@ CREATE TABLE `tracking_orders` (
   `status` varchar(255) NOT NULL,
   `to_date_back` varchar(255) NOT NULL,
   `to_time_back` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -276,7 +284,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -400,13 +408,13 @@ ALTER TABLE `checkout`
 -- AUTO_INCREMENT for table `customer_walkin`
 --
 ALTER TABLE `customer_walkin`
-  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `customer_walkin_checkout`
 --
 ALTER TABLE `customer_walkin_checkout`
-  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `permissions`
