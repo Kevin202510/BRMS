@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 10:31 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.0.23
+-- Generation Time: Dec 09, 2022 at 02:09 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,8 +40,17 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `quantity`, `status`) VALUES
-(57, 28, 54, 2, '0'),
-(58, 28, 54, 1, '0');
+(59, 33, 59, 0, '0'),
+(60, 33, 64, 0, '0'),
+(61, 33, 63, 0, '0'),
+(62, 33, 62, 2, '0'),
+(63, 33, 60, 2, '0'),
+(64, 28, 59, 7, '0'),
+(65, 34, 59, 3, '0'),
+(66, 34, 60, 0, '0'),
+(67, 31, 59, 5, '0'),
+(68, 28, 68, 3, '0'),
+(69, 37, 59, 25, '0');
 
 -- --------------------------------------------------------
 
@@ -89,20 +98,40 @@ CREATE TABLE `customer_walkin` (
   `cw_id` int(11) NOT NULL,
   `customer_fname` varchar(255) NOT NULL,
   `customer_lname` varchar(255) NOT NULL,
-  `customer_address` varchar(255) NOT NULL
+  `customer_address` varchar(255) NOT NULL,
+  `customer_product_id` int(11) NOT NULL,
+  `customer_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customer_walkin`
 --
 
-INSERT INTO `customer_walkin` (`cw_id`, `customer_fname`, `customer_lname`, `customer_address`) VALUES
-(1, 'kevins', 'felix', 'bago'),
-(2, 'vin', 'dasdasd', 'asdasdasd'),
-(3, 'kevz', 'sdasdasd', 'asdasdasd'),
-(4, 'sdfdgg', 'gsfdgf', 'dgsfdgfh'),
-(5, 'zdbfnd', 'zdbfn', 'dgbfndg'),
-(6, 'cxvzcbxv', 'Bzcnxv', 'xvcbvncmbv');
+INSERT INTO `customer_walkin` (`cw_id`, `customer_fname`, `customer_lname`, `customer_address`, `customer_product_id`, `customer_quantity`) VALUES
+(24, 'asdasd', 'asdasdasd', 'asdasdasd', 59, 4),
+(25, 'asdasd', 'asdasdas', 'dasdasdasd', 59, 7),
+(29, 'raaaa', 'sisig', 'jampong', 78, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_walkin_checkout`
+--
+
+CREATE TABLE `customer_walkin_checkout` (
+  `cwc_id` int(11) NOT NULL,
+  `cwc_customer_id` int(11) NOT NULL,
+  `checkout_Date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `checkout_Time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer_walkin_checkout`
+--
+
+INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `checkout_Date`, `checkout_Time`) VALUES
+(3, 24, '2022-12-08 18:09:11', '2022-12-08 18:09:11'),
+(4, 25, '2022-12-08 18:10:17', '2022-12-08 18:10:17');
 
 -- --------------------------------------------------------
 
@@ -146,7 +175,44 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `image`, `name`, `price`, `variation`, `stocks`, `category_id`, `description`) VALUES
-(54, 'logo5.jpg', 'sgesg', 56, 'M', 4, 12, 'sadfsgfd');
+(59, 'bar10.jpg', 'Filipiniana Handmade Pinilian Yellow Jumpsuit', 1000, 'small', 10, 10, 'Filipiniana Handmade Pinilian Yellow Jumpsuit'),
+(60, 'bar11.jpg', 'Filipiniana Handmade Pinilian Dress ', 1100, 'small', 10, 10, 'Filipiniana Handmade Pinilian Dress '),
+(61, 'bar12.jpg', 'Filipiniana Handmade Pinilian Dress', 900, 'medium', 9, 10, 'Filipiniana Handmade Pinilian Dress'),
+(62, 'bar14.jpg', 'Filipiniana Handmade Pinilian Bolero ', 650, 'small', 8, 10, 'Filipiniana Handmade Pinilian Bolero '),
+(63, 'hg.jpg', 'Filipiniana Handmade Pinilian ', 1150, 'Medium', 9, 10, 'Filipiniana Handmade Pinilian '),
+(64, 'yhgy.jpg', 'Filipiniana Yellow Handmade Pinilian', 1000, 'Medium', 10, 10, 'Filipiniana Yellow Handmade Pinilian'),
+(65, 'barong1.jpg', 'Filipiniana Handmade Pinilian Inabel Bolero', 500, 'Medium', 10, 10, 'Filipiniana Handmade Pinilian Inabel Bolero'),
+(66, 'barong2.jpg', 'Filipiniana Pink  Handmade Pinilian Bolero', 850, 'Small', 10, 10, 'Filipiniana Pink  Handmade Pinilian Bolero'),
+(67, 'baw.jpg', 'Filipiniana Handmade Pinilian Bolero', 800, 'Small', 9, 10, 'Filipiniana Handmade Pinilian Bolero'),
+(68, 'barong4.jpg', 'Jusi Green Barong Tagalog ', 450, 'Medium', 10, 10, 'Jusi Green Barong Tagalog '),
+(69, 'barong5.jpg', 'Cocoon Blue Barong Tagalog ', 500, 'Medium', 7, 10, 'Cocoon Blue Barong Tagalog '),
+(70, 'barong6.jpg', 'Cocoon Blue Barong Tagalog ', 500, 'Medium', 5, 10, 'Cocoon Blue Barong Tagalog '),
+(72, 'acc1.jpg', ' Bridal Hair Accessories Rhinestone', 200, 'Small', 7, 16, ' Bridal Hair Accessories Rhinestone'),
+(73, 'acc2.jpg', 'Princess Crowns and Hair Accessories', 200, 'Medium', 10, 16, 'Princess Crowns and Hair Accessories'),
+(74, 'acc3.jpg', 'JAGETRADE Crown Prom Jewelry ', 150, 'Medium', 10, 16, 'JAGETRADE Crown Prom Jewelry '),
+(75, 'acc4.jpg', 'Gold Tiaras and Crowns for Women Rhinestone', 200, 'Small', 6, 16, 'Gold Tiaras and Crowns for Women Rhinestone'),
+(76, 'acc5.jpg', 'Crown for Party Prom Headband Pageant Crown', 200, 'Medium', 9, 16, 'Crown for Party Prom Headband Pageant Crown'),
+(77, 'acc6.jpg', 'Rose Rhinestone Crown Princess', 200, 'Medium', 10, 16, 'Rose Rhinestone Crown Princess'),
+(78, 'suit1.jpg', 'Mens Suit Slim Fit Wedding Dinner Tuxedo Suits for Men ', 500, 'Large', 10, 15, 'Mens Suit Slim Fit Wedding Dinner Tuxedo Suits for Men '),
+(79, 'suit2.jpg', 'Mens Suit  Pinstripe Tailored Fit', 550, 'Medium', 7, 15, 'Mens Suit  Pinstripe Tailored Fit'),
+(80, 'suit3.jpg', 'Mens Tweed Wool Check Suit Vintage Tailored Fit', 600, 'Small', 8, 15, 'Mens Tweed Wool Check Suit Vintage Tailored Fit'),
+(81, 'suit4.jpg', 'Mens Camel Suit Herringbone Wool Vintage Retro Fit', 500, 'Medium', 7, 15, 'Mens Camel Suit Herringbone Wool Vintage Retro Fit'),
+(82, 'suit5.jpg', 'Mens Wool Suit Tweed Burgundy Black Tailored Fit Classic', 600, 'Small', 10, 15, 'Mens Wool Suit Tweed Burgundy Black Tailored Fit Classic'),
+(84, 'suit6.jpg', 'Mens Suit Tan Check Classic  Peaky Tweed Vintage', 500, 'Large', 8, 15, 'Mens Suit Tan Check Classic  Peaky Tweed Vintage'),
+(85, 'g1.jpg', 'Women Off The Shoulder Glitter Sequin Ball Gown', 1500, 'Medium', 8, 14, 'Women Off The Shoulder Glitter Sequin Ball Gown'),
+(86, 'gytu.jpg', 'Dreamy Deals On Stunning Ice Blue Wedding Dress', 1100, 'Small', 10, 14, 'Dreamy Deals On Stunning Ice Blue Wedding Dress'),
+(88, 'gow2.jpg', 'Cocktail Dress PInk', 700, 'Medium', 7, 14, 'Cocktail Dress PInk'),
+(89, 'gow1.jpg', 'Red Gown Flower', 1000, 'Medium', 5, 14, 'Red Gown Flower'),
+(90, 'oipop.jpg', ' Maroon Off Shoulder Bridesmaid Dress Long, Simple Tulle Dress', 1000, 'Small', 4, 14, ' Maroon Off Shoulder Bridesmaid Dress Long, Simple Tulle Dress'),
+(91, 'opop.jpg', 'Sexy Off-the-shoulder Wedding Dress Pink ', 1500, 'Small', 7, 14, 'Sexy Off-the-shoulder Wedding Dress Pink '),
+(92, 'red.jpg', 'Red Ball Gowns  Evening Dresses', 2000, 'Large', 8, 14, 'Red Ball Gowns  Evening Dresses'),
+(93, 'uyu.jpg', 'Wine Red Toast Wedding Dress Dinner Annual Meeting Gown', 1400, 'Large', 5, 14, 'Wine Red Toast Wedding Dress Dinner Annual Meeting Gown'),
+(94, 'jhjkh.jpg', 'Prom Dress Long  Dresses Off Shoulder Tulle Formal Evening Gowns Ball Gown', 2000, 'Small', 4, 14, 'Prom Dress Long  Dresses Off Shoulder Tulle Formal Evening Gowns Ball Gown'),
+(95, 'cc1.jpg', 'Peruvian Alpaca Costume', 700, 'Medium', 5, 12, 'Peruvian Alpaca Costume'),
+(96, 'cc2.jpg', 'Hanbok Korean Costume', 500, 'Small', 6, 12, 'Hanbok Korean Costume'),
+(97, 'cos3.jpg', 'Costume Indiana Red with SIlver', 650, 'Medium', 7, 12, 'Costume Indiana Red with SIlver'),
+(98, 'cos5.jpg', 'Costume Darna ', 500, 'Small', 5, 12, 'Costume Darna '),
+(99, 'cos1.jpg', 'Blue and Green Costume', 400, 'Large', 4, 12, 'Blue and Green Costume');
 
 -- --------------------------------------------------------
 
@@ -158,13 +224,6 @@ CREATE TABLE `rents` (
   `id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `rents`
---
-
-INSERT INTO `rents` (`id`, `customer_id`) VALUES
-(23, 6);
 
 -- --------------------------------------------------------
 
@@ -219,7 +278,11 @@ INSERT INTO `users` (`user_id`, `user_permission_id`, `fname`, `lname`, `address
 (27, 1, 'Gil', 'Bulacan', 'Concepcion', '09261364720', 'gilscreation@gmail.com', 'hi', 'admin'),
 (28, 2, 'john', 'javier', 'concepcion', '09261364720', 'jp145572@gmail.com', 'paulo28', 'customer'),
 (29, 2, 'Gymbert', 'Busalpa', 'Concepcion', '09876543211', 'gymbert@gmail.com', 'gym', 'customer'),
-(30, 2, 'hhhh', 'Busalpa', 'Concepcion', '098765432', 'gadiazatrisha@gmail.com', 'dg', '123456');
+(30, 2, 'hhhh', 'Busalpa', 'Concepcion', '098765432', 'gadiazatrisha@gmail.com', 'dg', '123456'),
+(31, 2, 'ewrsdtrft', 'adfxgc', 'zszdfxfghg', '0976521', 'zyrusg27@gmail.com', 'triciiii', 'hhhhhh'),
+(33, 2, 'trish', 'gg', 'sajcbkc', '09261364720', 'trishgg@gmail.com', 'trishgg', '12345'),
+(34, 2, 'tricia', 'gadiaza', 'DGSHFDGJ', '09261364720', 'tricia@gmail.com', 'triciagadiaza', '12345'),
+(37, 2, 'kerby', 'bads', 'dfhsdjhf', '09408328471', 'kerbyjohn18@gmail.com', 'kerby123', 'kerby123');
 
 --
 -- Indexes for dumped tables
@@ -251,7 +314,15 @@ ALTER TABLE `checkout`
 -- Indexes for table `customer_walkin`
 --
 ALTER TABLE `customer_walkin`
-  ADD PRIMARY KEY (`cw_id`);
+  ADD PRIMARY KEY (`cw_id`),
+  ADD KEY `cw_id` (`customer_product_id`);
+
+--
+-- Indexes for table `customer_walkin_checkout`
+--
+ALTER TABLE `customer_walkin_checkout`
+  ADD PRIMARY KEY (`cwc_id`),
+  ADD KEY `cw_check_id` (`cwc_customer_id`);
 
 --
 -- Indexes for table `permissions`
@@ -303,13 +374,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `checkout`
@@ -321,7 +392,13 @@ ALTER TABLE `checkout`
 -- AUTO_INCREMENT for table `customer_walkin`
 --
 ALTER TABLE `customer_walkin`
-  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `customer_walkin_checkout`
+--
+ALTER TABLE `customer_walkin_checkout`
+  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -333,13 +410,13 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `rents`
 --
 ALTER TABLE `rents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -357,7 +434,7 @@ ALTER TABLE `tracking_orders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Constraints for dumped tables
@@ -376,6 +453,18 @@ ALTER TABLE `cart`
 ALTER TABLE `checkout`
   ADD CONSTRAINT `co_cart_id` FOREIGN KEY (`checkout_cart_id`) REFERENCES `cart` (`cart_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `co_user_id` FOREIGN KEY (`checkout_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `customer_walkin`
+--
+ALTER TABLE `customer_walkin`
+  ADD CONSTRAINT `cw_id` FOREIGN KEY (`customer_product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `customer_walkin_checkout`
+--
+ALTER TABLE `customer_walkin_checkout`
+  ADD CONSTRAINT `cw_check_id` FOREIGN KEY (`cwc_customer_id`) REFERENCES `customer_walkin` (`cw_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `products`
