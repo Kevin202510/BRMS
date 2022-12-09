@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content" >
       <div class="modal-header" style="background-color:#EF9273;">
-        <center><h4 class="modal-title" id="productsModalLabel" style="color:white;">Products</h4></center>
+        <center><h4 class="modal-title" id="productsModalLabel" style="color:white;">Add Apparels</h4></center>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,16 +12,16 @@
       <div class="modal-body">
       <form action="functions/productscrud.php" method="post" enctype="multipart/form-data">
         <input type="hidden" id="product_id" name="product_id">
+        <h5 style="color:#8d7252;  font-family:poppins;">Add Image</h5>
         <input type="file" name="fileToUpload" id="fileToUpload">
         <br>
         <br>
         <div class="form-group">
-            <h5 style="color:#8d7252;  font-family:poppins;">Enter Product Name</h5>
+            <h5 style="color:#8d7252;  font-family:poppins;">Enter Apparel Name</h5>
             <input type="text"  class="form-control" id="name" name="name">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;"> Enter Category</h5>
-        <br>
             <select name="category_id" id="category_id">
               <option value=""selected disabled hidden> Categories</option>
                 <?php  $newDBCRUD->select("categories","*");

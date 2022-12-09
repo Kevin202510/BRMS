@@ -46,7 +46,6 @@
               </div>
             </div>
           </div>
-        <em>minimum 6 characters</em>
         <div class="col">
            <div class="forgot-link">
             <a href="#forgot-password" data-toggle="modal" data-target="#forgot-password"style="color:#8d7252;"> I forgot my password</a>
@@ -134,10 +133,10 @@
         <br>
         <br>
 
-
-          
-                <center><button name="adduser" class="btn btn-primary btn-block" style = "width: 100px; float:right; background-color:#EF9273;">REGISTER</button></center>
-
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style = "width: 100px; background-color:#EF9273;">CANCEL</button>
+        <button name="adduser" class="btn btn-primary" style = "width: 100px; background-color:#EF9273;">REGISTER</button>
+</div>
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 </fieldset>
 </form>

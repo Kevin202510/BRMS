@@ -1,17 +1,18 @@
 <!--  -->
-	<!-- <head>
+ <head>
 	
-	check out walkin
+	<!-- check out walkin
 	SELECT * FROM `customer_walkin_checkout` LEFT JOIN customer_walkin ON customer_walkin.cw_id = customer_walkin_checkout.cwc_customer_id LEFT JOIN products ON products.product_id = customer_walkin.customer_product_id
 	customer walkin with products
-	SELECT * FROM `customer_walkin` LEFT JOIN products ON products.product_id = customer_walkin.customer_product_id
+	SELECT * FROM `customer_walkin` LEFT JOIN products ON products.product_id = customer_walkin.customer_product_id -->
+	<link rel="stylesheet" href="css/stylecontact.css">
     <style>
 		body{
 			background-image: url("images/light.jpg");
 		}
 	</style>
 	</head>
-	<body> -->
+	<body>
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -98,5 +99,5 @@
 
 	<!-- </body>
 </html> -->
-<?php include('layouts/footer.php');?>
+
 
