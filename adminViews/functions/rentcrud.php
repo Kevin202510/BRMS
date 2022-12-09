@@ -16,8 +16,6 @@
 
         $newDBCRUD->insert('customer_walkin',['customer_fname'=>$customer_fname,
         'customer_lname'=>$customer_lname,'customer_address'=>$customer_address,'customer_product_id'=>$customer_product_id,'customer_quantity'=>$customer_quantity]);
-
-        $newDBCRUD->insert('customer_walkin_checkout',['cwc_customer_id'=>$cw_id]);
         
 
         if($newDBCRUD){
@@ -62,7 +60,7 @@
 
     if(isset($_POST['rent_id'])){
         $id =$_POST['rent_id'];
-        $newDBCRUD->select201($id);
+        $newDBCRUD->select220($id);
         $getUser = $newDBCRUD->sql;
         $res = array();
         while($datass = mysqli_fetch_assoc($getUser)){
@@ -82,6 +80,5 @@
     echo json_encode($res);
 
     }
-
 
 ?>

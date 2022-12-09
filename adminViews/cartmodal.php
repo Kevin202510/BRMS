@@ -71,3 +71,70 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="rentCheckoutModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rentprodModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form id="rentForms">
+        <input type="hidden" id="cw_ids" name="cw_id">
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >FullName</label>
+            <input type="text" class="form-control"  readonly id="customer_fnames">
+        </div>
+        <div class="form-group col-md-6">
+            <label >Address</label>
+            <input type="text" class="form-control"  readonly id="customer_addressss" placeholder="Enter ">
+        </div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >Apprrel Name</label>
+            <input type="text" class="form-control"  readonly id="product_ids">
+        </div>
+        <div class="form-group col-md-6">
+            <label >Rent Quantity</label>
+            <input type="text" class="form-control"  readonly id="customer_quantitys">
+        </div>
+        </div>
+
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >Apparel Price</label>
+            <input type="text" class="form-control"  readonly id="app_price">
+        </div>
+        <div class="form-group col-md-6">
+            <label >Total Amount</label>
+            <input type="text"  readonly class="form-control" id="app_total_amt" name="app_total_amt">
+        </div>
+        </div>
+
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >Payment</label>
+            <input type="text" class="form-control" id="app_pay" name="app_pay">
+        </div>
+        <div class="form-group col-md-6">
+            <label >Change</label>
+            <input type="text" class="form-control" id="app_change" readonly>
+        </div>
+        </div>
+        <!-- <input type="hidden" name="checkthisout"> -->
+        </form>
+      <!-- </div> -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" disabled id="saveBTNs">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

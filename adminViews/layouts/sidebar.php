@@ -25,6 +25,10 @@
                     <a class="waves-effect waves-dark" href="rentproduct.php">
                         <i class="icon-bag"></i><span> Rent Apparel</span>
                     </a>    
+
+                    <!-- <a class="waves-effect waves-dark" href="rentcheckout.php">
+                        <i class="icon-bag"></i><span> CheckOut Rent</span>
+                    </a>     -->
                    
                                       
                 </li>

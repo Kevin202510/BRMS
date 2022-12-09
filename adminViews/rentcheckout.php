@@ -24,33 +24,34 @@
 
             <div class="card">
         <div class="card-header">
+            
             <nav class="navbar navbar-light bg-light justify-content-between">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#rentModal" id="rentbtn">
-                Rent New
-                </button>
+                <a class="navbar-brand">CheckOut Rent</a>
                 <div class="form-inline" style="float:right;">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" id="searchData" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </div>
             </nav>
+
         </div>
         <div class="card-body">
         <table class="table">
                 <thead class="thead-light">
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Fullname</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
                     <th scope="col">Address</th>
                     <th scope="col">Product</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody id="table-main">
+                <tbody>
                 <?php
                     include('../APIFUNCTION/DBCRUD.php');
                     $newDBCRUD = new DBCRUD();
-                    $newDBCRUD->select210();
+                    $newDBCRUD->select20();
                     $productsLists = $newDBCRUD->sql;
             
                     $index = 1;
@@ -58,13 +59,13 @@
                 ?>
                     <tr>
                     <th scope="row"><?php echo $index; ?></th>
-                    <td><?php echo $data["customer_fname"] ." " .$data["customer_lname"]; ?></td>
+                    <td><?php echo $data["customer_fname"]; ?></td>
+                    <td><?php echo $data["customer_lname"] ; ?></td>
                     <td><?php echo $data["customer_address"]; ?></td>
                     <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["customer_quantity"]; ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-success" onclick="showcheckoutform(<?php echo $data['cw_id']; ?>);">CheckOut</button>
                             <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['cw_id']; ?>);">Edit</button>
                             <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['cw_id']; ?>);">Delete</button>
                         </div>
@@ -135,37 +136,6 @@ function showform(id){
     $("#rentModal").modal("show");
 }
 
-function showcheckoutform(id){
-
-// alert(id);
-$.ajax({
-    type: "POST",
-    url: "functions/rentcrud.php",
-    data: {rent_id:id},
-    success: function(datas){
-        var datas = JSON.parse(datas);
-        console.log(datas);
-        $("#cw_ids").val(datas.cw_id);
-        $("#customer_fnames").val(datas.customer_fname +" " +datas.customer_lname);
-        $("#product_ids").val(datas.name);
-        $("#customer_addressss").val(datas.customer_address);
-        $("#customer_quantitys").val(datas.customer_quantity); 
-        $("#app_price").val(datas.price); 
-        $("#app_total_amt").val(parseInt(datas.price)*parseInt(datas.customer_quantity)); 
-        // app_total_amt
-        // app_payment
-    },
-});
-    $("#rentCheckoutModal").modal("show");
-}
-
-$("#app_pay").keyup(function(){
-    if(parseInt($("#app_pay").val())>parseInt($("#app_total_amt").val())){
-        $("#app_change").val(parseInt($("#app_pay").val())-parseInt($("#app_total_amt").val()));
-        $("#saveBTNs").prop("disabled", false);
-    } 
-});
-
 var id;
 
 function showformdelete(ids){
@@ -187,26 +157,5 @@ $("#deleteproducts").click(function(e){
         },
     });
 });
-$("#searchData").keyup(function(){
-        // alert("asd");
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("searchData");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("table-main");
-    tr = table.getElementsByTagName("tr");
-
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-        } else {
-            tr[i].style.display = "none";
-        }
-        }
-    }
-    });
 </script>
 <script src="js/rents.js"></script>
