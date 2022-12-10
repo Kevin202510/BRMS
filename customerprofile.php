@@ -40,9 +40,8 @@
                            <?php }?>
 				<h6 class="user-email"></h6>
 			</div>
-			<div class="about">
-				<h5>About</h5>
-				<p></p>
+			<div >
+            <button type="file" name="fileToUpload" id="fileToUpload">Change Profile Picture</button>
 			</div>
 		</div>
 	</div>
@@ -101,7 +100,7 @@
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="text-right">
 					<button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
-					<button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+					<button type="button" class="btn btn-info" onclick="showform(<?php echo $data['user_id']; ?>);">Edit</button>
 				</div>
 			</div>
 		</div>

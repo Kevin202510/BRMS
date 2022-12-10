@@ -120,20 +120,20 @@ if(isset($_POST['adduser'])){
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/access.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Accessories</a>
+                        <a class="btn hvr-hover"style="color:white;">Accessories</a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/costume.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Barongs & Costumes</a>
+                        <a class="btn hvr-hover" style="color:white;">Barongs & Costumes</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/gown.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Suits & Gowns</a>
+                        <a class="btn hvr-hover" style="color:white;">Suits & Gowns</a>
                     </div>
 
                     
