@@ -11,7 +11,7 @@
                         <ul>
                     
                             <li><a href="#"><i class="fas fa-location-arrow"></i>location</a></li>
-                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                            <li><a href="contactpage.php"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div> 
@@ -54,7 +54,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand"><img src="images/logo5.jpg" class="logo" alt=""></a>
+                    <a class="navbar-brand"><img src="images/sure.jpg" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 

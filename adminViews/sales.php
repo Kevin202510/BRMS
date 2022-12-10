@@ -19,7 +19,8 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-               <h2  style=" font-family:poppins; color:#8d7252; ">Sales</h2><br>
+            
+              <h2 style=" font-family:poppins; color:#8d7252; ">Sales</h2>
                </div>
             </div>
             
