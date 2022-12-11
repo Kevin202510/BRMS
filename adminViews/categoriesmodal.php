@@ -15,13 +15,13 @@
         <input type="hidden" id="category_id" name="category_id">
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Category Name</h5>
-            <input type="text" class="form-control" id="cat_name" name="cat_name" placeholder="Enter Category Name">
+            <input type="text" class="form-control"style="font-size:19px;" id="cat_name" name="cat_name" placeholder="Enter Category Name">
         </div>
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <input type="hidden" name="addcategories" id="addcategories">
         </form>
       </div>
-      <div class="modal-footer" style="background-color:#EF9273;">
+      <div class="modal-footer">
         <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" id="saveBTN">Save</button>
       </div>

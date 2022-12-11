@@ -66,33 +66,33 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<h3 for="firstname"  style="color:#8d7252;">First Name *</h3>
-					<input type="text" name = "fname" class="form-control" id="firstname" value = "<?php echo $data['fname'];?>">
+					<input type="text" name = "fname" class="form-control"  style="font-size:19px;" id="firstname" value = "<?php echo $data['fname'];?>">
 				</div>
 			</div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<h3 for="lastname" style="color:#8d7252;">Last Name *</h3>
-					<input type="text" name = "lname" class="form-control" id="lastname" value = "<?php echo $data['lname'];?>">
+					<input type="text" name = "lname" class="form-control" style="font-size:19px;"  id="lastname" value = "<?php echo $data['lname'];?>">
 				</div>
 			</div>
 
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<h3 for="Adress" style="color:#8d7252;">Address *</h3>
-					<input type="text" name = "address" class="form-control" id="Address" value = "<?php echo $data['address'];?>">
+					<input type="text" name = "address" class="form-control" style="font-size:19px;" id="Address" value = "<?php echo $data['address'];?>">
 				</div>
 			</div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<h3 for="phone" style="color:#8d7252;">Phone *</h3>
-					<input type="text" name = "contact_num" class="form-control" id="phone" value = "<?php echo $data['contact_num'];?>">
+					<input type="text" name = "contact_num" class="form-control" style="font-size:19px;" id="phone" value = "<?php echo $data['contact_num'];?>">
 				</div>
 			</div>
 		
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<h3 for="Email" style="color:#8d7252;">Email *</h3>
-					<input type="email" name = "email" class="form-control" id="Email" value = "<?php echo $data['email'];?>">
+					<input type="email" name = "email" class="form-control"  style="font-size:19px;"id="Email" value = "<?php echo $data['email'];?>">
 				</div>
 			</div>
 			<?php } ?>

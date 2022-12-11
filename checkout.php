@@ -7,7 +7,23 @@
     <!-- Start Top Search -->
     <?php include('layouts/searchbar.php');?>    
     <!-- End Top Search -->
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
     <!-- Start All Title Box -->
     <div class="all-title-box">
         <div class="container">
@@ -32,7 +48,7 @@
                 <div class="col-sm-6 col-lg-6 mb-3"> 
                     <div class="checkout-address">
                         <div class="title-left">
-                            <center><h2 style="color:#EF9273;">Customer Information</h2></center>
+                            <center><h1 style="color:#EF9273;">Customer Information</h1></center>
                         </div>          
                         <form class="needs">
                         <?php
@@ -46,20 +62,41 @@
                             $index = 1;
                             while ($data = mysqli_fetch_assoc($userLists)){
                         ?>
+
+<table>
+  <tr>
+    <th>Fullname *</th>
+    <th>Contact</th>  
+  </tr>
+
+  <tr>
+    <th>Address *</th>
+    <th>Contact</th>
+  </tr>
+ 
+  <tr>
+    <th>Contact Number *</th>
+    <th>Contact</th>
+  </tr>
+ </table>
+
                             <div class="row">
                                 <div class="col-md-12 mb-3">
-                                    <h4 for="firstName" style="color:#8d7252;">Fullname *</h4>
-                                    <input type="text" style="text-align:center;" class="form-control" readonly id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" required>
+                             
+                                    <h2 for="fullname" style="color:#8d7252;">Fullname *
+                                   
+                                    <input style="text-align:center; font-size:19px;"  readonly id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" required></h2>
+                          
                                 </div>
                             </div>
                     
                             <div class="mb-3">
-                                <h4 for="address" style="color:#8d7252;">Address *</h4>
-                                <input type="text" style="text-align:center;" class="form-control" readonly id="address" value="<?php echo $data['address'] ?>" required>
+                                <h2 for="address" style="color:#8d7252;">Address *
+                                <input style="text-align:center; font-size:19px;"  readonly id="address" value="<?php echo $data['address'] ?>" required></h2>
                             </div>
                             <div class="mb-3">
-                                <h4 for="address2" style="color:#8d7252;">Contact Number *</h4>
-                                <input type="text" style="text-align:center;" class="form-control" readonly id="address2" value="<?php echo $data['contact_num'] ?>"> </div>
+                                <h2 for="address2" style="color:#8d7252;">Contact Number *
+                                <input style="text-align:center; font-size:19px;"  readonly id="address2" value="<?php echo $data['contact_num'] ?>"> </h2></div>
                             <?php }} ?>
                         </form>
                             
@@ -77,7 +114,7 @@
                         <div class="col-md-12 col-lg-12">
                             <div class="odr-box">
                                 <div class="title-left">
-                                   <center> <h3 style="color:#EF9273;">Your Orders</h3></center>
+                                   <center> <h1 style="color:#EF9273;">Your Orders</h1></center>
                                 </div>
                                 <div class="rounded p-2 bg-light">
                                 <?php
@@ -97,31 +134,30 @@
                                 ?>
                                     <div class="media mb-2 border-bottom">
                                         <div class="media-body"> <a href="#"><?php echo $data["name"]; ?></a>
-                                            <div class="small text-muted">Price: <?php echo $data["price"]; ?> <span class="mx-2">|</span> Qty: <?php echo $data["quantity"]; ?><span class="mx-2">|</span> Subtotal: <?php echo $data["price"] * $data["quantity"]; ?></div>
+                                            <h1><div class="small text-muted">Price: <?php echo $data["price"]; ?> <span class="mx-2">|</span> Qty: <?php echo $data["quantity"]; ?><span class="mx-2">|</span> Subtotal: <?php echo $data["price"] * $data["quantity"]; ?></div></h1>
                                         </div>
                                     </div>
 
                                     <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" id="placeorder" class="ml-auto btn hvr-hover" style="color:white;">Place Order</button></div>
                                     
-                                   
+                                    
                                     <?php }} ?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-12">
-                        <div class="order-box">
-                                    <div class="font-weight-bold">Product</div>
-                                    <div class="ml-auto font-weight-bold">Total</div>
-                                    </div>
-                                   
-                                </div>
-                                <div class="d-flex gr-total">
-                                    <h5>Grand Total</h5>
-                                    <div class="ml-auto h5"> <?php echo $total; ?> </div>
-                                    </div>
-                                <hr class="my-1">
+
+                       
                                 
-                                   
+                            <div class="order-box">
+                                <div class="d-flex">
+                            
+                                </div>
+
+                                <hr class="my-1">
+                                <div class="d-flex gr-total">
+                                    <h5>Grand Total: </h5>
+                                    <div class="ml-auto h5"> <?php echo $total; ?> </div>
                                 </div>
                                 <hr> </div>
                         </div>
@@ -132,8 +168,62 @@
 
         </div>
     </div>
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/access2.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/barongw.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/5.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/gown2.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/barong.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/1.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
     <!-- End Cart -->
-
+    <?php include('layouts/footer.php');?>
+    
 
 
 <!--CHECKOUT Modal -->
@@ -208,67 +298,13 @@
 
 <link rel="stylesheet" href="css/style.css">
     <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/access2.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/barongw.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/5.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/gown2.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/barong.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/1.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-           
-        </div>
-    </div>
+   
     <!-- End Instagram Feed  -->
 
     
 
 
-    <!-- Start Footer  -->
-    <?php include('layouts/footer.php');?>
-     <!-- end footer -->
+   
 
      <script>
      

@@ -11,18 +11,18 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Newsletter</h3>
-							<form class="newsletter-box">
-								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
-									<i class="fa fa-envelope"></i>
-								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
-							</form>
-						</div>
-					</div>
+				    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Information</h4>
+                            <ul>
+                                <li><a href="aboutus.php">About Us</a></li>
+                                <li><a href="contactpage.php">Contact  Us</a></li>
+                                
+                               
+                            </ul>
+                        </div>
+
+                    </div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
 							
@@ -41,20 +41,6 @@
                     edited, budget friendly selection of trendy styles.</p> 							
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link">
-                            <h4>Information</h4>
-                            <ul>
-                                <li><a href="aboutus.php">About Us</a></li>
-                                <li><a href="contactpage.php">Contact  Us</a></li>
-                                
-                               
-                            </ul>
-                        </div>
-                      
-                       
-                    </div>
-                    
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>Contact Us</h4>

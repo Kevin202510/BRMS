@@ -37,6 +37,8 @@
         <thead class="thead-light">
       <tr>
       <th scope="col">#</th>
+      <th scope="col">Full name</th>
+      <th scope="col">Apprel name</th>
       <th scope="col">Amount</th>
       <th scope="col">Date</th>
       <th scope="col">Time</th>
@@ -58,6 +60,8 @@
 
        <tr>
                     <th scope="row"><?php echo $index; ?></th>
+                    <td><?php echo $data["fname"]."".$data["lname"] ?></td>
+                    <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["total_checkout_amount"]; ?></td>
                     <td><?php echo $data["checkout_Date"]; ?></td>
                     <td><?php echo $data["checkout_Time"]; ?></td>

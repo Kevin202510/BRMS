@@ -1,4 +1,3 @@
-
 <div class="main-top">
         <div class="container-fluid">
             <div class="row">
@@ -9,8 +8,8 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                    
-                            <li><a href="#"><i class="fas fa-location-arrow"></i>location</a></li>
+
+                            <li><a href="#"><i class=""></i></a></li>
                             <li><a href="contactpage.php"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
                     </div>
