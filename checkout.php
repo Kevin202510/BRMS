@@ -102,22 +102,23 @@
                                     </div>
 
                                     <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" id="placeorder" class="ml-auto btn hvr-hover" style="color:white;">Place Order</button></div>
-                                    <div class="order-box">
-                                    <div class="font-weight-bold">Product</div>
-                                    <div class="ml-auto font-weight-bold">Total</div>
-                                    </div>
-                                    <div class="d-flex gr-total">
-                                    <h5>Grand Total</h5>
-                                    <div class="ml-auto h5"> <?php echo $total; ?> </div>
-                                    </div>
+                                    
+                                   
                                     <?php }} ?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-12">
-                           
+                        <div class="order-box">
+                                    <div class="font-weight-bold">Product</div>
+                                    <div class="ml-auto font-weight-bold">Total</div>
+                                    </div>
                                    
                                 </div>
+                                <div class="d-flex gr-total">
+                                    <h5>Grand Total</h5>
+                                    <div class="ml-auto h5"> <?php echo $total; ?> </div>
+                                    </div>
                                 <hr class="my-1">
                                 
                                    
@@ -205,7 +206,7 @@
 </div>
 
 
-
+<link rel="stylesheet" href="css/style.css">
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
@@ -319,3 +320,5 @@
     });
      
      </script>
+
+ 

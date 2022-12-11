@@ -39,7 +39,7 @@
               </div>
               <input name="password" type="password" value="" class="input form-control" id="password" placeholder="Password" required="true" aria-label="password" aria-describedby="basic-addon1" />
               <div class="input-group-append">
-                <span class="input-group-text"style="background-color:#EF9273; color:white;" onclick="password_show_hide();">
+                <span class="input-group-text" style="background-color:#EF9273; color:white;" onclick="password_show_hide();">
                   <i class="fas fa-eye" id="show_eye"></i>
                   <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
                 </span>
@@ -50,7 +50,7 @@
            <div class="forgot-link">
             <a href="#forgot-password" data-toggle="modal" data-target="#forgot-password"style="color:#8d7252;"> I forgot my password</a>
             </div>
-</div>
+          </div>
             
 
             <!-- Button -->
