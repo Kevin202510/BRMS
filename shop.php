@@ -241,7 +241,7 @@
             <div class="row">
                 <div class="col-md-12">
                 <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
-                    <input type="number" class="form-control" id="quantity" name="quantity">
+                    <input type="number" class="form-control" min="1" step="1"  id="quantity" name="quantity">
                 </div>
             </div>
         </div>
@@ -260,7 +260,7 @@
         $("body").on('click',"#addtc",function(e){
             let dataid = $(e.currentTarget).data("id");
             $.post("addtocart.php",{PRODUCT_ID:dataid},function(data,status){
-                // console.log(data);
+                console.log(data);
                 let newdata = JSON.parse(data);
                 $("#product_id").val(newdata.product_id);
                 $("#image").val(newdata.image);
@@ -268,9 +268,14 @@
                 $("#price").val(newdata.price);
                 $("#variation").val(newdata.variation);
                 $("#description").val(newdata.description);
+                $("#quantity").attr({"max":newdata.stocks});
             })
 
             $("#categoriesModal").modal("show");
+        });
+
+        $("[type='number']").keypress(function (evt) {
+            evt.preventDefault();
         });
 
         $("#addtcart").submit(function(e){
@@ -321,7 +326,7 @@
                                             '</div>'+
                                         '</div>'+
                                         '<div class="why-text">'+
-                                            '<h4>Name: '+value.name+'</h4>'+
+                                            '<h4> '+value.name+'</h4>'+
                                             '<h4>Stocks: '+value.stocks+'</h4>'+
                                             '<h4>Category: '+value.cat_name+'</h4>'+
                                             '<h5>₱ '+value.price+'</h5>'+
