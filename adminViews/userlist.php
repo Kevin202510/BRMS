@@ -24,7 +24,7 @@
 
             <div class="card">
         <div class="card-header">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#usersModal">
+            <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-toggle="modal" data-target="#usersModal">
             Add New Data
             </button>
         </div>
@@ -60,8 +60,8 @@
                     <td><?php echo $data["username"]; ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['user_id']; ?>);">Edit</button>
-                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['user_id']; ?>);">Delete</button>
+                        <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" onclick="showform(<?php echo $data['user_id']; ?>);">Edit</button>
+                            <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" onclick="showformdelete(<?php echo $data['user_id']; ?>);">Delete</button>
                         </div>
                     </td>
                     </tr>

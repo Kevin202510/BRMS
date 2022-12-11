@@ -17,7 +17,7 @@
                    
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                        <li class="breadcrumb-item active"  style="color:white; ">Our Apparel</li>
+                        <li class="breadcrumb-item active"  style="color:white; ">Apparel</li>
                     </ul>
                 </div>
             </div>
@@ -194,7 +194,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background-color:#EF9273;">
-   <h2 class="modal-title" id="categoriesModalLabel" style="color:white; text-align:center;">Categories</h2>
+   <h2 class="modal-title" id="categoriesModalLabel" style="color:white; text-align:center; left: 180px;">Categories</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -246,8 +246,8 @@
             </div>
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success" id="addmotosacart">Add To Cart</button>
+        <button type="button" class="btn btn-success" style="background-color:#8d7252;" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success" style="background-color:#8d7252;" id="addmotosacart">Add To Cart</button>
       </div>
         </form>
       </div>

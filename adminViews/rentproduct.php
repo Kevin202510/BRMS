@@ -25,12 +25,12 @@
             <div class="card">
         <div class="card-header">
             <nav class="navbar navbar-light bg-light justify-content-between">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#rentModal" id="rentbtn">
+                <button type="button" class="btn btn"  style="background-color:#8d7252; color:white;" data-toggle="modal" data-target="#rentModal" id="rentbtn">
                 Rent New
                 </button>
                 <div class="form-inline" style="float:right;">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" id="searchData" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline my-2 my-sm-0"style="background-color:#8d7252; color:white;" type="submit">Search</button>
                 </div>
             </nav>
         </div>

@@ -50,8 +50,8 @@
         </form>
       </div>
       <div class="modal-footer"  style="background-color:#EF9273;">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" style=" color:black;">Close</button>
-        <button type="button" class="btn btn-primary" id="saveBTN" style="color:white;">Save</button>
+        <button type="button" class="btn btn" data-dismiss="modal"style="background-color:#8d7252; color:white;">Close</button>
+        <button type="button" class="btn btn" id="saveBTN" style="background-color:#8d7252; color:white;">Save</button>
       </div>
     </div>
   </div>

@@ -8,9 +8,7 @@
                               
               
                <li class="dropdown pc-rheader-submenu message-notification search-toggle">
-                  <a href="#!" id="morphsearch-search" class="drop icon-circle txt-white">
-                     <i class="ti-search"></i>
-                  </a>
+                 
                </li>
             </ul>
             <!-- Navbar Right Menu-->
@@ -76,8 +74,7 @@
                
                         <span><?php echo $_SESSION['FULLNAME'];?> <i class=" icofont icofont-simple-down"></i></span>
                         <ul class="dropdown-menu settings-menu">
-                        <li><a href="index.php"><i class="icon-home"></i> Home</a></li>
-                        <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
+                       
                         <li><a href="editprofile.php"><i class="icon-user"></i> Profile</a></li>
                         <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
                         <li>
@@ -96,50 +93,8 @@
                   </li>
                </ul>
                      </a>
-               <!-- search -->
-               <div id="morphsearch" class="morphsearch">
-                  <form class="morphsearch-form">
-
-                     <input class="morphsearch-input" type="search" placeholder="Search..." />
-
-                     <button class="morphsearch-submit" type="submit">Search</button>
-
-                  </form>
-                  <div class="morphsearch-content">
-                     <div class="dummy-column">
-                        
-                        <a class="dummy-media-object" href="#!">
-                          
-                        </a>
-
-                        <a class="dummy-media-object" href="#!">
-                          
-                        </a>
-                     </div>
-                     <div class="dummy-column">
-                       
-                        <a class="dummy-media-object" href="#!">
-                           
-                        </a>
-
-                        <a class="dummy-media-object" href="#!">
-                          
-                        </a>
-                     </div>
-                     <div class="dummy-column">
-                       
-                        <a class="dummy-media-object" href="#!">
-                          
-                        </a>
-                        <a class="dummy-media-object" href="#!">
-                          
-                        </a>
-                     </div>
-                  </div>
-                  <!-- /morphsearch-content -->
-                  <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
-               </div>
-               <!-- search end -->
+             
+               
             </div>
          </nav>
       </header>

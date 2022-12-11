@@ -66,7 +66,7 @@
                        
                      <li>   
                     <a href="shop.php" class="ml-auto btn " style="color:#8d7252;">Apparel</a>
-                    <a href="cart.php" class="ml-auto btn "style="color:#8d7252;">Cart</a>
+                    
                     <a href="checkout.php" class="ml-auto btn "style="color:#8d7252;">Checkout</a>
                     
 </li>
@@ -89,7 +89,7 @@
                 <div class="attr-nav">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
      
-                        <li class="search"><a style="color: #EF9273; ;" href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="search"><a style="color: #EF9273; ;" href="#"><i class=""></i></a></li>
 </ul>
 </div>
 <?php if(isset($_SESSION['PERMISSION_ID'])){
