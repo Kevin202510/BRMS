@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2022 at 07:40 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Generation Time: Dec 11, 2022 at 10:30 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,24 +33,15 @@ CREATE TABLE `cart` (
   `cart_product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `quantity`, `status`) VALUES
-(59, 33, 59, 0, '0'),
-(60, 33, 64, 0, '0'),
-(61, 33, 63, 0, '0'),
-(62, 33, 62, 2, '0'),
-(63, 33, 60, 2, '0'),
-(64, 28, 59, 7, '0'),
-(65, 34, 59, 3, '0'),
-(66, 34, 60, 0, '0'),
-(67, 31, 59, 5, '0'),
-(68, 28, 68, 3, '0'),
-(69, 37, 59, 25, '0');
+(79, 44, 60, 10, '1'),
+(80, 44, 59, 4, '0');
 
 -- --------------------------------------------------------
 
@@ -61,7 +52,7 @@ INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `quantity`, `s
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
   `cat_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `categories`
@@ -84,9 +75,18 @@ CREATE TABLE `checkout` (
   `checkout_id` int(11) NOT NULL,
   `checkout_cart_id` int(11) NOT NULL,
   `checkout_user_id` int(11) NOT NULL,
-  `checkout_date` varchar(255) NOT NULL,
-  `checkout_time` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `checkout_amount` float NOT NULL,
+  `checkout_payments` float NOT NULL,
+  `checkout_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `checkout_time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `checkout`
+--
+
+INSERT INTO `checkout` (`checkout_id`, `checkout_cart_id`, `checkout_user_id`, `checkout_amount`, `checkout_payments`, `checkout_date`, `checkout_time`) VALUES
+(14, 79, 44, 11000, 12000, '2022-12-11 06:29:24', '2022-12-11 06:29:24');
 
 -- --------------------------------------------------------
 
@@ -102,21 +102,7 @@ CREATE TABLE `customer_walkin` (
   `customer_product_id` int(11) NOT NULL,
   `customer_quantity` int(11) NOT NULL,
   `checkout_status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `customer_walkin`
---
-
-INSERT INTO `customer_walkin` (`cw_id`, `customer_fname`, `customer_lname`, `customer_address`, `customer_product_id`, `customer_quantity`, `checkout_status`) VALUES
-(24, 'kevin', 'asdasdasd', 'asdasdasd', 59, 4, 1),
-(25, 'asdasd', 'asdasdas', 'dasdasdasd', 99, 7, 1),
-(29, 'raaaa', 'sisig', 'jampong', 78, 3, 1),
-(32, 'asdas', 'dasdasd', 'asdasdas', 78, 2, 1),
-(33, 'paulo', 'javier', 'Concepcion', 78, 3, 1),
-(34, 'sfadgf', 'sfdgfr', 'efdgfrshg', 77, 6, 1),
-(35, 'adsfdgfht', 'fegrht', 'fesgrht', 77, 5, 1),
-(36, 'wdF', 'WDEFSGR', 'efsrhdt', 59, 4, 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -131,23 +117,7 @@ CREATE TABLE `customer_walkin_checkout` (
   `checkout_payment` float NOT NULL,
   `checkout_Date` timestamp NOT NULL DEFAULT current_timestamp(),
   `checkout_Time` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `customer_walkin_checkout`
---
-
-INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `total_checkout_amount`, `checkout_payment`, `checkout_Date`, `checkout_Time`) VALUES
-(14, 32, 2, 2, '2022-12-09 14:51:31', '2022-12-09 14:51:31'),
-(15, 24, 4000, 5000, '2022-12-09 14:56:19', '2022-12-09 14:56:19'),
-(16, 25, 2800, 3000, '2022-12-09 14:59:44', '2022-12-09 14:59:44'),
-(17, 29, 1500, 2000, '2022-12-09 15:00:02', '2022-12-09 15:00:02'),
-(18, 29, 1500, 2000, '2022-12-09 15:00:05', '2022-12-09 15:00:05'),
-(19, 32, 1000, 1200, '2022-12-09 15:00:43', '2022-12-09 15:00:43'),
-(20, 33, 1500, 1599, '2022-12-09 15:09:53', '2022-12-09 15:09:53'),
-(21, 34, 1200, 1400, '2022-12-09 17:30:58', '2022-12-09 17:30:58'),
-(22, 35, 1000, 1599, '2022-12-09 18:00:59', '2022-12-09 18:00:59'),
-(23, 36, 4000, 15997, '2022-12-09 18:01:46', '2022-12-09 18:01:46');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -158,7 +128,7 @@ INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `total_chec
 CREATE TABLE `permissions` (
   `permission_id` int(11) NOT NULL,
   `diplay_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `permissions`
@@ -184,7 +154,7 @@ CREATE TABLE `products` (
   `stocks` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `description` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
@@ -192,7 +162,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`product_id`, `image`, `name`, `price`, `variation`, `stocks`, `category_id`, `description`) VALUES
 (59, 'bar10.jpg', 'Filipiniana Handmade Pinilian Yellow Jumpsuit', 1000, 'small', 10, 10, 'Filipiniana Handmade Pinilian Yellow Jumpsuit'),
-(60, 'bar11.jpg', 'Filipiniana Handmade Pinilian Dress ', 1100, 'small', 10, 10, 'Filipiniana Handmade Pinilian Dress '),
+(60, 'bar11.jpg', 'Filipiniana Handmade Pinilian Dress ', 1100, 'small', 0, 10, 'Filipiniana Handmade Pinilian Dress '),
 (61, 'bar12.jpg', 'Filipiniana Handmade Pinilian Dress', 900, 'medium', 9, 10, 'Filipiniana Handmade Pinilian Dress'),
 (62, 'bar14.jpg', 'Filipiniana Handmade Pinilian Bolero ', 650, 'small', 8, 10, 'Filipiniana Handmade Pinilian Bolero '),
 (63, 'hg.jpg', 'Filipiniana Handmade Pinilian ', 1150, 'Medium', 9, 10, 'Filipiniana Handmade Pinilian '),
@@ -239,7 +209,7 @@ INSERT INTO `products` (`product_id`, `image`, `name`, `price`, `variation`, `st
 CREATE TABLE `rents` (
   `id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -252,7 +222,7 @@ CREATE TABLE `sales` (
   `sales_total` int(11) NOT NULL,
   `sales_date` int(11) NOT NULL,
   `sales_time` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -264,9 +234,9 @@ CREATE TABLE `tracking_orders` (
   `tracking_orders_id` int(11) NOT NULL,
   `to_checkout_id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
-  `to_date_back` varchar(255) NOT NULL,
-  `to_time_back` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `to_date_back` varchar(255) DEFAULT NULL,
+  `to_time_back` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -284,7 +254,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -292,13 +262,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_permission_id`, `fname`, `lname`, `address`, `contact_num`, `email`, `username`, `password`) VALUES
 (27, 1, 'Gil', 'Bulacan', 'Concepcion', '09261364720', 'gilscreation@gmail.com', 'hi', 'admin'),
-(28, 2, 'john', 'javier', 'concepcion', '09261364720', 'jp145572@gmail.com', 'paulo28', 'customer'),
-(29, 2, 'Gymbert', 'Busalpa', 'Concepcion', '09876543211', 'gymbert@gmail.com', 'gym', 'customer'),
-(30, 2, 'hhhh', 'Busalpa', 'Concepcion', '098765432', 'gadiazatrisha@gmail.com', 'dg', '123456'),
-(31, 2, 'ewrsdtrft', 'adfxgc', 'zszdfxfghg', '0976521', 'zyrusg27@gmail.com', 'triciiii', 'hhhhhh'),
-(33, 2, 'trish', 'gg', 'sajcbkc', '09261364720', 'trishgg@gmail.com', 'trishgg', '12345'),
-(34, 2, 'tricia', 'gadiaza', 'DGSHFDGJ', '09261364720', 'tricia@gmail.com', 'triciagadiaza', '12345'),
-(37, 2, 'kerby', 'bads', 'dfhsdjhf', '09408328471', 'kerbyjohn18@gmail.com', 'kerby123', 'kerby123');
+(44, 2, 'Kevin ', 'Caluag', 'Bago general tinio ne', '09261364720', 'kfc202510@gmail.com', 'kev20', 'password');
 
 --
 -- Indexes for dumped tables
@@ -390,7 +354,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -402,19 +366,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `customer_walkin`
 --
 ALTER TABLE `customer_walkin`
-  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `customer_walkin_checkout`
 --
 ALTER TABLE `customer_walkin_checkout`
-  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -432,7 +396,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `rents`
 --
 ALTER TABLE `rents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -450,7 +414,7 @@ ALTER TABLE `tracking_orders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Constraints for dumped tables
