@@ -73,7 +73,7 @@
 </div>
 
 
-<!-- Modal -->
+<!-- RENT PRODUCT Modal -->
 <div class="modal fade" id="rentCheckoutModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

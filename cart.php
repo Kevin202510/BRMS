@@ -38,6 +38,7 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -74,10 +75,14 @@
                                         <?php echo $data['price']?>
                                     </td>
                                     <input type="hidden" id="pricy" value="<?php echo $data['price']?>">
-                                    <td class="quantity-box"><input type="number" size="4" value="<?php echo $data['quantity']?>" min="0" step="1" class="c-input-text qty text" id="changequantity"></td>
+                                    <td class="quantity-box"><input type="number" size="4" value="<?php echo $data['quantity']?>" min="1" max="<?php echo $data['stocks'] ?>" step="1" class="c-input-text qty text" id="changequantity"></td>
                                     <td class="total-pr">
                                     <span id="priceprod"><?php echo $total;?></span>
                                     </td>
+                                    <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" id="addquantity" class="btn btn-info" data-id="<?php echo $data['cart_id']; ?>">Update</button>
+                                    </div></td>
                                 </tr>
                                 <?php $index++; }}?>
                             </tbody>
@@ -87,26 +92,7 @@
             </div>
             <?php include('loginmodal.php');?>
             
-            <div class="row my-5">
-                <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="order-box">
-                        <h3>Order summary</h3>
-                        <div class="d-flex">
-                            <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> $ 130 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Discount</h4>
-                            <div class="ml-auto font-weight-bold"> $ 40 </div>
-                        </div>
-                        <hr>
-                        <div class="d-flex gr-total">
-                            <h5>Final Total</h5>
-                            <div class="ml-auto h5"> $ 388 </div>
-                        </div>
-                        <hr> </div>
-                </div>
+           
                 <div class="col-12 d-flex shopping-box"><a href="checkout.php" class="ml-auto btn hvr-hover">Checkout</a> </div>
             </div>
 
@@ -174,4 +160,19 @@
     <!-- Start Footer  -->
     <?php include('layouts/footer.php');?>
     <!-- end footer -->
+
+    <script>
+        $("body").on("click","#addquantity",function(e){
+            var cart_ids = $(e.currentTarget).data("id");
+            $.ajax({
+            type: "POST",
+            url: "addquantity.php",
+            data: {cart_id2:cart_ids,quantity:$("#changequantity").val()},
+            success: function(datas){
+                alert("Added Success")
+                location.reload();
+            },
+          });
+        });
+    </script>
             

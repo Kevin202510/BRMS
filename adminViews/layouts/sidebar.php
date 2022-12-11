@@ -26,8 +26,11 @@
                         <i class="icon-bag"></i><span> Rent Apparel</span>
                     </a>
                     <a class="waves-effect waves-dark" href="sales.php">
-                       <span>Sales</span>
-                    </a>    
+                    <i class="icon-clothes"></i><span>Sales</span>
+                    </a>
+                    <a class="waves-effect waves-dark" href="tracking.php">
+                    <i class="icon-clothes"></i><span>Tracking Orders</span>
+                    </a>     
 
                     <!-- <a class="waves-effect waves-dark" href="rentcheckout.php">
                         <i class="icon-bag"></i><span> CheckOut Rent</span>

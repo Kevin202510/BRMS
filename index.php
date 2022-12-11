@@ -31,6 +31,7 @@
 <?php
 
 if(isset($_POST['adduser'])){
+    
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
     $address = $_POST["address"];
@@ -49,7 +50,7 @@ if(isset($_POST['adduser'])){
     'username'=>$username,'password'=>$password]);
 
     if($newDBCRUD){
-        // echo "<script>alert('Succes');</script>";
+        //echo "<script>alert('Succes');</script>";
         header("location:index.php");
     }else{
         return 0;
