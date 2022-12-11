@@ -21,7 +21,7 @@
             $_SESSION['FULLNAME'] = $data['fname']." ".$data['lname'];
             $_SESSION['ID'] = $data['user_id'];
 
-            header("location: shop.php");
+            header("location: index.php");
         }
     }
  
@@ -179,104 +179,49 @@ if(isset($_POST['adduser'])){
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
                             <button class="active" data-filter="*">All</button>
-                            <button data-filter=".top-featured">Top featured</button>
-                            <button data-filter=".best-seller">Best Rented</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row special-list">
+            <div class="row special">
+            <?php
+                // include('APIFUNCTION/DBCRUD.php');
+                // $newDBCRUD = new DBCRUD();
+                $newDBCRUD->select("products","*");
+                $userLists = $newDBCRUD->sql;
+        
+                $index = 1;
+                while ($data = mysqli_fetch_assoc($userLists)){
+            ?>
+
                 <div class="col-lg-3 col-md-6 special-grid best-seller">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
                            
                             </div>
-                            <img src="images/bar10.jpg" class="img-fluid" alt="Image">
+                            <img src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                   
+                                <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                <?php if(isset($_SESSION['PERMISSION_ID'])){ ?>
+                                    <a type="button" class="cart" data-id="<?php echo $data['product_id']; ?>" id="addtc">Add to Cart</a>
+                                <?php }else{ ?>
+                                    <a type="button" class="cart" data-toggle = "modal" data-target="#loginsModal">Add to Cart</a>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Filipiniana Handmade Pinilian Yellow Jumpsuit</h4>
-                            <h5 style="color:white;"> ₱ 1000</h5>
+                            <h4><?php echo $data['name']; ?></h4>
+                            <h4>Stocks: <?php echo $data['stocks']; ?></h4>
+                            <h5 style="color:white;">₱ <?php echo $data['price']; ?></h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                              
-                            </div>
-                            <img src="images/bar12.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    
-                                   
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Filipiniana Handmade Pinilian Dress</h4>
-                            <h5 style="color:white;"> ₱ 900</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                            
-                            </div>
-                            <img src="images/barong1.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                  
-                                   
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            
-                            <h4> Filipiniana Handmade Pinilian Inabel Bolero</h4>
-                            <h5 style="color:white;"> ₱ 500</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                               
-                            </div>
-                            <img src="images/hg.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Filipiniana Handmade Pinilian</h4>
-                            <h5 style="color:white;"> ₱ 1150</h5>
-                        </div>
-                    </div>
-                </div>
+                <?php }?>
             </div>
         </div>
     </div>
@@ -393,9 +338,113 @@ if(isset($_POST['adduser'])){
            
         </div>
     </div>
+    <?php include('loginmodal.php');?>
     <!-- End Instagram Feed  -->
 
 
     <!-- Start Footer  -->
     <?php include('layouts/footer.php');?>
     <!-- end footer -->
+
+
+    <div class="modal fade" id="categoriesModal" tabindex="-1" role="dialog" aria-labelledby="categoriesModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#EF9273;">
+   <h2 class="modal-title" id="categoriesModalLabel" style="color:white; text-align:center;">Categories</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form method="POST" id="addtcart">
+        <input type="hidden" id="product_id" name="product_id">
+
+        <?php 
+        if(isset($_SESSION['PERMISSION_ID'])){
+            $id=$_SESSION['ID']; ?>
+        <input type="hidden" id="cart_user_id" name="cart_user_id" value="<?php echo $id;?>">
+        <?php }?>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 style="color:#8d7252; font-family:poppins">Product Name</h4>
+                    <input type="text" class="form-control" id="name"readonly>
+                </div>
+                <div class="col-md-6">
+                <h4 style="color:#8d7252; font-family:poppins">Product price</h4>
+                    <input type="text" class="form-control" id="price" readonly>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                <h4 style="color:#8d7252; font-family:poppins">Product variation</h4>
+
+               
+
+                    <input type="text" class="form-control" id="variation" readonly>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+            <div class="col-md-6">
+            <h4 style="color:#8d7252; font-family:poppins">Product description</h4>
+                    <textarea id="description" cols="12" rows="5" readonly></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
+                    <input type="number" class="form-control" min="1" step="1"  id="quantity" name="quantity">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success" id="addmotosacart">Add To Cart</button>
+      </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("body").on('click',"#addtc",function(e){
+            let dataid = $(e.currentTarget).data("id");
+            $.post("addtocart.php",{PRODUCT_ID:dataid},function(data,status){
+                console.log(data);
+                let newdata = JSON.parse(data);
+                $("#product_id").val(newdata.product_id);
+                $("#image").val(newdata.image);
+                $("#name").val(newdata.name);
+                $("#price").val(newdata.price);
+                $("#variation").val(newdata.variation);
+                $("#description").val(newdata.description);
+                $("#quantity").attr({"max":newdata.stocks});
+            })
+
+            $("#categoriesModal").modal("show");
+        });
+
+        $("[type='number']").keypress(function (evt) {
+            evt.preventDefault();
+        });
+
+        $("#addtcart").submit(function(e){
+            let formdata = $("#addtcart").serializeArray();
+            event.preventDefault();
+            $.post("addtocart.php",formdata,function(data,status){
+                location.reload();
+            });
+        });
+
+    });
+
+    
+</script>
+
