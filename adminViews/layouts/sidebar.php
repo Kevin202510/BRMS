@@ -36,16 +36,15 @@
 
                   
                     <a class="waves-effect waves-dark" href="tracking.php">
-<<<<<<< HEAD
+
                     <i class="icon-clothes"></i><span>Tracking Orders</span>
                     </a>   
                     <a class="waves-effect waves-dark" href="tracking_walkin.php">
                     <i class="icon-clothes"></i><span>Tracking walkin Orders</span>
                     </a>   
-=======
-                    <i class="icon-map"></i><span>Tracking Orders</span>
-                    </a>     
->>>>>>> 27dee3304a271917b433a3cf4612abfd4f69adbb
+                    <!-- <i class="icon-map"></i><span>Tracking Orders</span>
+                    </a>      -->
+
 
 
                     <!-- <a class="waves-effect waves-dark" href="rentcheckout.php">
