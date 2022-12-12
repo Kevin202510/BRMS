@@ -39,14 +39,14 @@ td, th {
     <!-- End All Title Box -->
 
     <!-- Start Cart  -->
-    <div class="cart-box-main">
+    <div class="cart-box-main" style="background-color:white">
         <div class="container">
             
             <div class="row">
                 <div class="col-sm-6 col-lg-6 mb-3"> 
                     <div class="checkout-address">
                         <div class="title-left">
-                            <center><h1 style="color:#EF9273;">Customer Information</h1></center>
+                            <center><h1 style="color:#EF9273;m">Customer Information</h1></center>
                         </div>          
                         <form class="needs">
                         <?php
@@ -63,15 +63,15 @@ td, th {
 
 <table>
   <tr>
-    <th style="color:#EF9273; letter-spacing: 3px;">Fullname: <center> <input style="font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" disabled></th> </center>
+    <th style="color:#EF9273; letter-spacing: 3px;">Fullname: <input style="font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" disabled></th> 
   </tr>
 
   <tr>
-    <th style="color:#EF9273;  letter-spacing: 3px;">Address:  <center> <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="address" value="<?php echo $data['address'] ?>" disabled></th></center>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Address: <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="address" value="<?php echo $data['address'] ?>" disabled></th>
   </tr>
  
   <tr>
-    <th style="color:#EF9273;  letter-spacing: 3px;">Contact: <center>   <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th></center>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Contact  <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th>
   </tr>
  </table>
 

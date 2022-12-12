@@ -218,7 +218,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h4 style="color:#8d7252; font-family:poppins">Apparel Name</h4>
-                    <input type="text" class="form-control"  style="font-size:19px; border:none; background-color:transparent;" id="name" disabled>
+                    <span type="text" class="form-control"  style="font-size:19px; border:none; background-color:transparent;" id="name" disabled></span>
                 </div>
                 <div class="col-md-6">
                 <h4 style="color:#8d7252; font-family:poppins">Apparel price</h4>
@@ -226,34 +226,31 @@
                 </div>
             </div>
             <br>
+           <br>
+            <div class="form-group">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                 <h4 style="color:#8d7252; font-family:poppins">Apparel Variation</h4>
-
-               
 
                     <input type="text" class="form-control" style="font-size:19px; border:none; background-color:transparent;" id="variation" disabled>
                 </div>
-            </div>
-
-            <br>
-            <div class="row">
             <div class="col-md-6">
             <h4 style="color:#8d7252; font-family:poppins">Apparel description</h4>
-                    <textarea style = "border:none; background-color:transparent;" id="description" cols="12" rows="5" disabled></textarea>
+                    <span style = "border:none; background-color:transparent; width: 100%;" id="description" cols="12" rows="5" disabled></span>
                 </div>
-            </div>
-            <br>
-           
+        </div>
                 <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
-                <div class="quantity buttons_added">
-	<input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                <div class="input-group">
+  <input type="button" value="-" class="button-minus" data-field="quantity">
+  <input type="number" step="1" max="" value="1" name="quantity" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" disabled>
+  <input type="button" value="+" class="button-plus" data-field="quantity">
 </div>
+               
                 
            
         <div class="modal-footer">
-        <button type="button" class="btn btn-success" style="background-color:#8d7252;" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success" style="background-color:#8d7252;" id="addmotosacart">Add To Cart</button>
+        <button type="button" class="btn btn" style="background-color:#8d7252; color:white" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn" style="background-color:#8d7252;color:white" id="addmotosacart">Add To Cart</button>
       </div>
         </form>
       </div>
@@ -270,10 +267,10 @@
                 let newdata = JSON.parse(data);
                 $("#product_id").val(newdata.product_id);
                 $("#image").val(newdata.image);
-                $("#name").val(newdata.name);
+                $("#name").text(newdata.name);
                 $("#price").val(newdata.price);
                 $("#variation").val(newdata.variation);
-                $("#description").val(newdata.description);
+                $("#description").text(newdata.description);
                 $("#quantity").attr({"max":newdata.stocks});
             })
 
@@ -360,6 +357,7 @@
 
     
 </script>
+<script src="js/addminus.js"></script>
 
 
     
