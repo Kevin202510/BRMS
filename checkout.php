@@ -63,22 +63,6 @@ tr:nth-child(even) {
                             while ($data = mysqli_fetch_assoc($userLists)){
                         ?>
 
-<table>
-  <tr>
-    <th>Fullname *</th>
-    <th>Contact</th>  
-  </tr>
-
-  <tr>
-    <th>Address *</th>
-    <th>Contact</th>
-  </tr>
- 
-  <tr>
-    <th>Contact Number *</th>
-    <th>Contact</th>
-  </tr>
- </table>
 
                             <div class="row">
                                 <div class="col-md-12 mb-3">
