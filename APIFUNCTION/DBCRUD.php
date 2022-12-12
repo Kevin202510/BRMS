@@ -129,7 +129,7 @@
             $this->sql = $result = $this->mysqli->query($sql);
         }
         public function select213(){
-            $sql = "SELECT * FROM `tracking_orders` left JOIN checkout ON checkout.checkout_id = tracking_orders.to_checkout_id LEFT JOIN cart ON cart.cart_id = checkout.checkout_cart_id LEFT JOIN users ON users.user_id = checkout.checkout_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id";
+            $sql = "SELECT * FROM `tracking_orders_customer_walkin_checkout` left JOIN customer_walkin_checkout ON customer_walkin_checkout.cwc_id = tracking_orders_customer_walkin_checkout.tocw_checkout_id LEFT JOIN customer_walkin ON customer_walkin.cw_id = customer_walkin_checkout.cwc_customer_id LEFT JOIN products ON products.product_id = customer_walkin.customer_product_id";
 
             $this->sql = $result = $this->mysqli->query($sql);
         }

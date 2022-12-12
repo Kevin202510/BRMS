@@ -71,6 +71,7 @@
      font-size: 16px; 
 }
  h5 {
+     
      font-size: 14px ;
 }
  h6 {
@@ -1464,18 +1465,7 @@ p {
      -o-transition: all .3s ease-in-out;
      -ms-transition: all .3s ease-in-out;
 }
- .footer-link ul li a::before {
-     font-family: FontAwesome;
-     content: "\f105";
-     position: absolute;
-     left: 5px;
-     line-height: 35px;
-     font-size: 16px;
-     transition: all .3s ease-in-out;
-     -webkit-transition: all .3s ease-in-out;
-     -moz-transition: all .3s ease-in-out;
-     -o-transition: all .3s ease-in-out;
-     -ms-transition: all .3s ease-in-out;
+ 
 }
  .footer-link ul li a:hover::before {
      left: 5px;

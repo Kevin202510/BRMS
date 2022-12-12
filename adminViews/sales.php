@@ -19,7 +19,8 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-               <h2  style=" font-family:poppins; color:#8d7252; ">Sales</h2><br>
+            
+              <h2 style=" font-family:poppins; color:#8d7252; ">Sales</h2>
                </div>
             </div>
             
@@ -32,10 +33,12 @@
   </div>   
         </div>
         <div class="card-body">
-        <table class="table table-dark table-hover">
-        <thead class="thead-light">
+        <table class="table table-bordered">
+        <thead>
       <tr>
       <th scope="col">#</th>
+      <th scope="col">Full name</th>
+      <th scope="col">Apprel name</th>
       <th scope="col">Amount</th>
       <th scope="col">Date</th>
       <th scope="col">Time</th>
@@ -57,6 +60,8 @@
 
        <tr>
                     <th scope="row"><?php echo $index; ?></th>
+                    <td><?php echo $data["fname"]."".$data["lname"] ?></td>
+                    <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["total_checkout_amount"]; ?></td>
                     <td><?php echo $data["checkout_Date"]; ?></td>
                     <td><?php echo $data["checkout_Time"]; ?></td>

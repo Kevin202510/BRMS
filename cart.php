@@ -81,7 +81,7 @@
                                     </td>
                                     <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" id="addquantity" class="btn btn-info" data-id="<?php echo $data['cart_id']; ?>">Update</button>
+                                    <button type="button" id="addquantity" class="btn btn"  style="background-color:#8d7252; color:white;" data-id="<?php echo $data['cart_id']; ?>">Update</button>
                                     </div></td>
                                 </tr>
                                 <?php $index++; }}?>
@@ -93,7 +93,7 @@
             <?php include('loginmodal.php');?>
             
            
-                <div class="col-12 d-flex shopping-box"><a href="checkout.php" class="ml-auto btn hvr-hover">Checkout</a> </div>
+                <div class="col-12 d-flex shopping-box"><a href="checkout.php" style="color:white; right:210px;"class="ml-auto btn hvr-hover">Checkout</a> </div>
             </div>
 
         </div>
