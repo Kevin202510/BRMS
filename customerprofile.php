@@ -9,6 +9,25 @@
       <?php include('layouts/header.php'); ?>
       <!-- Side-Nav-->
             
+      <?php
+
+        if (isset($_POST["verify_account"]))
+        {
+            $email = $_POST["email"];
+            $verification_code = $_POST["verification_code"];
+            $timestamp = time();
+            $formatted = date('y-m-d h:i:s T', $timestamp);
+            
+            $newDBCRUD->update('users',['email_verified_at'=> $formatted],"email = '" . $email . "' AND verification_code = '" . $verification_code . "'");
+
+                if($newDBCRUD){
+                    echo '<script>location.href="customerprofile.php";</script>';
+                }else{
+                    echo '<script>alert("May Error!");</script>';
+                }
+        }
+
+    ?>
 
     <!-- Start Content  -->
 
@@ -88,8 +107,12 @@
 					<input type="text" name = "contact_num" class="form-control" style="font-size:19px; border:none;" id="phone" value = "<?php echo $data['contact_num'];?>" disabled>
 				</div>
 			</div>
-		
-			
+
+            <?php if($data['email_verified_at']===NULL){ ?>
+		    <button type="button" class="btn btn-info" id="verifyAccount" style="background-color:#8d7252;" data-id="<?php echo $data['email']; ?>">Verify Account</button>
+			<?php }else{  ?>
+                <span>Account Verified</span>
+            <?php } ?>
 			<?php } ?>
 		</div>
 		<div class="row gutters">
@@ -151,4 +174,47 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="verifyMuna" tabindex="-1" role="dialog" aria-labelledby="verifyMunaTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="verifyMunaTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" readyonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputPassword4">Verification Code</label>
+                    <input type="text" class="form-control" id="verification_code" name="verification_code">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" name="verify_account">Save changes</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+
 <?php include('layouts/footer.php');?>
+
+<script>
+    $(document).ready(function(){
+        $("#verifyAccount").click(function(e){
+            var email = $(e.currentTarget).data("id");
+            $("#email").val(email);
+            $("#verifyMuna").modal("show");
+        });
+    })
+</script>

@@ -208,7 +208,7 @@ td, th {
 
 <!--CHECKOUT Modal -->
 <div class="modal fade" id="rentCheckoutModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="rentprodModalLabel"></h5>
@@ -222,13 +222,9 @@ td, th {
         <input type="hidden" id="user_ids" name="user_id">
         <input type="hidden" id="prods_id" name="prods_id">
         <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
             <label >FullName</label>
             <input type="text" class="form-control"  readonly id="customer_fnames">
-        </div>
-        <div class="form-group col-md-6">
-            <label >Address</label>
-            <input type="text" class="form-control"  readonly id="customer_addressss" >
         </div>
         </div>
         <div class="form-row">
@@ -239,7 +235,7 @@ td, th {
         <div class="form-group col-md-6">
             <label >Apparel Quantity</label>
             <input type="text" class="form-control"  readonly id="customer_quantitys">
-            <input type="text" class="form-control"  readonly name="prod_stocks" id="prod_quant">
+            <input type="hidden" class="form-control"  readonly name="prod_stocks" id="prod_quant">
         </div>
         </div>
 
@@ -254,7 +250,20 @@ td, th {
         </div>
         </div>
 
-        <div class="form-row">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Mode Of Transaction</label>
+            <select class="form-control" name="transaction_mode" id="exampleFormControlSelect1">
+            <option value="1">COD</option>
+            <option value="2">On Shop</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Delivery Address And Contact Number</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="delivery_description" rows="3"></textarea>
+        </div>
+
+        <!-- <div class="form-row">
         <div class="form-group col-md-6">
             <label >Payment</label>
             <input type="text" class="form-control" id="app_pay" name="app_pay">
@@ -263,13 +272,13 @@ td, th {
             <label >Change</label>
             <input type="text" class="form-control" id="app_change" readonly>
         </div>
-        </div>
+        </div> -->
         <!-- <input type="hidden" name="checkthisout"> -->
         </form>
       <!-- </div> -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" disabled id="saveBTNs">Save</button>
+        <button type="button" class="btn btn-primary" id="saveBTNs">Save</button>
       </div>
     </div>
   </div>
@@ -306,19 +315,19 @@ td, th {
                 $("#customer_quantitys").val(newdata[0].quantity);
                 $("#app_price").val(newdata[0].price);
                 $("#app_total_amt").val(parseInt(newdata[0].price)*parseInt(newdata[0].quantity));
-                $("#prod_quant").val(parseInt(newdata[0].stocks)-parseInt(newdata[0].quantity)); 
+                // $("#prod_quant").val(parseInt(newdata[0].stocks)-parseInt(newdata[0].quantity)); 
                 $("#prods_id").val(newdata[0].product_id);
             },
           });
         $("#rentCheckoutModal").modal("show");
      });
 
-     $("#app_pay").keyup(function(){
-    if(parseInt($("#app_pay").val())>=parseInt($("#app_total_amt").val())){
-            $("#app_change").val(parseInt($("#app_pay").val())-parseInt($("#app_total_amt").val()));
-            $("#saveBTNs").prop("disabled", false);
-        } 
-    });
+    //  $("#app_pay").keyup(function(){
+    // if(parseInt($("#app_pay").val())>=parseInt($("#app_total_amt").val())){
+    //         $("#app_change").val(parseInt($("#app_pay").val())-parseInt($("#app_total_amt").val()));
+    //         $("#saveBTNs").prop("disabled", false);
+    //     } 
+    // });
 
     $("#saveBTNs").click(function(e){
 
