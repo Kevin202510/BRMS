@@ -257,6 +257,22 @@ td, th {
             <option value="2">On Shop</option>
             </select>
         </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Rent Date</label>
+            <input class="form-control" id="checkout_rent_date" name="checkout_rent_date">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Return Date</label>
+            <input class="form-control" id="checkout_rent_return_date" name="checkout_rent_return_date">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Delivery Address And Contact Number</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="delivery_description" rows="3"></textarea>
+        </div>
+
         
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Delivery Address And Contact Number</label>
