@@ -46,14 +46,14 @@
     <!-- Start Main Top -->
     <header class="main-header">
         <!-- Start Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light  navbar-default bootsnav">
+            <div class="container" style="background-color:white">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand"><img src="images/last.jpg" class="logo" alt=""></a>
+                <a class><img src="images/log1.png" class="logo" alt=""><img src="images/log2.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
