@@ -18,22 +18,28 @@
         $variation = $_POST["variation"];
 
 
-        $newDBCRUD->insert('products',[
-        'image'=>$image,
-        'name'=>$name,
-        'category_id'=>$category_id,
-        'price'=>$price,
-        'stocks'=>$stocks,
-        'description'=>$description,
-        'variation'=>$variation]);
-
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-          } else {
-            echo "Sorry, there was an error uploading your file.";
-          }
+        $dataid = "name='$name' AND variation='$variation'";
+        $newDBCRUD->select("products","*",$dataid);
+        $getUser = $newDBCRUD->sql;
         
+        if ($getUser->num_rows !== 0) {
+             echo '<script>alert("Apparel Already Exist");</script>';
+        }else{
+            $newDBCRUD->insert('products',[
+            'image'=>$image,
+            'name'=>$name,
+            'category_id'=>$category_id,
+            'price'=>$price,
+            'stocks'=>$stocks,
+            'description'=>$description,
+            'variation'=>$variation]);
 
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+            } else {
+                header("location: ../productslist.php");
+            }
+        }
         header("location: ../productslist.php");
 
     }else if(isset($_POST['updateproducts'])){

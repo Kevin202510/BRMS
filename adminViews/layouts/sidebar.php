@@ -13,7 +13,11 @@
                     </a>    
                     <a class="waves-effect waves-dark" href="userlist.php" >
                         <i class="icon-user"></i><span> Users List</span>
+                    </a>
 
+                    <a class="waves-effect waves-dark" href="customer.php" >
+                        <i class="icon-user"></i><span>Customer List</span>
+                    </a>
                         <a class="waves-effect waves-dark" href="categorieslist.php" >
                         <i class="icon-list"></i><span> Categories List</span>
                     </a>    
@@ -30,7 +34,10 @@
                     </a>
                     <a class="waves-effect waves-dark" href="tracking.php">
                     <i class="icon-clothes"></i><span>Tracking Orders</span>
-                    </a>     
+                    </a>   
+                    <a class="waves-effect waves-dark" href="tracking_walkin.php">
+                    <i class="icon-clothes"></i><span>Tracking walkin Orders</span>
+                    </a>   
 
                     <!-- <a class="waves-effect waves-dark" href="rentcheckout.php">
                         <i class="icon-bag"></i><span> CheckOut Rent</span>
