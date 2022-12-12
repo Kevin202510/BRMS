@@ -49,10 +49,10 @@
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Pick Variation</h5>
         <select name = "variation" id = "variation">
-        <option value=""selected disabled hidden>Variation</option>
-        <option value="Small">Small</option>
-        <option value="Medium">Medium</option>
-        <option value="Large">Large</option>
+        <option value=""disabled hidden>Variation</option>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
       </select>
                     </div>
         <input type="hidden" name="addproducts" id="addproducts">

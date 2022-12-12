@@ -8,8 +8,8 @@ $(document).ready(function(){
             url: "functions/productscrud.php",
             data: $("#productsForm").serialize(),
             success: function(datas){
-                //alert("Work Saved Successfully");
-                location.reload();
+                // console.log(datas);
+                // location.reload();
             },
           });
         
