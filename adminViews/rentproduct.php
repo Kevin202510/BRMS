@@ -94,6 +94,24 @@
 <script>
 
 $(document).ready(function(){
+
+    datePickerId.min = new Date().toISOString().split("T")[0];
+    
+    $("#datePickerId").focusout(function(){
+    
+    console.log($("#datePickerId").val());
+    var tzoffset = (new Date()).getTimezoneOffset() * 60000;
+    var localISOTime = (new Date(Date.now() - tzoffset)).toISOString().slice(0, -1);
+
+    // var dt = new Date($("#datePickerId").val());
+
+    var a = new Date((new Date($("#datePickerId").val())).valueOf() + 1000*3600*48).toISOString().split("T")[0];
+    var b = new Date((new Date($("#datePickerId").val())).valueOf() + 1000*3600*24).toISOString().split("T")[0];
+    
+    datePickerId2.max = a;
+    datePickerId2.min = b;
+
+    });
     $("#rentbtn").click(function(){
         $.ajax({
         type: "POST",
