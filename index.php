@@ -2,6 +2,11 @@
  session_start();
     include('APIFUNCTION/DBCRUD.php');
     $newDBCRUD = new DBCRUD();
+    use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
 
     if(isset($_POST["signin"])){
         $whereclause = "email = '".$_POST["email"]."' AND password = '".$_POST["password"]."'";
@@ -26,15 +31,7 @@
     }
  
         
-    }
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-require 'vendor/autoload.php';
-
-        if (isset($_POST['register'])) {
+    }else if (isset($_POST['adduser'])) {
 
             $fname = $_POST["fname"];
             $lname = $_POST["lname"];
@@ -102,7 +99,7 @@ require 'vendor/autoload.php';
 
         if($newDBCRUD){
             echo "<script>alert('Sucess Fully To Create Account');</script>";
-            header('location: login.php' );
+            header('location: index.php' );
             
         }else{
             echo "<script>alert('May Error!'');</script>";
