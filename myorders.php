@@ -57,9 +57,15 @@
                                             <div class="media-body"> <a href="#"><?php echo $data["name"]; ?></a>
                                                 <div class="small text-muted">Price: <?php echo $data["price"]; ?> <span class="mx-2">|</span> Qty: <?php echo $data["quantity"]; ?><span class="mx-2">|</span> Subtotal: <?php echo $data["price"] * $data["quantity"]; ?>
                                                 <?php if($data['status']==1){ ?>
+
                                                     <span style="margin-left:800px;">On Process</span>
+
                                                 <?php }else if($data['status']==4){ ?>
+
                                                     <span style="margin-left:800px;">Canceled</span>
+
+                                                    <?php }else if($data['status']==2){ ?>
+                                                        <span style="margin-left:800px;">Cash On Delivery</span>
                                                     <?php } ?>
                                                 </div>
                                             </div>

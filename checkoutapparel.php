@@ -16,14 +16,19 @@ if(isset($_POST['cart_id'])){
     $checkout_cart_id  = $_POST["c_id"];
     $checkout_user_id = $_POST["user_id"];
     $checkout_amount = $_POST["app_total_amt"];
-    $checkout_payments = $_POST["app_pay"];
+    $delivery_description = $_POST["delivery_description"];
+    $transaction_mode = $_POST["transaction_mode"];
     
 
 
     $newDBCRUD->insert('checkout',['checkout_cart_id'=>$checkout_cart_id,
-    'checkout_user_id'=>$checkout_user_id,'checkout_amount'=>$checkout_amount,'checkout_payments'=>$checkout_payments]);
+    'checkout_user_id'=>$checkout_user_id,'checkout_amount'=>$checkout_amount,'transaction_mode'=>$transaction_mode,'delivery_description'=>$delivery_description]);
     
-    $newDBCRUD->update('cart',['status'=>'1'],"cart_id='$checkout_cart_id'");
+    if($transaction_mode==1){
+        $newDBCRUD->update('cart',['status'=>'2'],"cart_id='$checkout_cart_id'");
+    }else{
+        $newDBCRUD->update('cart',['status'=>'1'],"cart_id='$checkout_cart_id'");
+    }
 
     $prods_id = $_POST['prods_id'];
 

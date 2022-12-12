@@ -256,13 +256,8 @@
         </div>
                 <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
                 <div class="input-group">
-  <input type="button" value="-" class="button-minus" data-field="quantity">
-  <input type="number" step="1" max="" value="1" name="quantity" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" disabled>
-  <input type="button" value="+" class="button-plus" data-field="quantity">
-</div>
-               
-                
-           
+                    <input type="number" class="form-control" min="1" step="1"  id="quantity" name="quantity">
+                </div>
         <div class="modal-footer">
         <button type="button" class="btn btn" style="background-color:#8d7252; color:white" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn" style="background-color:#8d7252;color:white" id="addmotosacart">Add To Cart</button>
@@ -372,7 +367,6 @@
 
     
 </script>
-<script src="js/addminus.js"></script>
 
 
     
