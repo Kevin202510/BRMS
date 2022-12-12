@@ -25,7 +25,7 @@
         <div class="card-header">
             
             <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-toggle="modal" data-target="#productsModal">
-            Add New Product
+            Add Apparel
             </button>
         </div>
         <div class="card-body">

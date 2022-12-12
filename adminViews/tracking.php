@@ -34,8 +34,8 @@
 
         </div>
         <div class="card-body">
-        <table class="table">
-                <thead class="thead-light">
+        <table class="table table-bordered">
+                <thead>
                     <tr>
                     <th scope="col">#</th>
                     <th scope="col">Fullname</th>

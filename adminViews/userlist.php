@@ -25,11 +25,11 @@
             <div class="card">
         <div class="card-header">
             <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-toggle="modal" data-target="#usersModal">
-            Add New Data
+            Add User
             </button>
         </div>
         <div class="card-body">
-        <table class="table">
+        <table class="table  table-bordered">
                 <thead class="thead-light">
                     <tr>
                     <th scope="col">#</th>
