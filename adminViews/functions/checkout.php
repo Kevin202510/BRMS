@@ -13,6 +13,7 @@ if(isset($_POST['app_pay'])){
     $newDBCRUD->insert('customer_walkin_checkout',['cwc_customer_id'=>$cw_id,'total_checkout_amount'=>$app_total_amt,'checkout_payment'=>$app_pay]);
     
     $newDBCRUD->update('customer_walkin',['checkout_status'=>'1'],"cw_id='$cw_id'");
+    
 
 }
 

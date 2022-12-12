@@ -8,6 +8,12 @@
     <!-- Start Top Search -->
     <?php include('layouts/searchbar.php');?>   
     <!-- Start All Title Box -->
+
+    <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="scriptquantity.css">
+    <script src="script.js"></script>
+
+
     <div class="all-title-box">
         <div class="container">
             <div class="row">
@@ -212,11 +218,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <h4 style="color:#8d7252; font-family:poppins">Apparel Name</h4>
-                    <input type="text" class="form-control"  style="font-size:19px;" id="name"readonly>
+                    <input type="text" class="form-control"  style="font-size:19px; border:none; background-color:transparent;" id="name" disabled>
                 </div>
                 <div class="col-md-6">
                 <h4 style="color:#8d7252; font-family:poppins">Apparel price</h4>
-                    <input type="text" class="form-control"  style="font-size:19px;" id="price" readonly>
+                    <input type="text" class="form-control"  style="font-size:19px; border:none; background-color:transparent;" id="price" disabled>
                 </div>
             </div>
             <br>
@@ -226,7 +232,7 @@
 
                
 
-                    <input type="text" class="form-control" style="font-size:19px;" id="variation" readonly>
+                    <input type="text" class="form-control" style="font-size:19px; border:none; background-color:transparent;" id="variation" disabled>
                 </div>
             </div>
 
@@ -234,17 +240,17 @@
             <div class="row">
             <div class="col-md-6">
             <h4 style="color:#8d7252; font-family:poppins">Apparel description</h4>
-                    <textarea id="description" cols="12" rows="5" readonly></textarea>
+                    <textarea style = "border:none; background-color:transparent;" id="description" cols="12" rows="5" disabled></textarea>
                 </div>
             </div>
             <br>
-            <div class="row">
-                <div class="col-md-12">
+           
                 <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
-                    <input type="number" class="form-control" min="1" step="1"  id="quantity" name="quantity">
-                </div>
-            </div>
-        </div>
+                <div class="quantity buttons_added">
+	<input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+</div>
+                
+           
         <div class="modal-footer">
         <button type="button" class="btn btn-success" style="background-color:#8d7252;" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-success" style="background-color:#8d7252;" id="addmotosacart">Add To Cart</button>

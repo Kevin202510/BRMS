@@ -35,7 +35,7 @@
             </nav>
         </div>
         <div class="card-body">
-        <table class="table">
+        <table class="table table-bordered">
                 <thead class="thead-light">
                     <tr>
                     <th scope="col">#</th>

@@ -65,36 +65,31 @@
 								?>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<h3 for="firstname"  style="color:#8d7252;">First Name *</h3>
-					<input type="text" name = "fname" class="form-control"  style="font-size:19px;" id="firstname" value = "<?php echo $data['fname'];?>">
+					<h3 for="firstname"  style="color:#8d7252;">First Name </h3>
+					<input type="text" name = "fname" class="form-control"  style="font-size:19px; border:none;" id="firstname" value = "<?php echo $data['fname'];?>" disabled>
 				</div>
 			</div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<h3 for="lastname" style="color:#8d7252;">Last Name *</h3>
-					<input type="text" name = "lname" class="form-control" style="font-size:19px;"  id="lastname" value = "<?php echo $data['lname'];?>">
+					<h3 for="lastname" style="color:#8d7252;">Last Name </h3>
+					<input type="text" name = "lname" class="form-control" style="font-size:19px; border:none;"  id="lastname" value = "<?php echo $data['lname'];?>" disabled>
 				</div>
 			</div>
 
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<h3 for="Adress" style="color:#8d7252;">Address *</h3>
-					<input type="text" name = "address" class="form-control" style="font-size:19px;" id="Address" value = "<?php echo $data['address'];?>">
+					<h3 for="Adress" style="color:#8d7252;">Address </h3>
+					<input type="text" name = "address" class="form-control" style="font-size:19px; border:none;" id="Address" value = "<?php echo $data['address'];?>" disabled>
 				</div>
 			</div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<h3 for="phone" style="color:#8d7252;">Phone *</h3>
-					<input type="text" name = "contact_num" class="form-control" style="font-size:19px;" id="phone" value = "<?php echo $data['contact_num'];?>">
+					<h3 for="phone" style="color:#8d7252;">Phone </h3>
+					<input type="text" name = "contact_num" class="form-control" style="font-size:19px; border:none;" id="phone" value = "<?php echo $data['contact_num'];?>" disabled>
 				</div>
 			</div>
 		
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<h3 for="Email" style="color:#8d7252;">Email *</h3>
-					<input type="email" name = "email" class="form-control"  style="font-size:19px;"id="Email" value = "<?php echo $data['email'];?>">
-				</div>
-			</div>
+			
 			<?php } ?>
 		</div>
 		<div class="row gutters">
@@ -141,7 +136,7 @@
                                     <a href="myorders.php"> <i class="fa fa-gift"></i> </a>
                                 </div>
                                 <div class="service-desc">
-                                    <h4>Your Orders</h4>
+                                    <h4>My Orders</h4>
                                     <p>Track, return, or Rent things again</p>
                                 </div>
                             </div>

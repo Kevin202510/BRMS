@@ -15,14 +15,12 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 2px solid #8d7252;
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
+
 </style>
     <!-- Start All Title Box -->
     <div class="all-title-box">
@@ -63,24 +61,21 @@ tr:nth-child(even) {
                             while ($data = mysqli_fetch_assoc($userLists)){
                         ?>
 
+<table>
+  <tr>
+    <th style="color:#EF9273; letter-spacing: 3px;">Fullname: <center> <input style="font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" disabled></th> </center>
+  </tr>
 
-                            <div class="row">
-                                <div class="col-md-12 mb-3">
-                             
-                                    <h2 for="fullname" style="color:#8d7252;">Fullname *
-                                   
-                                    <input style="text-align:center; font-size:19px;"  readonly id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" required></h2>
-                          
-                                </div>
-                            </div>
-                    
-                            <div class="mb-3">
-                                <h2 for="address" style="color:#8d7252;">Address *
-                                <input style="text-align:center; font-size:19px;"  readonly id="address" value="<?php echo $data['address'] ?>" required></h2>
-                            </div>
-                            <div class="mb-3">
-                                <h2 for="address2" style="color:#8d7252;">Contact Number *
-                                <input style="text-align:center; font-size:19px;"  readonly id="address2" value="<?php echo $data['contact_num'] ?>"> </h2></div>
+  <tr>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Address:  <center> <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="address" value="<?php echo $data['address'] ?>" disabled></th></center>
+  </tr>
+ 
+  <tr>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Contact: <center>   <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th></center>
+  </tr>
+ </table>
+
+                           
                             <?php }} ?>
                         </form>
                             

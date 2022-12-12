@@ -68,7 +68,7 @@
 
     if(isset($_POST['userId'])){
         $dataid = "user_id=" . $_POST['userId'];
-        $newDBCRUD->select("users","*",$dataid);
+        $newDBCRUD->selectleftjoin("users","permissions","permission_id","user_permission_id",$dataid);
         $getUser = $newDBCRUD->sql;
         $res = array();
         while($datass = mysqli_fetch_assoc($getUser)){
@@ -78,5 +78,18 @@
 
     }
 
+
+    if(isset($_POST['update_customer_walkin'])){
+        
+        $cwc_id = $_POST['cwc_id'];
+        $customer_walkin = $_POST["customer_walkin"];
+        $checkout_status = $_POST["checkout_status"];
+     
+  
+        $newDBCRUD->update('customer_walkin_checkout',['checkout_status'=>'1'],"cw_id='$cw_id'");
+      
+    }
+
+ 
 
 ?>

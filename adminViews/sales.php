@@ -33,8 +33,8 @@
   </div>   
         </div>
         <div class="card-body">
-        <table class="table table-dark table-hover">
-        <thead class="thead-light">
+        <table class="table table-bordered">
+        <thead>
       <tr>
       <th scope="col">#</th>
       <th scope="col">Full name</th>

@@ -18,18 +18,16 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-                  <h2  style=" font-family:poppins; color:#8d7252;">User List</h2>
+                  <h2  style=" font-family:poppins; color:#8d7252;">Costumer List</h2>
                </div>
             </div>
 
             <div class="card">
         <div class="card-header">
-            <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-toggle="modal" data-target="#usersModal">
-            Add User
-            </button>
+            
         </div>
         <div class="card-body">
-        <table class="table  table-bordered">
+        <table class="table">
                 <thead class="thead-light">
                     <tr>
                     <th scope="col">#</th>
@@ -45,7 +43,7 @@
                 <?php
                     include('../APIFUNCTION/DBCRUD.php');
                     $newDBCRUD = new DBCRUD();
-                    $newDBCRUD->select("users","*","user_permission_id!=2");
+                    $newDBCRUD->select("users","*","user_permission_id=2");
                     $userLists = $newDBCRUD->sql;
             
                     $index = 1;
@@ -59,15 +57,9 @@
                     <td><?php echo $data["email"]; ?></td>
                     <td><?php echo $data["username"]; ?></td>
                     <td>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-<<<<<<< HEAD
-                        <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['user_id']; ?>);">Edit</button>
-                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['user_id']; ?>);">Delete</button>
+                        <div class="btn-group" role="group" aria-label="Basic example">                     
+                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['user_id']; ?>);">Ban</button>
                             <button type="button" class="btn btn-success" onclick="showformview(<?php echo $data['user_id']; ?>);">view</button>
-=======
-                        <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" onclick="showform(<?php echo $data['user_id']; ?>);">Edit</button>
-                            <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" onclick="showformdelete(<?php echo $data['user_id']; ?>);">Delete</button>
->>>>>>> 27dee3304a271917b433a3cf4612abfd4f69adbb
                         </div>
                     </td>
                     </tr>

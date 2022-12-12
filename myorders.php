@@ -34,7 +34,7 @@
                         <div class="col-md-12 col-lg-12">
                             <div class="odr-box">
                                 <div class="title-left">
-                                   <center> <h3 style="color:#EF9273;">Your Orders</h3></center>
+                                   <center> <h3 style="color:#EF9273;">My Orders</h3></center>
                                 </div>
                                 <div class="rounded p-2 bg-light">
                                 <?php
