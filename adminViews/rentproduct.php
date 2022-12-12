@@ -62,6 +62,7 @@
                     <td><?php echo $data["customer_address"]; ?></td>
                     <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["customer_quantity"]; ?></td>
+                 
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button type="button" class="btn btn-success" onclick="showcheckoutform(<?php echo $data['cw_id']; ?>);">CheckOut</button>

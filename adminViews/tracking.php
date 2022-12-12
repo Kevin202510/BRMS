@@ -52,7 +52,7 @@
                 <?php
                     include('../APIFUNCTION/DBCRUD.php');
                     $newDBCRUD = new DBCRUD();
-                    $newDBCRUD->select213();
+                    $newDBCRUD-> select213();
                     $productsLists = $newDBCRUD->sql;
             
                     $index = 1;
