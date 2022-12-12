@@ -100,8 +100,11 @@
                                             <div class="small text-muted">Price: <?php echo $data["price"]; ?> <span class="mx-2">|</span> Qty: <?php echo $data["quantity"]; ?><span class="mx-2">|</span> Subtotal: <?php echo $data["price"] * $data["quantity"]; ?></div>
                                         </div>
                                     </div>
-
-                                    <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" id="placeorder" class="ml-auto btn hvr-hover" style="color:white;">Place Order</button></div>
+                                    <?php if($data['status']==2){ ?>
+                                        <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" class="ml-auto btn hvr-hover" style="color:white;">Out Of Stock</button></div>
+                                    <?php }else if($data['status']==0){ ?>
+                                        <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" id="placeorder" class="ml-auto btn hvr-hover" style="color:white;">Place Order</button></div>
+                                    <?php } ?>
                                     <?php }} ?>
                                 </div>
                             </div>
@@ -309,7 +312,7 @@
             data: $("#rentForms").serializeArray(),
             success: function(datas){
                 //alert("Work Saved Successfully");
-                location.reload();
+                // location.reload();
             },
         });
     });

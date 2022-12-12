@@ -203,19 +203,29 @@ if(isset($_POST['adduser'])){
                             </div>
                             <img src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-fluid" alt="Image">
                             <div class="mask-icon">
+                            <?php if($data['stocks']==0){ ?>
                                 <ul>
                                 <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                 </ul>
+                            <?php }else{ ?>
+                                <ul>
+                                <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                </ul>
+
                                 <?php if(isset($_SESSION['PERMISSION_ID'])){ ?>
                                     <a type="button" class="cart" data-id="<?php echo $data['product_id']; ?>" id="addtc">Add to Cart</a>
                                 <?php }else{ ?>
                                     <a type="button" class="cart" data-toggle = "modal" data-target="#loginsModal">Add to Cart</a>
-                                <?php } ?>
+                                <?php }} ?>
                             </div>
                         </div>
                         <div class="why-text">
                             <h4><?php echo $data['name']; ?></h4>
-                            <h4>Stocks: <?php echo $data['stocks']; ?></h4>
+                            <?php if($data['stocks']==0){ ?>
+                                <h4 style="color:red;">Out Of Stock</h4>
+                            <?php }else{ ?>
+                                <h4>Stocks: <?php echo $data['stocks']; ?></h4>
+                            <?php } ?>
                             <h5 style="color:white;">₱ <?php echo $data['price']; ?></h5>
                         </div>
                     </div>

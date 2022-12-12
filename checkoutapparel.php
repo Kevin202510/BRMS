@@ -27,7 +27,7 @@ if(isset($_POST['cart_id'])){
 
     $prods_id = $_POST['prods_id'];
 
-    $newDBCRUD->update('products',['stocks'=>$_POST['prod_stocks']],"product_id='$prods_id'");
+    $newDBCRUD->update('products',['stocks'=>$_POST["prod_stocks"]],"product_id='$prods_id'");
 
     if($newDBCRUD){
         return 1;
