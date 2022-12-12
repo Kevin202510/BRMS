@@ -2,8 +2,8 @@
 
 <aside class="main-sidebar hidden-print ">
          <section class="sidebar" id="sidebar-scroll">
+      
             <!-- Sidebar Menu-->
-            
             <ul class="sidebar-menu">
             <li class="nav-level" style="color:#8d7252;">----------------------ADMIN------------------------</li>
                 <li class="treeview">
@@ -23,21 +23,30 @@
                     </a>    
 
                     <a class="waves-effect waves-dark" href="productslist.php" >
-                        <i class="icon-list"></i><span> Apparel List</span>
+                    <i class="icon-tag"></i><span> Apparel List</span>
                     </a>    
 
                     <a class="waves-effect waves-dark" href="rentproduct.php">
                         <i class="icon-bag"></i><span> Rent Apparel</span>
                     </a>
                     <a class="waves-effect waves-dark" href="sales.php">
-                    <i class="icon-clothes"></i><span>Sales</span>
-                    </a>
+
+                    <i class="icon-chart"></i><span>Sales</span>
+                    </a>    
+
+                  
                     <a class="waves-effect waves-dark" href="tracking.php">
+<<<<<<< HEAD
                     <i class="icon-clothes"></i><span>Tracking Orders</span>
                     </a>   
                     <a class="waves-effect waves-dark" href="tracking_walkin.php">
                     <i class="icon-clothes"></i><span>Tracking walkin Orders</span>
                     </a>   
+=======
+                    <i class="icon-map"></i><span>Tracking Orders</span>
+                    </a>     
+>>>>>>> 27dee3304a271917b433a3cf4612abfd4f69adbb
+
 
                     <!-- <a class="waves-effect waves-dark" href="rentcheckout.php">
                         <i class="icon-bag"></i><span> CheckOut Rent</span>

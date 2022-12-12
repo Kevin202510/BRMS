@@ -14,10 +14,10 @@
                 <div class="col-lg-12">
                
                     <h2>Apparel</h2>
-                   
+                
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                        <li class="breadcrumb-item active"  style="color:white; ">Our Apparel</li>
+                        <li class="breadcrumb-item active"  style="color:white; ">Apparel</li>
                     </ul>
                 </div>
             </div>
@@ -194,7 +194,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background-color:#EF9273;">
-   <h2 class="modal-title" id="categoriesModalLabel" style="color:white; text-align:center;">Categories</h2>
+   <h2 class="modal-title" id="categoriesModalLabel" style="color:white; text-align:center; left: 180px;">Add to Cart</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -211,29 +211,29 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
-                    <h4 style="color:#8d7252; font-family:poppins">Product Name</h4>
-                    <input type="text" class="form-control" id="name"readonly>
+                    <h4 style="color:#8d7252; font-family:poppins">Apparel Name</h4>
+                    <input type="text" class="form-control"  style="font-size:19px;" id="name"readonly>
                 </div>
                 <div class="col-md-6">
-                <h4 style="color:#8d7252; font-family:poppins">Product price</h4>
-                    <input type="text" class="form-control" id="price" readonly>
+                <h4 style="color:#8d7252; font-family:poppins">Apparel price</h4>
+                    <input type="text" class="form-control"  style="font-size:19px;" id="price" readonly>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-md-12">
-                <h4 style="color:#8d7252; font-family:poppins">Product variation</h4>
+                <h4 style="color:#8d7252; font-family:poppins">Apparel Variation</h4>
 
                
 
-                    <input type="text" class="form-control" id="variation" readonly>
+                    <input type="text" class="form-control" style="font-size:19px;" id="variation" readonly>
                 </div>
             </div>
 
             <br>
             <div class="row">
             <div class="col-md-6">
-            <h4 style="color:#8d7252; font-family:poppins">Product description</h4>
+            <h4 style="color:#8d7252; font-family:poppins">Apparel description</h4>
                     <textarea id="description" cols="12" rows="5" readonly></textarea>
                 </div>
             </div>
@@ -246,8 +246,8 @@
             </div>
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success" id="addmotosacart">Add To Cart</button>
+        <button type="button" class="btn btn-success" style="background-color:#8d7252;" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success" style="background-color:#8d7252;" id="addmotosacart">Add To Cart</button>
       </div>
         </form>
       </div>

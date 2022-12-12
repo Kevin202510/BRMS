@@ -23,35 +23,35 @@
 
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Firstname:</h5>
-            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter Firstname">
+            <input type="text" class="form-control" style="font-size:18px;" id="fname" name="fname" placeholder="Enter Firstname">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Lastname:</h5>
-            <input type="text" class="form-control" id="lname" name="lname"  placeholder="Enter Lastname">
+            <input type="text" class="form-control" style="font-size:18px;" id="lname" name="lname"  placeholder="Enter Lastname">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;" for="Address" >Address:</h5>
-            <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address">
+            <input type="text" class="form-control" style="font-size:18px;" id="address" name="address" placeholder="Enter Address">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Contact:</h5>
-            <input type="text" class="form-control" id="contact_num" name="contact_num" placeholder="Enter Contact">
+            <input type="text" class="form-control" style="font-size:18px;" id="contact_num" name="contact_num" placeholder="Enter Contact">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Email:</h5>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+            <input type="email" class="form-control"style="font-size:18px;"  id="email" name="email" placeholder="Enter Email">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Username:</h5>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+            <input type="text" class="form-control" style="font-size:18px;" id="username" name="username" placeholder="Enter Username">
         </div>
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <input type="hidden" name="adduser" id="adduser">
         </form>
       </div>
-      <div class="modal-footer"  style="background-color:#EF9273;">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" style=" color:black;">Close</button>
-        <button type="button" class="btn btn-primary" id="saveBTN" style="color:white;">Save</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn" data-dismiss="modal"style="background-color:#8d7252; color:white;">Close</button>
+        <button type="button" class="btn btn" id="saveBTN" style="background-color:#8d7252; color:white;">Save</button>
       </div>
     </div>
   </div>

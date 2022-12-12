@@ -18,13 +18,13 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-               <h2  style=" font-family:poppins; color:#8d7252; ">Products List</h2><br>
+               <h2  style=" font-family:poppins; color:#8d7252; ">Apparel List</h2><br>
                </div>
             </div>
         <div class="card">
         <div class="card-header">
             
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#productsModal">
+            <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-toggle="modal" data-target="#productsModal">
             Add New Product
             </button>
         </div>

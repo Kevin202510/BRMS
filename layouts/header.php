@@ -1,4 +1,3 @@
-
 <div class="main-top">
         <div class="container-fluid">
             <div class="row">
@@ -9,9 +8,9 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                    
-                            <li><a href="#"><i class="fas fa-location-arrow"></i>location</a></li>
-                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+
+                            <li><a href="#"><i class=""></i></a></li>
+                            <li><a href="contactpage.php"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div> 
@@ -54,7 +53,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand"><img src="images/logo5.jpg" class="logo" alt=""></a>
+                    <a class="navbar-brand"><img src="images/sure.jpg" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -66,7 +65,7 @@
                        
                      <li>   
                     <a href="shop.php" class="ml-auto btn " style="color:#8d7252;">Apparel</a>
-                    <a href="cart.php" class="ml-auto btn "style="color:#8d7252;">Cart</a>
+                    
                     <a href="checkout.php" class="ml-auto btn "style="color:#8d7252;">Checkout</a>
                     
 </li>
@@ -89,7 +88,7 @@
                 <div class="attr-nav">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
      
-                        <li class="search"><a style="color: #EF9273; ;" href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="search"><a style="color: #EF9273; ;" href="#"><i class=""></i></a></li>
 </ul>
 </div>
 <?php if(isset($_SESSION['PERMISSION_ID'])){

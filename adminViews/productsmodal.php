@@ -17,11 +17,11 @@
         <br>
         <br>
         <div class="form-group">
-            <h5 style="color:#8d7252;  font-family:poppins;">Enter Apparel Name</h5>
-            <input type="text"  class="form-control" id="name" name="name">
+            <h5 style="color:#8d7252;  font-family:poppins;">Enter Apparel Name:</h5>
+            <input type="text"  class="form-control" style="font-size:18px;" id="name" name="name">
         </div>
         <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;"> Enter Category</h5>
+        <h5 style="color:#8d7252;  font-family:poppins;"> Enter Category:</h5>
             <select name="category_id" id="category_id">
               <option value=""selected disabled hidden> Categories</option>
                 <?php  $newDBCRUD->select("categories","*");
@@ -35,16 +35,16 @@
         </div>
         
         <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Enter Price</h5>
-            <input type="number" class="form-control" id="price" name="price">
+        <h5 style="color:#8d7252;  font-family:poppins;">Enter Price:</h5>
+            <input type="number" class="form-control" style="font-size:18px;" id="price" name="price">
         </div>
         <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Enter Stocks</h5>
-            <input type="number"  class="form-control" id="stocks" name="stocks">
+        <h5 style="color:#8d7252;  font-family:poppins;">Enter Stocks:</h5>
+            <input type="number"  class="form-control"  style="font-size:18px;"id="stocks" name="stocks">
         </div>
         <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Enter Description</h5>
-            <input type="text" class="form-control" id="description" name="description">
+        <h5 style="color:#8d7252;  font-family:poppins;">Enter Description:</h5>
+            <input type="text" class="form-control" style="font-size:18px;" id="description" name="description">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Pick Variation</h5>
@@ -56,7 +56,7 @@
       </select>
                     </div>
         <input type="hidden" name="addproducts" id="addproducts">
-        <div class="modal-footer"style="background-color:#EF9273;">
+        <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Save</button>
         </div>
