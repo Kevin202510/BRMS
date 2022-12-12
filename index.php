@@ -27,36 +27,121 @@
  
         
     }
-?>
-<?php
 
-if(isset($_POST['adduser'])){
-    
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
-    $address = $_POST["address"];
-    $contact_num = $_POST["contact_num"];
-    $email = $_POST["email"];
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $user_permission_id = $_POST["user_permission_id"];
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-    $newDBCRUD->insert('users',['user_permission_id'=>$user_permission_id,
-    'fname'=>$fname,
-    'lname'=>$lname,
-    'address'=>$address,
-    'contact_num'=>$contact_num,
-    'email'=>$email,
-    'username'=>$username,'password'=>$password]);
+require 'vendor/autoload.php';
 
-    if($newDBCRUD){
-        //echo "<script>alert('Succes');</script>";
-        header("location:index.php");
-    }else{
-        return 0;
+        if (isset($_POST['register'])) {
+
+            $fname = $_POST["fname"];
+            $lname = $_POST["lname"];
+            $address = $_POST["address"];
+            $contact_num = $_POST["contact_num"];
+            $email = $_POST["email"];
+            $username = $_POST["username"];
+            $password = $_POST["password"];
+            $user_permission_id = $_POST["user_permission_id"];
+
+            $mail = new PHPMailer(true);
+
+    try {
+        //Enable verbose debug output
+        $mail->SMTPDebug = 0;//SMTP::DEBUG_SERVER;
+
+        //Send using SMTP
+        $mail->isSMTP();
+
+        //Set the SMTP server to send through
+        $mail->Host = 'smtp.gmail.com';
+
+        //Enable SMTP authentication
+        $mail->SMTPAuth = true;
+
+        //SMTP username
+        $mail->Username = 'jp145572@gmail.com';
+
+        //SMTP password
+        $mail->Password = 'aimeupnhjmpmxypf';
+
+        //Enable TLS encryption;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+
+        //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        $mail->Port = 587;
+
+        //Recipients
+        $mail->setFrom('jp145572@gmail.com', 'Boutique Rental System');
+
+        //Add a recipient
+        $mail->addAddress($email, $fname);
+
+        //Set email format to HTML
+        $mail->isHTML(true);
+
+        $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+
+        $mail->Subject = 'Email verification';
+        $mail->Body    = '<p>Your verification code is: <b style="font-size: 30px;">' . $verification_code . '</b><a href="http://localhost/palasresort/email-verification.php?email="' . $email.'">VERIFY MY ACCOUNT</a></p>';
+
+        $mail->send();
+        // echo 'Message has been sent';
+
+        // $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
+
+        $newDBCRUD->insert('users',['user_permission_id'=>$user_permission_id,
+        'fname'=>$fname,
+        'lname'=>$lname,
+        'address'=>$address,
+        'contact_num'=>$contact_num,
+        'email'=>$email,
+        'verification_code'=>$verification_code,
+        'username'=>$username,'password'=>$password]);
+
+        if($newDBCRUD){
+            echo "<script>alert('Sucess Fully To Create Account');</script>";
+            header('location: login.php' );
+            
+        }else{
+            echo "<script>alert('May Error!'');</script>";
+   
     }
 
-}
+        exit();
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+    }
+
+// if(isset($_POST['adduser'])){
+    
+//     $fname = $_POST["fname"];
+//     $lname = $_POST["lname"];
+//     $address = $_POST["address"];
+//     $contact_num = $_POST["contact_num"];
+//     $email = $_POST["email"];
+//     $username = $_POST["username"];
+//     $password = $_POST["password"];
+//     $user_permission_id = $_POST["user_permission_id"];
+
+//     $newDBCRUD->insert('users',['user_permission_id'=>$user_permission_id,
+//     'fname'=>$fname,
+//     'lname'=>$lname,
+//     'address'=>$address,
+//     'contact_num'=>$contact_num,
+//     'email'=>$email,
+//     'username'=>$username,'password'=>$password]);
+
+//     if($newDBCRUD){
+//         //echo "<script>alert('Succes');</script>";
+//         header("location:index.php");
+//     }else{
+//         return 0;
+//     }
+
+// }
 
 
 ?>
