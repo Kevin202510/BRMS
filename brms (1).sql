@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 10:30 AM
+-- Generation Time: Dec 12, 2022 at 04:17 PM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,14 +34,6 @@ CREATE TABLE `cart` (
   `quantity` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `quantity`, `status`) VALUES
-(79, 44, 60, 10, '1'),
-(80, 44, 59, 4, '0');
 
 -- --------------------------------------------------------
 
@@ -78,15 +70,9 @@ CREATE TABLE `checkout` (
   `checkout_amount` float NOT NULL,
   `checkout_payments` float NOT NULL,
   `checkout_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `checkout_time` timestamp NOT NULL DEFAULT current_timestamp()
+  `checkout_rent_date` varchar(50) NOT NULL,
+  `checkout_rent_return_date` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `checkout`
---
-
-INSERT INTO `checkout` (`checkout_id`, `checkout_cart_id`, `checkout_user_id`, `checkout_amount`, `checkout_payments`, `checkout_date`, `checkout_time`) VALUES
-(14, 79, 44, 11000, 12000, '2022-12-11 06:29:24', '2022-12-11 06:29:24');
 
 -- --------------------------------------------------------
 
@@ -115,9 +101,20 @@ CREATE TABLE `customer_walkin_checkout` (
   `cwc_customer_id` int(11) NOT NULL,
   `total_checkout_amount` float DEFAULT NULL,
   `checkout_payment` float NOT NULL,
-  `checkout_Date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `checkout_Time` timestamp NOT NULL DEFAULT current_timestamp()
+  `checkout_Date` varchar(50) DEFAULT NULL,
+  `checkout_rent_date` varchar(50) NOT NULL,
+  `checkout_rent_return_date` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customer_walkin_checkout`
+--
+
+INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `total_checkout_amount`, `checkout_payment`, `checkout_Date`, `checkout_rent_date`, `checkout_rent_return_date`) VALUES
+(3, 42, 800, 1500, '2022-12-11', '', ''),
+(4, 43, 2000, 2001, '2022-12-11', '', ''),
+(8, 46, 300, 1500, '2022-12-11', '2022-12-11', '2022-12-11'),
+(11, 47, 3000, 5000, '2022-12-11', '2022-12-17', '2022-12-13');
 
 -- --------------------------------------------------------
 
@@ -161,7 +158,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `image`, `name`, `price`, `variation`, `stocks`, `category_id`, `description`) VALUES
-(59, 'bar10.jpg', 'Filipiniana Handmade Pinilian Yellow Jumpsuit', 1000, 'small', 10, 10, 'Filipiniana Handmade Pinilian Yellow Jumpsuit'),
+(59, 'bar10.jpg', 'Filipiniana Handmade Pinilian Yellow Jumpsuit', 1000, 'small', 0, 10, 'Filipiniana Handmade Pinilian Yellow Jumpsuit'),
 (60, 'bar11.jpg', 'Filipiniana Handmade Pinilian Dress ', 1100, 'small', 0, 10, 'Filipiniana Handmade Pinilian Dress '),
 (61, 'bar12.jpg', 'Filipiniana Handmade Pinilian Dress', 900, 'medium', 9, 10, 'Filipiniana Handmade Pinilian Dress'),
 (62, 'bar14.jpg', 'Filipiniana Handmade Pinilian Bolero ', 650, 'small', 8, 10, 'Filipiniana Handmade Pinilian Bolero '),
@@ -241,6 +238,25 @@ CREATE TABLE `tracking_orders` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tracking_orders_customer_walkin_checkout`
+--
+
+CREATE TABLE `tracking_orders_customer_walkin_checkout` (
+  `tocw_id` int(11) NOT NULL,
+  `tocw_checkout_id` int(11) NOT NULL,
+  `tocw_status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tracking_orders_customer_walkin_checkout`
+--
+
+INSERT INTO `tracking_orders_customer_walkin_checkout` (`tocw_id`, `tocw_checkout_id`, `tocw_status`) VALUES
+(1, 2, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -261,8 +277,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_permission_id`, `fname`, `lname`, `address`, `contact_num`, `email`, `username`, `password`) VALUES
-(27, 1, 'Gil', 'Bulacan', 'Concepcion', '09261364720', 'gilscreation@gmail.com', 'hi', 'admin'),
-(44, 2, 'Kevin ', 'Caluag', 'Bago general tinio ne', '09261364720', 'kfc202510@gmail.com', 'kev20', 'password');
+(27, 1, 'Gil', 'Bulacan', 'Concepcion', '09261364720', 'gilscreation@gmail.com', 'hi', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -338,6 +353,13 @@ ALTER TABLE `tracking_orders`
   ADD KEY `to_checkout_id` (`to_checkout_id`);
 
 --
+-- Indexes for table `tracking_orders_customer_walkin_checkout`
+--
+ALTER TABLE `tracking_orders_customer_walkin_checkout`
+  ADD PRIMARY KEY (`tocw_id`),
+  ADD KEY `tocw_foreign_key_checkout_cw` (`tocw_checkout_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -354,7 +376,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -366,7 +388,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `customer_walkin`
@@ -378,7 +400,7 @@ ALTER TABLE `customer_walkin`
 -- AUTO_INCREMENT for table `customer_walkin_checkout`
 --
 ALTER TABLE `customer_walkin_checkout`
-  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -411,10 +433,16 @@ ALTER TABLE `tracking_orders`
   MODIFY `tracking_orders_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tracking_orders_customer_walkin_checkout`
+--
+ALTER TABLE `tracking_orders_customer_walkin_checkout`
+  MODIFY `tocw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Constraints for dumped tables
@@ -439,12 +467,6 @@ ALTER TABLE `checkout`
 --
 ALTER TABLE `customer_walkin`
   ADD CONSTRAINT `cw_id` FOREIGN KEY (`customer_product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `customer_walkin_checkout`
---
-ALTER TABLE `customer_walkin_checkout`
-  ADD CONSTRAINT `cw_check_id` FOREIGN KEY (`cwc_customer_id`) REFERENCES `customer_walkin` (`cw_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `products`
