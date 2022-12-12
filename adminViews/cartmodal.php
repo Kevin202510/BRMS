@@ -46,7 +46,7 @@
         <input type="hidden" name="rentmodal" id="rentmodal">
         </form>
       </div>
-      <div class="modal-footer"style="background-color:#EF9273;">
+      <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="saveBTN">Save</button>
       </div>

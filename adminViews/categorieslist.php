@@ -25,12 +25,12 @@
             <div class="card">
         <div class="card-header">
             
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#categoriesModal">
-            Add New Data
+            <button type="button" class="btn btn"  style="background-color:#8d7252; color:white;" data-toggle="modal" data-target="#categoriesModal">
+            Add Categories
             </button>
         </div>
         <div class="card-body">
-        <table class="table">
+        <table class="table  table-bordered">
                 <thead class="thead-light">
                     <tr>
                     <th scope="col">#</th>
@@ -53,8 +53,8 @@
                     <td><?php echo $data["cat_name"]; ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['category_id']; ?>);">Edit</button>
-                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['category_id']; ?>);">Delete</button>
+                            <button type="button" class="btn btn" style="background-color:#8d7252; color:white;"onclick="showform(<?php echo $data['category_id']; ?>);">Edit</button>
+                            <button type="button" class="btn btn"style="background-color:#8d7252; color:white;" onclick="showformdelete(<?php echo $data['category_id']; ?>);">Delete</button>
                         </div>
                     </td>
                     </tr>

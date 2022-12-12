@@ -7,7 +7,21 @@
     <!-- Start Top Search -->
     <?php include('layouts/searchbar.php');?>    
     <!-- End Top Search -->
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+td, th {
+  border: 2px solid #8d7252;
+  text-align: left;
+  padding: 8px;
+}
+
+
+</style>
     <!-- Start All Title Box -->
     <div class="all-title-box">
         <div class="container">
@@ -25,14 +39,14 @@
     <!-- End All Title Box -->
 
     <!-- Start Cart  -->
-    <div class="cart-box-main">
+    <div class="cart-box-main" style="background-color:white">
         <div class="container">
             
             <div class="row">
                 <div class="col-sm-6 col-lg-6 mb-3"> 
                     <div class="checkout-address">
                         <div class="title-left">
-                            <center><h2 style="color:#EF9273;">Customer Information</h2></center>
+                            <center><h1 style="color:#EF9273;m">Customer Information</h1></center>
                         </div>          
                         <form class="needs">
                         <?php
@@ -46,20 +60,22 @@
                             $index = 1;
                             while ($data = mysqli_fetch_assoc($userLists)){
                         ?>
-                            <div class="row">
-                                <div class="col-md-12 mb-3">
-                                    <h4 for="firstName" style="color:#8d7252;">Fullname *</h4>
-                                    <input type="text" style="text-align:center;" class="form-control" readonly id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" required>
-                                </div>
-                            </div>
-                    
-                            <div class="mb-3">
-                                <h4 for="address" style="color:#8d7252;">Address *</h4>
-                                <input type="text" style="text-align:center;" class="form-control" readonly id="address" value="<?php echo $data['address'] ?>" required>
-                            </div>
-                            <div class="mb-3">
-                                <h4 for="address2" style="color:#8d7252;">Contact Number *</h4>
-                                <input type="text" style="text-align:center;" class="form-control" readonly id="address2" value="<?php echo $data['contact_num'] ?>"> </div>
+
+<table>
+  <tr>
+    <th style="color:#EF9273; letter-spacing: 3px;">Fullname: <input style="font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" disabled></th> 
+  </tr>
+
+  <tr>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Address: <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="address" value="<?php echo $data['address'] ?>" disabled></th>
+  </tr>
+ 
+  <tr>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Contact  <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th>
+  </tr>
+ </table>
+
+                           
                             <?php }} ?>
                         </form>
                             
@@ -77,7 +93,7 @@
                         <div class="col-md-12 col-lg-12">
                             <div class="odr-box">
                                 <div class="title-left">
-                                   <center> <h3 style="color:#EF9273;">Your Orders</h3></center>
+                                   <center> <h1 style="color:#EF9273;">Your Orders</h1></center>
                                 </div>
                                 <div class="rounded p-2 bg-light">
                                 <?php
@@ -97,20 +113,26 @@
                                 ?>
                                     <div class="media mb-2 border-bottom">
                                         <div class="media-body"> <a href="#"><?php echo $data["name"]; ?></a>
-                                            <div class="small text-muted">Price: <?php echo $data["price"]; ?> <span class="mx-2">|</span> Qty: <?php echo $data["quantity"]; ?><span class="mx-2">|</span> Subtotal: <?php echo $data["price"] * $data["quantity"]; ?></div>
+                                            <h1><div class="small text-muted">Price: <?php echo $data["price"]; ?> <span class="mx-2">|</span> Qty: <?php echo $data["quantity"]; ?><span class="mx-2">|</span> Subtotal: <?php echo $data["price"] * $data["quantity"]; ?></div></h1>
                                         </div>
                                     </div>
 
                                     <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" id="placeorder" class="ml-auto btn hvr-hover" style="color:white;">Place Order</button></div>
+                                    
+                                    
                                     <?php }} ?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-12">
+
+                       
+                                
                             <div class="order-box">
                                 <div class="d-flex">
                             
                                 </div>
+
                                 <hr class="my-1">
                                 <div class="d-flex gr-total">
                                     <h5>Grand Total: </h5>
@@ -253,7 +275,7 @@
 </div>
 
 
-
+<link rel="stylesheet" href="css/style.css">
     <!-- Start Instagram Feed  -->
    
     <!-- End Instagram Feed  -->
@@ -261,9 +283,7 @@
     
 
 
-    <!-- Start Footer  -->
    
-     <!-- end footer -->
 
      <script>
      
@@ -315,3 +335,5 @@
     });
      
      </script>
+
+ 

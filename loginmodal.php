@@ -26,7 +26,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1" style="background-color:#EF9273; color:white;"><i class="fas fa-user"></i></span>
               </div>
-             <input  class="input form-control" name="email" type="text" placeholder="Email" required="true" aria-label="Email" aria-describedby="basic-addon1">
+             <input  class="input form-control" style="font-size:19px;" name="email" type="text" placeholder="Email" required="true" aria-label="Email" aria-describedby="basic-addon1">
             </div>
           </div>
         
@@ -37,9 +37,9 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"style="background-color:#EF9273; color:white;"><i class="fas fa-lock"></i></span>
               </div>
-              <input name="password" type="password" value="" class="input form-control" id="password" placeholder="Password" required="true" aria-label="password" aria-describedby="basic-addon1" />
+              <input name="password" type="password" value="" class="input form-control" style="font-size:19px;" id="password" placeholder="Password" required="true" aria-label="password" aria-describedby="basic-addon1" />
               <div class="input-group-append">
-                <span class="input-group-text"style="background-color:#EF9273; color:white;" onclick="password_show_hide();">
+                <span class="input-group-text" style="background-color:#EF9273; color:white;" onclick="password_show_hide();">
                   <i class="fas fa-eye" id="show_eye"></i>
                   <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
                 </span>
@@ -48,9 +48,9 @@
           </div>
         <div class="col">
            <div class="forgot-link">
-            <a href="#forgot-password" data-toggle="modal" data-target="#forgot-password"style="color:#8d7252;"> I forgot my password</a>
+           
             </div>
-</div>
+          </div>
             
 
             <!-- Button -->
@@ -101,7 +101,7 @@
         </div>
          <div class="col">
          <div class="group">
-         <input type="number" class="input" id="contact_num" name="contact_num" required="true" >
+         <input type="text" class="input" id="contact_num" name="contact_num" required="true" >
         <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Contact:</label> </div>
 
         </div>
@@ -119,14 +119,15 @@
         <div class="row">
         <div class="col">
         <div class="group">
-        <input type="text" class="input" id="username" name="username" required="true" >
-        <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Username:</label>
+        <input type="password" class="input" id="password" name="password" required="true" >
+        <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Password:</label> </div>
+        <!-- <input type="text" class="input" id="username" name="username" required="true" >
+        <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Username:</label> -->
             </div>
         </div>
         <div class="col">
          <div class="group">
-         <input type="password" class="input" id="password" name="password" required="true" >
-        <label class="label" for="date" style="color:#8d7252;  font-family:poppins;">Password:</label> </div>
+         
             
         </div>
 </div>
@@ -155,35 +156,6 @@
   
    
 
-<!--modal2-->
-
-<div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-        <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Password will be sent to your email</h4>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal">
-        <fieldset>
-        <div class="group">
-<input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-    <label class="label" for="date">Email address</label></div>
-        
-        
-        <div class="control-group">
-              <label class="control-label" for="forpassword"></label>
-              <div class="controls">
-                <button id="forpasswodr" name="forpassword" class="btn btn-primary btn-block">Send</button>
-              </div>
-            </div>
-          </fieldset>
-            </form>
-          
-      </div>
-    </div>
-    
   </div>
 </div>
 

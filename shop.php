@@ -8,16 +8,22 @@
     <!-- Start Top Search -->
     <?php include('layouts/searchbar.php');?>   
     <!-- Start All Title Box -->
+
+    <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="scriptquantity.css">
+    <script src="script.js"></script>
+
+
     <div class="all-title-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                
                     <h2>Apparel</h2>
-                   
+                
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                        <li class="breadcrumb-item active"  style="color:white; ">Our Apparel</li>
+                        <li class="breadcrumb-item active"  style="color:white; ">Apparel</li>
                     </ul>
                 </div>
             </div>
@@ -194,7 +200,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background-color:#EF9273;">
-   <h2 class="modal-title" id="categoriesModalLabel" style="color:white; text-align:center;">Categories</h2>
+   <h2 class="modal-title" id="categoriesModalLabel" style="color:white; text-align:center; left: 180px;">Add to Cart</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -211,43 +217,40 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
-                    <h4 style="color:#8d7252; font-family:poppins">Product Name</h4>
-                    <input type="text" class="form-control" id="name"readonly>
+                    <h4 style="color:#8d7252; font-family:poppins">Apparel Name</h4>
+                    <span type="text" class="form-control"  style="font-size:19px; border:none; background-color:transparent;" id="name" disabled></span>
                 </div>
                 <div class="col-md-6">
-                <h4 style="color:#8d7252; font-family:poppins">Product price</h4>
-                    <input type="text" class="form-control" id="price" readonly>
+                <h4 style="color:#8d7252; font-family:poppins">Apparel price</h4>
+                    <input type="text" class="form-control"  style="font-size:19px; border:none; background-color:transparent;" id="price" disabled>
                 </div>
             </div>
             <br>
+           <br>
+            <div class="form-group">
             <div class="row">
-                <div class="col-md-12">
-                <h4 style="color:#8d7252; font-family:poppins">Product variation</h4>
+                <div class="col-md-6">
+                <h4 style="color:#8d7252; font-family:poppins">Apparel Variation</h4>
 
-               
-
-                    <input type="text" class="form-control" id="variation" readonly>
+                    <input type="text" class="form-control" style="font-size:19px; border:none; background-color:transparent;" id="variation" disabled>
                 </div>
-            </div>
-
-            <br>
-            <div class="row">
             <div class="col-md-6">
-            <h4 style="color:#8d7252; font-family:poppins">Product description</h4>
-                    <textarea id="description" cols="12" rows="5" readonly></textarea>
+            <h4 style="color:#8d7252; font-family:poppins">Apparel description</h4>
+                    <span style = "border:none; background-color:transparent; width: 100%;" id="description" cols="12" rows="5" disabled></span>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
-                    <input type="number" class="form-control" min="1" step="1"  id="quantity" name="quantity">
-                </div>
-            </div>
         </div>
+                <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
+                <div class="input-group">
+  <input type="button" value="-" class="button-minus" data-field="quantity">
+  <input type="number" step="1" max="" value="1" name="quantity" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" disabled>
+  <input type="button" value="+" class="button-plus" data-field="quantity">
+</div>
+               
+                
+           
         <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success" id="addmotosacart">Add To Cart</button>
+        <button type="button" class="btn btn" style="background-color:#8d7252; color:white" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn" style="background-color:#8d7252;color:white" id="addmotosacart">Add To Cart</button>
       </div>
         </form>
       </div>
@@ -264,10 +267,10 @@
                 let newdata = JSON.parse(data);
                 $("#product_id").val(newdata.product_id);
                 $("#image").val(newdata.image);
-                $("#name").val(newdata.name);
+                $("#name").text(newdata.name);
                 $("#price").val(newdata.price);
                 $("#variation").val(newdata.variation);
-                $("#description").val(newdata.description);
+                $("#description").text(newdata.description);
                 $("#quantity").attr({"max":newdata.stocks});
             })
 
@@ -354,6 +357,7 @@
 
     
 </script>
+<script src="js/addminus.js"></script>
 
 
     

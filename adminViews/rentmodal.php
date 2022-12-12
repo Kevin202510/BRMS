@@ -13,16 +13,16 @@
         <input type="hidden" id="cw_id" name="cw_id">
         <input type="hidden" id="id" name="id">
         <div class="form-group">
-            <label >First Name</label>
-            <input type="text" class="form-control" id="customer_fname" name="customer_fname" placeholder="Enter First Name">
+            <label>First Name</label>
+            <input type="text" class="form-control" style="font-size:19px;" id="customer_fname" name="customer_fname" placeholder="Enter First Name">
         </div>
         <div class="form-group">
             <label >Last Name</label>
-            <input type="text" class="form-control" id="customer_lname" name="customer_lname" placeholder="Enter Last Name">
+            <input type="text" class="form-control" style="font-size:19px;" id="customer_lname" name="customer_lname" placeholder="Enter Last Name">
         </div>
         <div class="form-group">
             <label >Address</label>
-            <input type="text" class="form-control" id="customer_address" name="customer_address" placeholder="Enter ">
+            <input type="text" class="form-control"  style="font-size:19px;" id="customer_address" name="customer_address" placeholder="Enter ">
         </div>
        
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
@@ -30,8 +30,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="saveBTN">Save</button>
+        <button type="button" class="btn btn" style="background-color:#8d7252; color:white;"data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn"  style="background-color:#8d7252; color:white;"id="saveBTN">Save</button>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <h3>ARE YOU SURE YOU WANT TO DELETE THIS ?</h3>
+        <h3 style="color:#8d7252;">ARE YOU SURE YOU WANT TO DELETE THIS ?</h3>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

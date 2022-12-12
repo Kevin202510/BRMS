@@ -18,14 +18,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>Boutique Rental</title>
+    <title>Gil's Creation</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/fab.jpg">
+    <!-- <link rel="shortcut icon" href="images/png" type="image/png"> -->
+    <link rel="icon" href="images/log1.png" type="image/png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/loginmodal.css">
     <link rel="stylesheet" href="css/customerprofile.css">
+    
     
 		<!-- <link rel="stylesheet" href="css/styless.css"> -->
 
