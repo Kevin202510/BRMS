@@ -151,5 +151,5 @@
 
             $this->sql = $result = $this->mysqli->query($sql);
         }
-    }
+    }g
 ?>
