@@ -60,6 +60,12 @@
             $this->sql = $result = $this->mysqli->query($sql);
         }
 
+        public function updateStatus(){
+            $sql ="UPDATE cart set status=2";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
+
 
         public function selectleftjoin($table,$table1,$attributename,$attributename1,$where = null){
 
@@ -85,7 +91,7 @@
         }
 
         public function selectleftjoin23($myid){
-            $sql = "SELECT * FROM `cart` LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id LEFT JOIN categories ON categories.category_id = products.category_id WHERE cart_user_id=$myid";
+            $sql = "SELECT * FROM `cart` LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id LEFT JOIN categories ON categories.category_id = products.category_id WHERE cart.status=1 AND cart_user_id=$myid";
 
             $this->sql = $result = $this->mysqli->query($sql);
         }

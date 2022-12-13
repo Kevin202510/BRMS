@@ -107,6 +107,7 @@ td, th {
                                     $total = 0;
                                     // var_dump(json_encode($userLists));
                                     while ($data = mysqli_fetch_assoc($userLists)){
+                                    if($data['status']==2 || $data['status']==0){
                                     $price1 = (int)$data["price"];
                                     $quantity = (int)$data["quantity"];
                                     $total += $price1*$quantity;
@@ -120,8 +121,12 @@ td, th {
                                         <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" class="ml-auto btn hvr-hover" style="color:white;">Out Of Stock</button></div>
                                     <?php }else if($data['status']==0){ ?>
                                         <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" id="placeorder" class="ml-auto btn hvr-hover" style="color:white;">Place Order</button></div>
-                                    <?php } ?>
-                                    <?php }} ?>
+                                    <?php }}else{ ?>
+                                        <div class="media mb-2 border-bottom">
+                                            <div class="media-body"> <a href="#">NO CHECKOUT AVAILABLE</a>
+                                            </div>
+                                        </div>
+                                    <?php } } }?>
                                 </div>
                             </div>
                         </div>
@@ -260,36 +265,18 @@ td, th {
 
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Rent Date</label>
-            <input class="form-control" id="checkout_rent_date" name="checkout_rent_date">
+            <input type="date" class="form-control" id="checkout_rent_date" name="checkout_rent_date">
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Return Date</label>
-            <input class="form-control" id="checkout_rent_return_date" name="checkout_rent_return_date">
+            <input type="date" class="form-control" id="checkout_rent_return_date" name="checkout_rent_return_date">
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Delivery Address And Contact Number</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="delivery_description" rows="3"></textarea>
         </div>
-
-        
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Delivery Address And Contact Number</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="delivery_description" rows="3"></textarea>
-        </div>
-
-        <!-- <div class="form-row">
-        <div class="form-group col-md-6">
-            <label >Payment</label>
-            <input type="text" class="form-control" id="app_pay" name="app_pay">
-        </div>
-        <div class="form-group col-md-6">
-            <label >Change</label>
-            <input type="text" class="form-control" id="app_change" readonly>
-        </div>
-        </div> -->
-        <!-- <input type="hidden" name="checkthisout"> -->
         </form>
       <!-- </div> -->
       <div class="modal-footer">
@@ -348,7 +335,7 @@ td, th {
     $("#saveBTNs").click(function(e){
 
         e.preventDefault();
-
+        
         $.ajax({
             type: "POST",
             url: "checkoutapparel.php",

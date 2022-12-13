@@ -42,9 +42,8 @@
                     <th scope="col">Apparel Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
-                    <th scope="col">checkout Amount</th>
-                    <th scope="col">checkout Date</th>
-                    <th scope="col">checkout Time</th>
+                    <th scope="col">CheckOut Amount</th>
+                    <th scope="col">CheckOut Date</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
