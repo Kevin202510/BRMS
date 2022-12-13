@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2022 at 06:43 PM
+-- Generation Time: Dec 13, 2022 at 08:55 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -87,7 +87,7 @@ CREATE TABLE `checkout` (
 --
 
 INSERT INTO `checkout` (`checkout_id`, `checkout_cart_id`, `checkout_amount`, `checkout_payments`, `checkout_date`, `checkout_rent_date`, `checkout_rent_return_date`, `delivery_description`, `transaction_mode`) VALUES
-(21, 90, 3250, NULL, '2022-12-13 17:27:41', '2022-12-14', '2022-12-16', 'gfghdgdssdfgsf', 1);
+(21, 90, 3250, 3250, '2022-12-13 17:27:41', '2022-12-14', '2022-12-16', 'gfghdgdssdfgsf', 1);
 
 -- --------------------------------------------------------
 
@@ -104,6 +104,13 @@ CREATE TABLE `customer_walkin` (
   `customer_quantity` int(11) NOT NULL,
   `checkout_status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customer_walkin`
+--
+
+INSERT INTO `customer_walkin` (`cw_id`, `customer_fname`, `customer_lname`, `customer_address`, `customer_product_id`, `customer_quantity`, `checkout_status`) VALUES
+(50, 'Kevin', 'Customer', 'asdasdasd', 97, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -126,8 +133,7 @@ CREATE TABLE `customer_walkin_checkout` (
 --
 
 INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `total_checkout_amount`, `checkout_payment`, `checkout_Date`, `checkout_rent_date`, `checkout_rent_return_date`) VALUES
-(20, 48, 3000, 6000, '', '2022-12-20', '2022-12-22'),
-(21, 49, 1000, 1200, '', '2022-12-17', '2022-12-19');
+(22, 50, 1300, 1301, '', '2022-12-14', '2022-12-16');
 
 -- --------------------------------------------------------
 
@@ -235,8 +241,7 @@ CREATE TABLE `tracking_orders_customer_walkin_checkout` (
 --
 
 INSERT INTO `tracking_orders_customer_walkin_checkout` (`tocw_id`, `tocw_checkout_id`, `tocw_status`) VALUES
-(9, 48, 0),
-(10, 49, 0);
+(12, 50, 0);
 
 -- --------------------------------------------------------
 
@@ -380,13 +385,13 @@ ALTER TABLE `checkout`
 -- AUTO_INCREMENT for table `customer_walkin`
 --
 ALTER TABLE `customer_walkin`
-  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `customer_walkin_checkout`
 --
 ALTER TABLE `customer_walkin_checkout`
-  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -422,7 +427,7 @@ ALTER TABLE `tracking_orders`
 -- AUTO_INCREMENT for table `tracking_orders_customer_walkin_checkout`
 --
 ALTER TABLE `tracking_orders_customer_walkin_checkout`
-  MODIFY `tocw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `tocw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -452,6 +457,12 @@ ALTER TABLE `checkout`
 --
 ALTER TABLE `customer_walkin`
   ADD CONSTRAINT `cw_id` FOREIGN KEY (`customer_product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `customer_walkin_checkout`
+--
+ALTER TABLE `customer_walkin_checkout`
+  ADD CONSTRAINT `custo_id_walk` FOREIGN KEY (`cwc_customer_id`) REFERENCES `customer_walkin` (`cw_id`);
 
 --
 -- Constraints for table `products`
