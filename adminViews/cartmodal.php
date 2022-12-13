@@ -110,19 +110,19 @@
             <input type="text" class="form-control"  readonly id="customer_quantitys">
         </div>
         
-        <div class="form-group col-md-6">
+        <!-- <div class="form-group col-md-6">
             <label >Checkout Date</label>
             <input type="date" class="form-control" name="checkout_Date"   id="checkout_Dates">
-        </div>
+        </div> -->
 
         <div class="form-group col-md-6">
             <label >Checkout Rent Date</label>
-            <input type="date" class="form-control"  name="checkout_rent_date"  id="checkout_rent_dates">
+            <input type="date" class="form-control"  name="checkout_rent_date"  id="datePickerId">
         </div>
 
         <div class="form-group col-md-6">
             <label >Checkout Rent Return Date</label>
-            <input type="date" class="form-control"  name="checkout_rent_return_date"  id="checkout_rent_return_dates">
+            <input type="date" class="form-control"  name="checkout_rent_return_date"  id="datePickerId2">
         </div>
       </div>
 

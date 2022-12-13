@@ -43,7 +43,6 @@
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">checkout Amount</th>
-                    <th scope="col">checkout Date</th>
                     <th scope="col">Rent Date</th>
                     <th scope="col">Rent Return Date</th>
                     <th scope="col">Action</th>
@@ -69,7 +68,6 @@
                     <td><?php echo $data["price"]; ?></td>
                     <td><?php echo $data["customer_quantity"]; ?></td>
                     <td><?php echo $data["total_checkout_amount"]; ?></td>
-                    <td><?php echo date('M-d-Y', strtotime($data["checkout_Date"])); ?></td>
                     <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_date"])); ?></td>
                     <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_return_date"])); ?></td>
                     <td>
