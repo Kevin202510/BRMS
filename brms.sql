@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 06:08 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Dec 13, 2022 at 05:21 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `cart` (
   `cart_product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
@@ -51,7 +51,7 @@ INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `quantity`, `s
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
   `cat_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `categories`
@@ -81,7 +81,7 @@ CREATE TABLE `checkout` (
   `checkout_rent_return_date` varchar(50) NOT NULL,
   `delivery_description` longtext DEFAULT NULL,
   `transaction_mode` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `checkout`
@@ -104,7 +104,15 @@ CREATE TABLE `customer_walkin` (
   `customer_product_id` int(11) NOT NULL,
   `customer_quantity` int(11) NOT NULL,
   `checkout_status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer_walkin`
+--
+
+INSERT INTO `customer_walkin` (`cw_id`, `customer_fname`, `customer_lname`, `customer_address`, `customer_product_id`, `customer_quantity`, `checkout_status`) VALUES
+(48, 'sadfsdfsd', 'fsdfsdfsdf', 'sdfsdfsdf', 59, 3, 1),
+(49, 'Customer First Name', 'Customer Last Name', 'Customer Address', 59, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -120,17 +128,15 @@ CREATE TABLE `customer_walkin_checkout` (
   `checkout_Date` varchar(50) DEFAULT NULL,
   `checkout_rent_date` varchar(50) NOT NULL,
   `checkout_rent_return_date` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customer_walkin_checkout`
 --
 
 INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `total_checkout_amount`, `checkout_payment`, `checkout_Date`, `checkout_rent_date`, `checkout_rent_return_date`) VALUES
-(3, 42, 800, 1500, '2022-12-11', '', ''),
-(4, 43, 2000, 2001, '2022-12-11', '', ''),
-(8, 46, 300, 1500, '2022-12-11', '2022-12-11', '2022-12-11'),
-(11, 47, 3000, 5000, '2022-12-11', '2022-12-17', '2022-12-13');
+(20, 48, 3000, 6000, '', '2022-12-20', '2022-12-22'),
+(21, 49, 1000, 1200, '', '2022-12-17', '2022-12-19');
 
 -- --------------------------------------------------------
 
@@ -141,7 +147,7 @@ INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `total_chec
 CREATE TABLE `permissions` (
   `permission_id` int(11) NOT NULL,
   `diplay_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `permissions`
@@ -167,7 +173,7 @@ CREATE TABLE `products` (
   `stocks` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `description` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products`
@@ -222,7 +228,7 @@ INSERT INTO `products` (`product_id`, `image`, `name`, `price`, `variation`, `st
 CREATE TABLE `rents` (
   `id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -235,7 +241,7 @@ CREATE TABLE `sales` (
   `sales_total` int(11) NOT NULL,
   `sales_date` int(11) NOT NULL,
   `sales_time` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -249,7 +255,7 @@ CREATE TABLE `tracking_orders` (
   `status` varchar(255) NOT NULL,
   `to_date_back` varchar(255) DEFAULT NULL,
   `to_time_back` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -261,14 +267,15 @@ CREATE TABLE `tracking_orders_customer_walkin_checkout` (
   `tocw_id` int(11) NOT NULL,
   `tocw_checkout_id` int(11) NOT NULL,
   `tocw_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tracking_orders_customer_walkin_checkout`
 --
 
 INSERT INTO `tracking_orders_customer_walkin_checkout` (`tocw_id`, `tocw_checkout_id`, `tocw_status`) VALUES
-(1, 2, 0);
+(9, 48, 0),
+(10, 49, 0);
 
 -- --------------------------------------------------------
 
@@ -288,7 +295,7 @@ CREATE TABLE `users` (
   `email_verified_at` datetime DEFAULT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -413,13 +420,13 @@ ALTER TABLE `checkout`
 -- AUTO_INCREMENT for table `customer_walkin`
 --
 ALTER TABLE `customer_walkin`
-  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `customer_walkin_checkout`
 --
 ALTER TABLE `customer_walkin_checkout`
-  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -455,7 +462,7 @@ ALTER TABLE `tracking_orders`
 -- AUTO_INCREMENT for table `tracking_orders_customer_walkin_checkout`
 --
 ALTER TABLE `tracking_orders_customer_walkin_checkout`
-  MODIFY `tocw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `tocw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -504,6 +511,12 @@ ALTER TABLE `rents`
 --
 ALTER TABLE `tracking_orders`
   ADD CONSTRAINT `to_checkout_id` FOREIGN KEY (`to_checkout_id`) REFERENCES `checkout` (`checkout_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tracking_orders_customer_walkin_checkout`
+--
+ALTER TABLE `tracking_orders_customer_walkin_checkout`
+  ADD CONSTRAINT `foreign_key_tracking_orders_customer_walkin_checkout` FOREIGN KEY (`tocw_checkout_id`) REFERENCES `customer_walkin_checkout` (`cwc_customer_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users`
