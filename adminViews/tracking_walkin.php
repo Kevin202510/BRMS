@@ -117,7 +117,7 @@
         <input type="hidden" id="id" name="id">
         <div class="form-group">
         <label>Customer Walkin</label>
-            <input type="text" class="form-control" id="customer_walkin" name="customer_walkin">
+            <input type="text" class="form-control" id="cw_id" name="cw_id">
         </div>
         <div class="form-group">
            <label>Checkout Status</label>
