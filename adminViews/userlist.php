@@ -37,7 +37,6 @@
                     <th scope="col">Address</th>
                     <th scope="col">Contact</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Username</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -57,7 +56,7 @@
                     <td><?php echo $data["address"]; ?></td>
                     <td><?php echo $data["contact_num"]; ?></td>
                     <td><?php echo $data["email"]; ?></td>
-                    <td><?php echo $data["username"]; ?></td>
+                    
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                         <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['user_id']; ?>);">Edit</button>
