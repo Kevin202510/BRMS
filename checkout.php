@@ -97,6 +97,7 @@ td, th {
                                 </div>
                                 <div class="rounded p-2 bg-light">
                                 <?php
+                                $total = 0;
                                  if(isset($_SESSION['PERMISSION_ID'])){
                                     $ids=$_SESSION['ID'];
                                     // echo $ids;
@@ -104,7 +105,6 @@ td, th {
                                     $userLists = $newDBCRUD->sql;
                             
                                     $index = 1;
-                                    $total = 0;
                                     // var_dump(json_encode($userLists));
                                     while ($data = mysqli_fetch_assoc($userLists)){
                                     if($data['status']==2 || $data['status']==0){
@@ -342,7 +342,7 @@ td, th {
             data: $("#rentForms").serializeArray(),
             success: function(datas){
                 //alert("Work Saved Successfully");
-                // location.reload();
+                location.reload();
             },
         });
     });

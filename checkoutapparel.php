@@ -14,7 +14,6 @@ if(isset($_POST['cart_id'])){
 
 }else if(isset($_POST['c_id'])){
     $checkout_cart_id  = $_POST["c_id"];
-    $checkout_user_id = $_POST["user_id"];
     $checkout_amount = $_POST["app_total_amt"];
     $delivery_description = $_POST["delivery_description"];
     $transaction_mode = $_POST["transaction_mode"];
@@ -23,8 +22,7 @@ if(isset($_POST['cart_id'])){
     
 
 
-    $newDBCRUD->insert('checkout',['checkout_cart_id'=>$checkout_cart_id,'checkout_rent_return_date'=>$checkout_rent_return_date,'checkout_rent_date'=>$checkout_rent_date,
-    'checkout_user_id'=>$checkout_user_id,'checkout_amount'=>$checkout_amount,'transaction_mode'=>$transaction_mode,'delivery_description'=>$delivery_description]);
+    $newDBCRUD->insert('checkout',['checkout_cart_id'=>$checkout_cart_id,'checkout_rent_return_date'=>$checkout_rent_return_date,'checkout_rent_date'=>$checkout_rent_date,'checkout_amount'=>$checkout_amount,'transaction_mode'=>$transaction_mode,'delivery_description'=>$delivery_description]);
         $newDBCRUD->updateStatus();
         $newDBCRUD->update('cart',['status'=>'1'],"cart_id='$checkout_cart_id'");
 
