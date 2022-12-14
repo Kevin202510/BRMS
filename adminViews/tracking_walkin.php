@@ -73,7 +73,7 @@
                     <td>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                       <label class="btn btn-secondary active">
-                      <button type="button" class="btn btn-success" onclick="showformreturn(<?php echo $data['cwc_id']; ?>);">Return</button>
+                      <button type="button" class="btn btn-success" onclick="showformreturn(<?php echo $data['tocw_id']; ?>);">Return</button>
                       </label>
                     </div>
                     </td>
@@ -100,7 +100,7 @@
 
 
          <!--update customer_walkin Modal -->
-<div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
+<div class="modal fade" id="returnomerModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -111,8 +111,7 @@
       </div>
       <div class="modal-body">
       <form id="rentForm">
-        <input type="hidden" id="cw_id" name="cw_id">
-        <input type="hidden" id="id" name="id">
+        <input type="hidden" id="tocw_id" name="tocw_id">
         <div class="form-group">
         <label>Customer Walkin</label>
             <input type="text" class="form-control" id="cw_id" name="cw_id">
@@ -172,8 +171,9 @@
             success: function(datas){
                 var datas = JSON.parse(datas);
                 console.log(datas);
-                $("#cwc_id").val(datas.cwc_id);
-                $("#customer_walkin").val(datas.customer_walkin);
+               
+                $("#tocw_id").val(datas.cw_id);
+                $("#cw_id").val(datas.cw_id);
                 $("#checkout_status").val(datas.checkout_status);
                 
             },
@@ -182,7 +182,7 @@
           $("#update_customer_walkin").attr('name',"updateuser");
         $("#update_customer_walkin").html("Update");
 
-        $("#customerModal").modal("show");
+        $("#returnomerModal").modal("show");
 }
 
 </script>
