@@ -318,19 +318,12 @@ td, th {
                 $("#customer_quantitys").val(newdata[0].quantity);
                 $("#app_price").val(newdata[0].price);
                 $("#app_total_amt").val(parseInt(newdata[0].price)*parseInt(newdata[0].quantity));
-                // $("#prod_quant").val(parseInt(newdata[0].stocks)-parseInt(newdata[0].quantity)); 
+                $("#prod_quant").val(parseInt(newdata[0].stocks)-parseInt(newdata[0].quantity)); 
                 $("#prods_id").val(newdata[0].product_id);
             },
           });
         $("#rentCheckoutModal").modal("show");
      });
-
-    //  $("#app_pay").keyup(function(){
-    // if(parseInt($("#app_pay").val())>=parseInt($("#app_total_amt").val())){
-    //         $("#app_change").val(parseInt($("#app_pay").val())-parseInt($("#app_total_amt").val()));
-    //         $("#saveBTNs").prop("disabled", false);
-    //     } 
-    // });
 
     $("#saveBTNs").click(function(e){
 
