@@ -361,7 +361,7 @@
                     $("#productss").append(htm);
             });
 
-            // $("#categoriesModal").modal("show");
+            //t $("#categoriesModal").modal("show");
         });
     });
 

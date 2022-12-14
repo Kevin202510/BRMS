@@ -41,10 +41,10 @@
         <h5 style="color:#8d7252;  font-family:poppins;">Email:</h5>
             <input type="email" class="form-control"style="font-size:18px;"  id="email" name="email" placeholder="Enter Email">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Username:</h5>
             <input type="text" class="form-control" style="font-size:18px;" id="username" name="username" placeholder="Enter Username">
-        </div>
+        </div> -->
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <input type="hidden" name="adduser" id="adduser">
         </form>
@@ -63,13 +63,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="usersModalDeleteLabel">Delete User</h5>
+        <h5 class="modal-title" id="usersModalDeleteLabel">Ban User</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h3>ARE YOU SURE YOU WANT TO DELETE THIS ?</h3>
+        <h5>Are you sure to Ban this user?</h5>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -85,7 +85,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background-color:#EF9273;">
-        <center><h3 class="modal-title" id="viewuserModalLabel" style="color:white">viewUsers</h3></center>
+        <center><h3 class="modal-title" id="viewuserModalLabel" style="color:white">View User</h3></center>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -122,10 +122,8 @@
         <h5 style="color:#8d7252;  font-family:poppins;">Email:</h5>
             <input type="email" class="form-control" id="emails" name="email" readonly>
         </div>
-        <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Username:</h5>
-            <input type="text" class="form-control" id="usernames" name="username" readonly>
-        </div>
+       
+
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <input type="hidden" name="adduser" id="addusers">
         </form>

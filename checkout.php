@@ -71,7 +71,7 @@ td, th {
   </tr>
  
   <tr>
-    <th style="color:#EF9273;  letter-spacing: 3px;">Contact  <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Contact:  <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th>
   </tr>
  </table>
 
