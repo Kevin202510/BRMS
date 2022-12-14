@@ -66,6 +66,8 @@
 
                                                     <?php }else if($data['status']==2){ ?>
                                                         <span style="margin-left:800px;">Cash On Delivery</span>
+                                                    <?php }else if($data['status']==5){ ?>
+                                                        <span style="margin-left:800px;">On Rent</span>
                                                     <?php } ?>
                                                 </div>
                                             </div>

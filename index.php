@@ -38,7 +38,6 @@ require 'vendor/autoload.php';
             $address = $_POST["address"];
             $contact_num = $_POST["contact_num"];
             $email = $_POST["email"];
-            $username = $_POST["username"];
             $password = $_POST["password"];
             $user_permission_id = $_POST["user_permission_id"];
 
@@ -94,8 +93,7 @@ require 'vendor/autoload.php';
         'address'=>$address,
         'contact_num'=>$contact_num,
         'email'=>$email,
-        'verification_code'=>$verification_code,
-        'username'=>$username,'password'=>$password]);
+        'verification_code'=>$verification_code,'password'=>$password]);
 
         if($newDBCRUD){
             echo "<script>alert('Sucess Fully To Create Account');</script>";
@@ -103,8 +101,7 @@ require 'vendor/autoload.php';
             
         }else{
             echo "<script>alert('May Error!'');</script>";
-   
-    }
+        }
 
         exit();
     } catch (Exception $e) {
