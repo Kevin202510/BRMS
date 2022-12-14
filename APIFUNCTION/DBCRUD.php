@@ -139,5 +139,11 @@
 
             $this->sql = $result = $this->mysqli->query($sql);
         }
+
+        public function select214(){
+            $sql = "SELECT * FROM `checkout` LEFT JOIN cart ON cart.cart_id=checkout.checkout_cart_id LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id;";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
     }
 ?>

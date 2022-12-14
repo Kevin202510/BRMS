@@ -39,6 +39,13 @@
 
                     <i class="icon-clothes"></i><span>Tracking Orders</span>
                     </a>   
+
+                    <a class="waves-effect waves-dark" href="customer_checkout.php">
+
+                    <i class="icon-clothes"></i><span>Customer Checkout</span>
+                    </a> 
+
+
                     <!-- <a class="waves-effect waves-dark" href="tracking_walkin.php">
                     <i class="icon-clothes"></i><span>Tracking walkin Orders</span>
                     </a>    -->
