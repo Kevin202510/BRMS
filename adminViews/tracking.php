@@ -42,9 +42,10 @@
                     <th scope="col">Apparel Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
-                    <th scope="col">checkout Amount</th>
-                    <th scope="col">checkout Date</th>
-                    <th scope="col">checkout Time</th>
+                    <th scope="col">CheckOut Amount</th>
+                    <th scope="col">CheckOut Date</th>
+                    <th scope="col">Rent Date</th>
+                    <th scope="col">Return Date</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -52,7 +53,7 @@
                 <?php
                     include('../APIFUNCTION/DBCRUD.php');
                     $newDBCRUD = new DBCRUD();
-                    $newDBCRUD->select213();
+                    $newDBCRUD-> select213();
                     $productsLists = $newDBCRUD->sql;
             
                     $index = 1;
@@ -69,12 +70,13 @@
                     <td><?php echo $data["quantity"]; ?></td>
                     <td><?php echo $data["checkout_amount"]; ?></td>
                     <td><?php echo date('M-d-Y', strtotime($data["checkout_date"])); ?></td>
-                    <td><?php echo date('h:i:s a', strtotime($data["checkout_time"])); ?></td>
+                    <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_date"])); ?></td>
+                    <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_return_date"])); ?></td>
                     <td>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                      <label class="btn btn-secondary active">
-                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Return
-                      </label>
+                      <button type="button" data-id="<?php echo $data['to_checkout_id']; ?>" id="returnapparel" class="btn btn-success">
+                        Return
+                      </button>
                     </div>
                     </td>
                     </tr>
@@ -96,12 +98,95 @@
       </div>
    </div>
                     </div>
+
+<!--RETURN Modal -->
+<div class="modal fade" id="returnModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rentprodModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form id="rentForms">
+        <input type="hidden" id="cart_ids" name="c_id">
+        <input type="hidden" id="user_ids" name="user_id">
+        <input type="hidden" id="prods_id" name="prods_id">
+        <div class="form-row">
+        <div class="form-group col-md-12">
+            <label >FullName</label>
+            <input type="text" class="form-control"  readonly id="customer_fnames">
+        </div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >Apprrel Name</label>
+            <input type="text" class="form-control"  readonly id="product_ids">
+        </div>
+        <div class="form-group col-md-6">
+            <label >Apparel Quantity</label>
+            <input type="text" class="form-control"  readonly id="customer_quantitys">
+            <input type="hidden" class="form-control"  readonly name="prod_stocks" id="prod_quant">
+        </div>
+        </div>
+
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >Apparel Price</label>
+            <input type="text" class="form-control"  readonly id="app_price">
+        </div>
+        <div class="form-group col-md-6">
+            <label >Total Amount</label>
+            <input type="text"  readonly class="form-control" id="app_total_amt" name="app_total_amt">
+        </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Mode Of Transaction</label>
+            <select class="form-control" name="transaction_mode" id="exampleFormControlSelect1">
+            <option value="1">COD</option>
+            <option value="2">On Shop</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Rent Date</label>
+            <input type="date" class="form-control" id="checkout_rent_date" name="checkout_rent_date">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Return Date</label>
+            <input type="date" class="form-control" id="checkout_rent_return_date" name="checkout_rent_return_date">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Delivery Address And Contact Number</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="delivery_description" rows="3"></textarea>
+        </div>
+        </form>
+      <!-- </div> -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="saveBTNs">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
    <?php include('cartmodal.php');?>
 <?php include('layouts/footer.php');?>
 
 
 <script>
   $(document).ready(function(){
+
+    $("body").on("click","#returnapparel",function(e){
+      var cart_ids = $(e.currentTarget).data("id");
+      $("#returnModal").modal("show");
+    });
+
     $("#searchData").keyup(function(){
         // alert("asd");
     var input, filter, table, tr, td, i, txtValue;

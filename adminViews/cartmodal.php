@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <form id="rentForm">
+    <form id="rentForm">
         <input type="hidden" name="cw_id" id="cw_id">
         <div class="form-group">
             <h5 style="color:#8d7252; font-family:poppins;" >Customer First Name</h5>
@@ -23,6 +23,10 @@
             <h5 style="color:#8d7252;  font-family:poppins;">Customer Address</h5>
             <input type="text" class="form-control" id="customer_address" name="customer_address" placeholder="Enter Product Name">
         </div>
+        <!-- <div class="form-group">
+            <h5 style="color:#8d7252;  font-family:poppins;">Date</h5>
+            <input type="date" class="form-control" id="customer_date" name="customer_date" placeholder="Enter Product Name">
+        </div> -->
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;">Product</h5>
             <select style = "width:350px;" name="customer_product_id" id="customer_product_ids">
@@ -83,7 +87,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+    <div class="modal-body">
       <form id="rentForms">
         <input type="hidden" id="cw_ids" name="cw_id">
         <div class="form-row">
@@ -95,8 +99,8 @@
             <label >Address</label>
             <input type="text" class="form-control"  readonly id="customer_addressss" placeholder="Enter ">
         </div>
-        </div>
-        <div class="form-row">
+      </div>
+      <div class="form-row">
         <div class="form-group col-md-6">
             <label >Apprrel Name</label>
             <input type="text" class="form-control"  readonly id="product_ids">
@@ -105,9 +109,24 @@
             <label >Rent Quantity</label>
             <input type="text" class="form-control"  readonly id="customer_quantitys">
         </div>
+        
+        <!-- <div class="form-group col-md-6">
+            <label >Checkout Date</label>
+            <input type="date" class="form-control" name="checkout_Date"   id="checkout_Dates">
+        </div> -->
+
+        <div class="form-group col-md-6">
+            <label >Checkout Rent Date</label>
+            <input type="date" class="form-control"  name="checkout_rent_date"  id="datePickerId">
         </div>
 
-        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >Checkout Rent Return Date</label>
+            <input type="date" class="form-control"  name="checkout_rent_return_date"  id="datePickerId2">
+        </div>
+      </div>
+
+      <div class="form-row">
         <div class="form-group col-md-6">
             <label >Apparel Price</label>
             <input type="text" class="form-control"  readonly id="app_price">
@@ -116,9 +135,9 @@
             <label >Total Amount</label>
             <input type="text"  readonly class="form-control" id="app_total_amt" name="app_total_amt">
         </div>
-        </div>
+      </div>
 
-        <div class="form-row">
+      <div class="form-row">
         <div class="form-group col-md-6">
             <label >Payment</label>
             <input type="text" class="form-control" id="app_pay" name="app_pay">
@@ -127,7 +146,7 @@
             <label >Change</label>
             <input type="text" class="form-control" id="app_change" readonly>
         </div>
-        </div>
+      </div>
         <!-- <input type="hidden" name="checkthisout"> -->
         </form>
       <!-- </div> -->

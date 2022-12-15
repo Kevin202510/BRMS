@@ -43,7 +43,6 @@
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">checkout Amount</th>
-                    <th scope="col">checkout Date</th>
                     <th scope="col">Rent Date</th>
                     <th scope="col">Rent Return Date</th>
                     <th scope="col">Action</th>
@@ -69,13 +68,12 @@
                     <td><?php echo $data["price"]; ?></td>
                     <td><?php echo $data["customer_quantity"]; ?></td>
                     <td><?php echo $data["total_checkout_amount"]; ?></td>
-                    <td><?php echo date('M-d-Y', strtotime($data["checkout_Date"])); ?></td>
-                    <td><?php echo date('M-d-Y', strtotime($data["checkout_rent"])); ?></td>
-                    <td><?php echo date('M-d-Y', strtotime($data["checkout_return"])); ?></td>
+                    <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_date"])); ?></td>
+                    <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_return_date"])); ?></td>
                     <td>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                       <label class="btn btn-secondary active">
-                      <button type="button" class="btn btn-success" onclick="showformreturn(<?php echo $data['cwc_id']; ?>);">Return</button>
+                      <button type="button" class="btn btn-success" onclick="showformreturn(<?php echo $data['tocw_id']; ?>);">Return</button>
                       </label>
                     </div>
                     </td>
@@ -102,7 +100,7 @@
 
 
          <!--update customer_walkin Modal -->
-<div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
+<div class="modal fade" id="returnomerModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -113,11 +111,10 @@
       </div>
       <div class="modal-body">
       <form id="rentForm">
-        <input type="hidden" id="cw_id" name="cw_id">
-        <input type="hidden" id="id" name="id">
+        <input type="hidden" id="tocw_id" name="tocw_id">
         <div class="form-group">
         <label>Customer Walkin</label>
-            <input type="text" class="form-control" id="customer_walkin" name="customer_walkin">
+            <input type="text" class="form-control" id="cw_id" name="cw_id">
         </div>
         <div class="form-group">
            <label>Checkout Status</label>
@@ -174,8 +171,9 @@
             success: function(datas){
                 var datas = JSON.parse(datas);
                 console.log(datas);
-                $("#cwc_id").val(datas.cwc_id);
-                $("#customer_walkin").val(datas.customer_walkin);
+               
+                $("#tocw_id").val(datas.cw_id);
+                $("#cw_id").val(datas.cw_id);
                 $("#checkout_status").val(datas.checkout_status);
                 
             },
@@ -184,7 +182,7 @@
           $("#update_customer_walkin").attr('name',"updateuser");
         $("#update_customer_walkin").html("Update");
 
-        $("#customerModal").modal("show");
+        $("#returnomerModal").modal("show");
 }
 
 </script>

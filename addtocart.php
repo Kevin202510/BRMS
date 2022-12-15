@@ -12,12 +12,21 @@ if(isset($_POST['product_id'])){
     $dataid = "cart_user_id=".$cart_user_id." AND cart_product_id=".$product_id;
     $newDBCRUD->select("cart","*",$dataid);
     $getUser = $newDBCRUD->sql;
+    $newDBCRUD->select("products","*",$product_id);
+    $getStocks = $newDBCRUD->sql;
+    
     if ($getUser->num_rows !== 0) {
     while($datass = mysqli_fetch_assoc($getUser)){
-    $quantity+=$datass["quantity"];
-    $cart_id = $datass['cart_id'];
-        $newDBCRUD->update('cart',[
-            'quantity'=>$quantity],"cart_id='$cart_id'");
+    while($datass = mysqli_fetch_assoc($getStocks)){
+        if($datass['stocks']>$datass["quantity"]){
+            $quantity+=$datass["quantity"];
+        }else{
+            $quantity=$datass["quantity"];
+        }
+        $cart_id = $datass['cart_id'];
+            $newDBCRUD->update('cart',[
+                'quantity'=>$quantity],"cart_id='$cart_id'");
+    }
     }
     }else{
         $newDBCRUD->insert('cart',['cart_user_id '=>$cart_user_id ,

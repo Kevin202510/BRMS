@@ -2,6 +2,11 @@
  session_start();
     include('APIFUNCTION/DBCRUD.php');
     $newDBCRUD = new DBCRUD();
+    use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
 
     if(isset($_POST["signin"])){
         $whereclause = "email = '".$_POST["email"]."' AND password = '".$_POST["password"]."'";
@@ -26,37 +31,111 @@
     }
  
         
-    }
-?>
-<?php
+    }else if (isset($_POST['adduser'])) {
 
-if(isset($_POST['adduser'])){
+            $fname = $_POST["fname"];
+            $lname = $_POST["lname"];
+            $address = $_POST["address"];
+            $contact_num = $_POST["contact_num"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $user_permission_id = $_POST["user_permission_id"];
+
+            $mail = new PHPMailer(true);
+
+    try {
+        //Enable verbose debug output
+        $mail->SMTPDebug = 0;//SMTP::DEBUG_SERVER;
+
+        //Send using SMTP
+        $mail->isSMTP();
+
+        //Set the SMTP server to send through
+        $mail->Host = 'smtp.gmail.com';
+
+        //Enable SMTP authentication
+        $mail->SMTPAuth = true;
+
+        //SMTP username
+        $mail->Username = 'jp145572@gmail.com';
+
+        //SMTP password
+        $mail->Password = 'mlmgsvbndkcwonls';
+
+        //Enable TLS encryption;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+
+        //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        $mail->Port = 587;
+
+        //Recipients
+        $mail->setFrom('jp145572@gmail.com', 'Boutique Rental System');
+
+        //Add a recipient
+        $mail->addAddress($email, $fname);
+
+        //Set email format to HTML
+        $mail->isHTML(true);
+
+        $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+
+        $mail->Subject = 'Email verification';
+        $mail->Body    = '<p>Your verification code is: <b style="font-size: 30px;">' . $verification_code . '</b><a href="http://localhost/palasresort/email-verification.php?email="' . $email.'">VERIFY MY ACCOUNT</a></p>';
+
+        $mail->send();
+        // echo 'Message has been sent';
+
+        // $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
+
+        $newDBCRUD->insert('users',['user_permission_id'=>$user_permission_id,
+        'fname'=>$fname,
+        'lname'=>$lname,
+        'address'=>$address,
+        'contact_num'=>$contact_num,
+        'email'=>$email,
+        'verification_code'=>$verification_code,'password'=>$password]);
+
+        if($newDBCRUD){
+            echo "<script>alert('Sucess Fully To Create Account');</script>";
+            header('location: index.php' );
+            
+        }else{
+            echo "<script>alert('May Error!'');</script>";
+        }
+
+        exit();
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+    }
+
+// if(isset($_POST['adduser'])){
     
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
-    $address = $_POST["address"];
-    $contact_num = $_POST["contact_num"];
-    $email = $_POST["email"];
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $user_permission_id = $_POST["user_permission_id"];
+//     $fname = $_POST["fname"];
+//     $lname = $_POST["lname"];
+//     $address = $_POST["address"];
+//     $contact_num = $_POST["contact_num"];
+//     $email = $_POST["email"];
+//     $username = $_POST["username"];
+//     $password = $_POST["password"];
+//     $user_permission_id = $_POST["user_permission_id"];
 
-    $newDBCRUD->insert('users',['user_permission_id'=>$user_permission_id,
-    'fname'=>$fname,
-    'lname'=>$lname,
-    'address'=>$address,
-    'contact_num'=>$contact_num,
-    'email'=>$email,
-    'username'=>$username,'password'=>$password]);
+//     $newDBCRUD->insert('users',['user_permission_id'=>$user_permission_id,
+//     'fname'=>$fname,
+//     'lname'=>$lname,
+//     'address'=>$address,
+//     'contact_num'=>$contact_num,
+//     'email'=>$email,
+//     'username'=>$username,'password'=>$password]);
 
-    if($newDBCRUD){
-        //echo "<script>alert('Succes');</script>";
-        header("location:index.php");
-    }else{
-        return 0;
-    }
+//     if($newDBCRUD){
+//         //echo "<script>alert('Succes');</script>";
+//         header("location:index.php");
+//     }else{
+//         return 0;
+//     }
 
-}
+// }
 
 
 ?>
@@ -203,19 +282,29 @@ if(isset($_POST['adduser'])){
                             </div>
                             <img src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-fluid" alt="Image">
                             <div class="mask-icon">
+                            <?php if($data['stocks']==0){ ?>
                                 <ul>
                                 <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                 </ul>
+                            <?php }else{ ?>
+                                <ul>
+                                <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                </ul>
+
                                 <?php if(isset($_SESSION['PERMISSION_ID'])){ ?>
                                     <a type="button" class="cart" data-id="<?php echo $data['product_id']; ?>" id="addtc">Add to Cart</a>
                                 <?php }else{ ?>
                                     <a type="button" class="cart" data-toggle = "modal" data-target="#loginsModal">Add to Cart</a>
-                                <?php } ?>
+                                <?php }} ?>
                             </div>
                         </div>
                         <div class="why-text">
                             <h4><?php echo $data['name']; ?></h4>
-                            <h4>Stocks: <?php echo $data['stocks']; ?></h4>
+                            <?php if($data['stocks']==0){ ?>
+                                <h4 style="color:red;">Out Of Stock</h4>
+                            <?php }else{ ?>
+                                <h4>Stocks: <?php echo $data['stocks']; ?></h4>
+                            <?php } ?>
                             <h5 style="color:white;">₱ <?php echo $data['price']; ?></h5>
                         </div>
                     </div>

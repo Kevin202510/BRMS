@@ -81,12 +81,12 @@
 
     if(isset($_POST['update_customer_walkin'])){
         
-        $cwc_id = $_POST['cwc_id'];
-        $customer_walkin = $_POST["customer_walkin"];
+        
+        $cw_id = $_POST["cw_id"];
         $checkout_status = $_POST["checkout_status"];
      
   
-        $newDBCRUD->update('customer_walkin_checkout',['checkout_status'=>'1'],"cw_id='$cw_id'");
+        $newDBCRUD->update('customer_walkin',['checkout_status'=>'1'],"cw_id='$cw_id'");
       
     }
 

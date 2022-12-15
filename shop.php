@@ -66,22 +66,37 @@
                                             while ($data = mysqli_fetch_assoc($userLists)){
                                         ?>
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
+                                        <div class="products-single fix">
                                                 <div class="box-img-hover">
-                                                <img style="width:200px; height:250px;" src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-thumbnail">
+                                                    <div class="type-lb">
+                                                
+                                                    </div>
+                                                    <img src="adminViews/uploads/<?php echo $data["image"]; ?>" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
+                                                    <?php if($data['stocks']==0){ ?>
                                                         <ul>
-                                                            <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                         </ul>
-                                                        <div class= "pointed">
+                                                    <?php }else{ ?>
+                                                        <ul>
+                                                        <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        </ul>
+
+                                                        <?php if(isset($_SESSION['PERMISSION_ID'])){ ?>
                                                             <a type="button" class="cart" data-id="<?php echo $data['product_id']; ?>" id="addtc">Add to Cart</a>
-                                                        </div>
+                                                        <?php }else{ ?>
+                                                            <a type="button" class="cart" data-toggle = "modal" data-target="#loginsModal">Add to Cart</a>
+                                                        <?php }} ?>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
                                                     <h4><?php echo $data['name']; ?></h4>
-                                                    <h4>Stocks: <?php echo $data['stocks']; ?></h4>
-                                                    <h5  style="color:white; ">₱ <?php echo $data['price']; ?></h5>
+                                                    <?php if($data['stocks']==0){ ?>
+                                                        <h4 style="color:red;">Out Of Stock</h4>
+                                                    <?php }else{ ?>
+                                                        <h4>Stocks: <?php echo $data['stocks']; ?></h4>
+                                                    <?php } ?>
+                                                    <h5 style="color:white;">₱ <?php echo $data['price']; ?></h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -207,7 +222,7 @@
       </div>
       <div class="modal-body">
       <form method="POST" id="addtcart">
-        <input type="hidden" id="product_id" name="product_id">
+        <input type="text" id="product_id" name="product_id">
 
         <?php 
         if(isset($_SESSION['PERMISSION_ID'])){
@@ -243,13 +258,8 @@
         </div>
                 <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
                 <div class="input-group">
-  <input type="button" value="-" class="button-minus" data-field="quantity">
-  <input type="number" step="1" max="" value="1" name="quantity" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" disabled>
-  <input type="button" value="+" class="button-plus" data-field="quantity">
-</div>
-               
-                
-           
+                    <input type="number" class="form-control" min="1" step="1"  id="quantity" name="quantity">
+                </div>
         <div class="modal-footer">
         <button type="button" class="btn btn" style="background-color:#8d7252; color:white" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn" style="background-color:#8d7252;color:white" id="addmotosacart">Add To Cart</button>
@@ -359,7 +369,6 @@
 
     
 </script>
-<script src="js/addminus.js"></script>
 
 
     

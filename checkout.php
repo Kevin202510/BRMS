@@ -97,6 +97,7 @@ td, th {
                                 </div>
                                 <div class="rounded p-2 bg-light">
                                 <?php
+                                $total = 0;
                                  if(isset($_SESSION['PERMISSION_ID'])){
                                     $ids=$_SESSION['ID'];
                                     // echo $ids;
@@ -104,9 +105,9 @@ td, th {
                                     $userLists = $newDBCRUD->sql;
                             
                                     $index = 1;
-                                    $total = 0;
                                     // var_dump(json_encode($userLists));
                                     while ($data = mysqli_fetch_assoc($userLists)){
+                                    if($data['status']==2 || $data['status']==0){
                                     $price1 = (int)$data["price"];
                                     $quantity = (int)$data["quantity"];
                                     $total += $price1*$quantity;
@@ -116,11 +117,16 @@ td, th {
                                             <h1><div class="small text-muted">Price: <?php echo $data["price"]; ?> <span class="mx-2">|</span> Qty: <?php echo $data["quantity"]; ?><span class="mx-2">|</span> Subtotal: <?php echo $data["price"] * $data["quantity"]; ?></div></h1>
                                         </div>
                                     </div>
-
-                                    <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" id="placeorder" class="ml-auto btn hvr-hover" style="color:white;">Place Order</button></div>
-                                    
-                                    
-                                    <?php }} ?>
+                                    <?php if($data['status']==2){ ?>
+                                        <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" class="ml-auto btn hvr-hover" style="color:white;">Out Of Stock</button></div>
+                                    <?php }else if($data['status']==0){ ?>
+                                        <div class="col-12 d-flex shopping-box"><button type="button" data-id="<?php echo $data["cart_id"]; ?>" id="placeorder" class="ml-auto btn hvr-hover" style="color:white;">Place Order</button></div>
+                                    <?php }}else{ ?>
+                                        <div class="media mb-2 border-bottom">
+                                            <div class="media-body"> <a href="#">NO CHECKOUT AVAILABLE</a>
+                                            </div>
+                                        </div>
+                                    <?php } } }?>
                                 </div>
                             </div>
                         </div>
@@ -207,7 +213,7 @@ td, th {
 
 <!--CHECKOUT Modal -->
 <div class="modal fade" id="rentCheckoutModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="rentprodModalLabel"></h5>
@@ -221,13 +227,9 @@ td, th {
         <input type="hidden" id="user_ids" name="user_id">
         <input type="hidden" id="prods_id" name="prods_id">
         <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
             <label >FullName</label>
             <input type="text" class="form-control"  readonly id="customer_fnames">
-        </div>
-        <div class="form-group col-md-6">
-            <label >Address</label>
-            <input type="text" class="form-control"  readonly id="customer_addressss" >
         </div>
         </div>
         <div class="form-row">
@@ -238,7 +240,7 @@ td, th {
         <div class="form-group col-md-6">
             <label >Apparel Quantity</label>
             <input type="text" class="form-control"  readonly id="customer_quantitys">
-            <input type="text" class="form-control"  readonly name="prod_stocks" id="prod_quant">
+            <input type="hidden" class="form-control"  readonly name="prod_stocks" id="prod_quant">
         </div>
         </div>
 
@@ -253,22 +255,33 @@ td, th {
         </div>
         </div>
 
-        <div class="form-row">
-        <div class="form-group col-md-6">
-            <label >Payment</label>
-            <input type="text" class="form-control" id="app_pay" name="app_pay">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Mode Of Transaction</label>
+            <select class="form-control" name="transaction_mode" id="exampleFormControlSelect1">
+            <option value="1">COD</option>
+            <option value="2">On Shop</option>
+            </select>
         </div>
-        <div class="form-group col-md-6">
-            <label >Change</label>
-            <input type="text" class="form-control" id="app_change" readonly>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Rent Date</label>
+            <input type="date" class="form-control" id="checkout_rent_date" name="checkout_rent_date">
         </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Return Date</label>
+            <input type="date" class="form-control" id="checkout_rent_return_date" name="checkout_rent_return_date">
         </div>
-        <!-- <input type="hidden" name="checkthisout"> -->
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Delivery Address And Contact Number</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="delivery_description" rows="3"></textarea>
+        </div>
         </form>
       <!-- </div> -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" disabled id="saveBTNs">Save</button>
+        <button type="button" class="btn btn-primary" id="saveBTNs">Save</button>
       </div>
     </div>
   </div>
@@ -312,17 +325,10 @@ td, th {
         $("#rentCheckoutModal").modal("show");
      });
 
-     $("#app_pay").keyup(function(){
-    if(parseInt($("#app_pay").val())>=parseInt($("#app_total_amt").val())){
-            $("#app_change").val(parseInt($("#app_pay").val())-parseInt($("#app_total_amt").val()));
-            $("#saveBTNs").prop("disabled", false);
-        } 
-    });
-
     $("#saveBTNs").click(function(e){
 
         e.preventDefault();
-
+        
         $.ajax({
             type: "POST",
             url: "checkoutapparel.php",

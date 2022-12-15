@@ -60,6 +60,12 @@
             $this->sql = $result = $this->mysqli->query($sql);
         }
 
+        public function updateStatus(){
+            $sql ="UPDATE cart set status=2";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
+
 
         public function selectleftjoin($table,$table1,$attributename,$attributename1,$where = null){
 
@@ -79,7 +85,7 @@
         }
 
         public function selectleftjoin3($myid){
-            $sql = "SELECT * FROM `cart` LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id LEFT JOIN categories ON categories.category_id = products.category_id WHERE cart.status=0 AND cart_user_id=$myid";
+            $sql = "SELECT * FROM `cart` LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id LEFT JOIN categories ON categories.category_id = products.category_id WHERE (cart.status=0 OR cart.status=2) AND cart_user_id=$myid";
 
             $this->sql = $result = $this->mysqli->query($sql);
         }
@@ -129,7 +135,19 @@
             $this->sql = $result = $this->mysqli->query($sql);
         }
         public function select213(){
-            $sql = "SELECT * FROM `tracking_orders_customer_walkin_checkout` left JOIN customer_walkin_checkout ON customer_walkin_checkout.cwc_id = tracking_orders_customer_walkin_checkout.tocw_checkout_id LEFT JOIN customer_walkin ON customer_walkin.cw_id = customer_walkin_checkout.cwc_customer_id LEFT JOIN products ON products.product_id = customer_walkin.customer_product_id";
+            $sql = "SELECT * FROM `tracking_orders_customer_walkin_checkout` LEFT JOIN customer_walkin_checkout ON customer_walkin_checkout.cwc_customer_id = tracking_orders_customer_walkin_checkout.tocw_checkout_id LEFT JOIN customer_walkin ON customer_walkin.cw_id = customer_walkin_checkout.cwc_customer_id LEFT JOIN products ON products.product_id = customer_walkin.customer_product_id";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
+
+        public function select214(){
+            $sql = "SELECT * FROM `checkout` LEFT JOIN cart ON cart.cart_id=checkout.checkout_cart_id LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id where checkout.checkout_payments IS NULL";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
+
+        public function select215($checkout_id){
+            $sql = "SELECT * FROM `checkout` LEFT JOIN cart ON cart.cart_id=checkout.checkout_cart_id LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id WHERE checkout_id = $checkout_id";
 
             $this->sql = $result = $this->mysqli->query($sql);
         }
