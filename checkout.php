@@ -63,15 +63,15 @@ td, th {
 
 <table>
   <tr>
-    <th style="color:#EF9273; letter-spacing: 3px;">Fullname: <input style="font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" disabled></th> 
+    <th style="color:#EF9273; letter-spacing: 3px;">Fullname:<center> <input style="font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" disabled></th>  </center>
   </tr>
 
   <tr>
-    <th style="color:#EF9273;  letter-spacing: 3px;">Address: <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="address" value="<?php echo $data['address'] ?>" disabled></th>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Address: <center><input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="address" value="<?php echo $data['address'] ?>" disabled></th>  </center>
   </tr>
  
   <tr>
-    <th style="color:#EF9273;  letter-spacing: 3px;">Contact  <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Contact<center>  <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th> </center>
   </tr>
  </table>
 

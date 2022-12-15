@@ -4,10 +4,12 @@
             <div class="container">
 				<div class="row">
 					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
+						<div class="footer-top-box"style="margin-top:11px">
 							<h3>Business Time</h3>
 							<ul class="list-time">
-								<li>Monday - Friday: 10:00am to 6:00pm</li> <li>Saturday: 9:00 AM to 5:00 PM</li> <li>Sunday: <span>Closed</span></li>
+								<li>Monday - Friday: 10:00am to 6:00pm</li> 
+                                <li>Saturday: 9:00 AM to 5:00 PM</li>
+                                 <li>Sunday: <span>Closed</span></li>
 							</ul>
 						</div>
 					</div>
@@ -17,30 +19,10 @@
                             <ul>
                                 <li><a href="aboutus.php">About Us</a></li>
                                 <li><a href="contactpage.php">Contact  Us</a></li>
-                                
-                               
                             </ul>
                         </div>
+                    </div>
 
-                    </div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							
-					</div>
-				</div>
-				<hr>
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-widget">
-                            <h4>About Gil's Creation</h4>
-                            <p>In  true  boutique  fashion,  we  choose  the  clothes. At  Gil's,  our  Style  have  a passion for fashion and are constantly 
-                    searching to fill our collection with a limited selection of unique pieces so that when you rent from Gil's Creation Boutique, you
-                    know your individual style will always stand out from the crowd and shine.
-                    </p> 
-							<p>Gil's helps you find your own unique look without the expensive price tags, offering you a well 
-                    edited, budget friendly selection of trendy styles.</p> 							
-                        </div>
-                    </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>Contact Us</h4>
@@ -57,6 +39,7 @@
                             </ul>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@
                         <li class="bell-notification">
                            <a href="javascript:;" class="media">
                               <span class="media-left media-icon">
-                    <img class="img-circle" src="assets/images/.png" alt="User Image">
+                    <img class="img-circle" src="assets/images/log1.png" alt="User Image"><img class="img-circle" src="assets/images/log2.png" alt="User Image">
                   </span>
                               <div class="media-body"><span class="block">Server Not Working</span><span class="text-muted block-time">20min ago</span></div>
                            </a>
