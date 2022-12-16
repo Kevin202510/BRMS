@@ -21,7 +21,7 @@
             <input type="text"  class="form-control" style="font-size:18px;" id="name" name="name">
         </div>
         <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;"> Enter Category:</h5>
+        <h5 style="color:#8d7252;  font-family:poppins;"> Choose Category:</h5>
             <select name="category_id" id="category_id">
               <option value=""selected disabled hidden> Categories</option>
                 <?php  $newDBCRUD->select("categories","*");
@@ -47,7 +47,7 @@
             <input type="text" class="form-control" style="font-size:18px;" id="description" name="description">
         </div>
         <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Pick Variation</h5>
+        <h5 style="color:#8d7252;  font-family:poppins;">Choose Variation</h5>
         <select name = "variation" id = "variation">
         <option value=""disabled hidden>Variation</option>
         <option value="small">Small</option>
@@ -72,13 +72,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="productsModalDeleteLabel">Delete User</h5>
+        <h5 class="modal-title" id="productsModalDeleteLabel">Delete Apparel</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h3>ARE YOU SURE YOU WANT TO DELETE THIS ?</h3>
+        <h5>ARE YOU SURE YOU WANT TO DELETE THIS ?</h5>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

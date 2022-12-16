@@ -53,8 +53,8 @@
                     <td><?php echo $data["cat_name"]; ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn" style="background-color:#8d7252; color:white;"onclick="showform(<?php echo $data['category_id']; ?>);">Edit</button>
-                            <button type="button" class="btn btn"style="background-color:#8d7252; color:white;" onclick="showformdelete(<?php echo $data['category_id']; ?>);">Delete</button>
+                            <button type="button" class="btn btn" style="background-color:#8d7252; color:white;"onclick="showform(<?php echo $data['category_id']; ?>);"><i class = "icon-pencil"></i></i></button>
+                            <button type="button" class="btn btn"style="background-color:#8d7252; color:white;" onclick="showformdelete(<?php echo $data['category_id']; ?>);"><i class = "icon-trash"></i></button>
                         </div>
                     </td>
                     </tr>

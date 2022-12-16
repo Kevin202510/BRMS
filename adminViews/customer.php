@@ -57,7 +57,7 @@
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">                     
                             <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['user_id']; ?>);">Ban</button>
-                            <button type="button" class="btn btn-success" onclick="showformview(<?php echo $data['user_id']; ?>);">view</button>
+                            <button type="button" class="btn btn-success" onclick="showformview(<?php echo $data['user_id']; ?>);"><i class = "icon-eye"></i></button>
                         </div>
                     </td>
                     </tr>

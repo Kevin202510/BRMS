@@ -57,12 +57,12 @@
                     
               </ul>
               <!-- Navbar Right Menu-->
-              <div class="navbar-custom-menu" style="text-align:center;">
+              <div class="navbar-custom-menu" style="text-align:center; ">
                 <div class="upgrade-button">              
                 </div>
                  <ul class="top-nav">
                     <!--Notification Menu--> 
-                    <li class="dropdown">
+                    <li class="dropdown" style = "color:black;">
                        <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
                           <span>Customer Walkin<i class=" icofont icofont-simple-down"></i></span>
                           <ul class="dropdown-menu settings-menu">
