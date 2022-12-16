@@ -64,8 +64,8 @@
                     <td><?php echo $data["variation"]; ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['product_id']; ?>);">Edit</button>
-                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['product_id']; ?>);">Delete</button>
+                            <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['product_id']; ?>);"><i class = "icon-pencil"></i></button>
+                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['product_id']; ?>);"><i class = "icon-trash"></i></button>
                         </div>
                     </td>
                     </tr>

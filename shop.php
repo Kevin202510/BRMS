@@ -222,7 +222,7 @@
       </div>
       <div class="modal-body">
       <form method="POST" id="addtcart">
-        <input type="text" id="product_id" name="product_id">
+        <input type="hidden" id="product_id" name="product_id">
 
         <?php 
         if(isset($_SESSION['PERMISSION_ID'])){
@@ -254,6 +254,8 @@
                     <span style = "border:none; background-color:transparent; width: 100%;" id="description" cols="12" rows="5" disabled></span>
                 </div>
         </div>
+        <br>
+        <br>
                 <h4 style="color:#8d7252; font-family:poppins">Quantity</h4>
                 <div class="input-group">
                     <input type="number" class="form-control" min="1" step="1"  id="quantity" name="quantity">

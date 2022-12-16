@@ -118,8 +118,9 @@
 		<div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="text-right">
-					
-					<button type="button" class="btn btn-info" style="background-color:#8d7252;" onclick="showform(<?php echo $data['user_id']; ?>);">Edit</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#usersmodal">
+                        <i class="fas fa-pencil-alt"></i></button>
+                    </a>
 				</div>
 			</div>
 		</div>
@@ -131,7 +132,7 @@
         </div>
     </div>
     <!-- END CONTENT -->
-
+   
 	<!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -174,6 +175,10 @@
             </div>
         </div>
     </div>
+    <?php include('layouts/footer.php');?>
+    <?php include('loginmodal.php'); ?>
+     <script src="custom.js"></script>
+
 
     <!-- Modal -->
     <div class="modal fade" id="verifyMuna" tabindex="-1" role="dialog" aria-labelledby="verifyMunaTitle" aria-hidden="true">
@@ -207,7 +212,7 @@
     </div>
     </div>
 
-<?php include('layouts/footer.php');?>
+
 
 <script>
     $(document).ready(function(){

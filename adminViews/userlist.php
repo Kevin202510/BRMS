@@ -59,9 +59,9 @@
                     
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['user_id']; ?>);">Edit</button>
-                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['user_id']; ?>);">Delete</button>
-                            <button type="button" class="btn btn-success" onclick="showformview(<?php echo $data['user_id']; ?>);">view</button>
+                        <button type="button" class="btn btn-info" onclick="showform(<?php echo $data['user_id']; ?>);"><i class = "icon-pencil"></i></button>
+                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['user_id']; ?>);"><i class = "icon-trash"></i></button>
+                            <button type="button" class="btn btn-success" onclick="showformview(<?php echo $data['user_id']; ?>);"><i class = "icon-eye"></i></button>
                         </div>
                     </td>
                     </tr>
