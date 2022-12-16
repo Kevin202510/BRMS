@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php include('layouts/head.php');?>
+
     <!-- Start Main Top -->
     <?php include('layouts/header.php');?>
     <!-- End Main Top -->

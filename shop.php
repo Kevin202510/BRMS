@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php include('layouts/head.php');?>
-
+   
     <!-- Start Main Top -->
     <?php include('layouts/header.php');?>
     <!-- End Main Top -->
@@ -315,7 +315,7 @@
 
         //     // $("#categoriesModal").modal("show");
         // });
-
+        
         $("body").on('click',"#prodcat",function(e){
             let dataid = $(e.currentTarget).data("id");
             // alert(dataid);

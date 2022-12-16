@@ -141,6 +141,7 @@ require 'vendor/autoload.php';
 ?>
 
 <?php include('layouts/head.php');?>
+
     <!-- Start Main Top -->
     <?php include('layouts/header.php');?>
     <!-- End Main Top -->
