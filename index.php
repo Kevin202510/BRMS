@@ -60,7 +60,7 @@ require 'vendor/autoload.php';
         $mail->Username = 'jp145572@gmail.com';
 
         //SMTP password
-        $mail->Password = 'mlmgsvbndkcwonls';
+        $mail->Password = 'nexbzrnqzikqcfhp';
 
         //Enable TLS encryption;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -141,7 +141,6 @@ require 'vendor/autoload.php';
 ?>
 
 <?php include('layouts/head.php');?>
-
     <!-- Start Main Top -->
     <?php include('layouts/header.php');?>
     <!-- End Main Top -->

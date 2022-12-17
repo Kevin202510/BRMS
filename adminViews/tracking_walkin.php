@@ -82,6 +82,7 @@
                     
                 </tbody>
             </table>
+            <a href="print_pdf.php">Print TO PDF</a>
         </div>
 
             <!-- 2-1 block end -->

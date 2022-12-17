@@ -102,7 +102,7 @@ td, th {
                                  if(isset($_SESSION['PERMISSION_ID'])){
                                     $ids=$_SESSION['ID'];
                                     // echo $ids;
-                                    $newDBCRUD->selectleftjoin3($ids);
+                                    $newDBCRUD->selectleftjoin3000($ids);
                                     $userLists = $newDBCRUD->sql;
                             
                                     $index = 1;
@@ -278,8 +278,10 @@ td, th {
             <label for="exampleFormControlTextarea1">Delivery Address And Contact Number</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="delivery_description" rows="3"></textarea>
         </div>
+          
         </form>
       <!-- </div> -->
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="saveBTNs">Save</button>

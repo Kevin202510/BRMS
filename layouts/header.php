@@ -109,7 +109,7 @@
                                 $newDBCRUD = new DBCRUD();
                                 if(isset($_SESSION['PERMISSION_ID'])){
                                     $ids=$_SESSION['ID'];
-                                $newDBCRUD->selectleftjoin3($ids);
+                                $newDBCRUD->selectleftjoin3000($ids);
                                 $userLists = $newDBCRUD->sql;
                         
                                 $index = 1;

@@ -43,7 +43,7 @@
             <input type="number"  class="form-control"  style="font-size:18px;"id="stocks" name="stocks">
         </div>
         <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Enter Description:</h5>
+        <h5 style="color:#8d7252;  font-family:poppins;">Add Description:</h5>
             <input type="text" class="form-control" style="font-size:18px;" id="description" name="description">
         </div>
         <div class="form-group">

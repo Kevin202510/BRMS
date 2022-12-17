@@ -83,7 +83,7 @@
 				        			<span class="fa fa-phone"></span>
 				        		</div>
 				        		<div class="text pl-3" >
-					            <p><span>Phone:</span>   0966-8298-686</p>
+					            <p><span >Phone:</span>   0966-8298-686</p>
 					          </div>
 				          </div>
 				        	<div class="dbox w-100 d-flex align-items-center">

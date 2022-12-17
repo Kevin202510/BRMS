@@ -35,7 +35,7 @@
             <div class="col-12">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"style="background-color:#EF9273; color:white;"><i class="fas fa-lock"></i></span>
+                <span class="input-group-text" id="basic-addon1"style="background-color:#EF9273; color:white;"><i class="fas fa-key"></i></span>
               </div>
               <input name="password" type="password" value="" class="input form-control" style="font-size:19px;" id="password" placeholder="Password" required="true" aria-label="password" aria-describedby="basic-addon1" />
               <div class="input-group-append">
@@ -66,7 +66,7 @@
 
        
         <div class="tab-pane fade" id="signup">
- <form method="POST" action="">
+ <form method="POST" action="" autocomplete="off">
   <fieldset>
  <input type="hidden" id="user_id" name="user_id">
         <div class="form-group">
@@ -166,22 +166,23 @@
                     <center><h4 class="modal-title" id="usersModalLabel"></h4></center>
                 </div>
                 <div class="modal-body">
+                  <form id="editprof">
 				<div class="container-fluid">
 					<div class="form-group input-group">
 						<span class="input-group-addon" style="width:150px;">Firstname:</span>
-						<input type="text" style="width:350px;" class="form-control" id="fname">
+						<input type="text" style="width:350px;" class="form-control" name="fname" id="fnames">
 					</div>
 					<div class="form-group input-group">
 						<span class="input-group-addon" style="width:150px;">Lastname:</span>
-						<input type="text" style="width:350px;" class="form-control" id="lastname">
+						<input type="text" style="width:350px;" class="form-control" name="lname" id="lnames">
 					</div>
 					<div class="form-group input-group">
 						<span class="input-group-addon" style="width:150px;">Address:</span>
-						<input type="text" style="width:350px;" class="form-control" id="address">
+						<input type="text" style="width:350px;" class="form-control" id="addresss" name="address">
 					</div>
           <div class="form-group input-group">
 						<span class="input-group-addon" style="width:150px;">Contact:</span>
-						<input type="text" style="width:350px;" class="form-control" id="contact_num">
+						<input type="text" style="width:350px;" class="form-control" id="contact_nums" name="contact_num">
 					</div>							
 				</div>
 				</div>
@@ -190,6 +191,7 @@
                     <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> </i> Update</button>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 
