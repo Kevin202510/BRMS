@@ -19,8 +19,6 @@ td, th {
   text-align: left;
   padding: 8px;
 }
-
-
 </style>
     <!-- Start All Title Box -->
     <div class="all-title-box">
@@ -29,7 +27,7 @@ td, th {
                 <div class="col-lg-12">
                     <h2>Checkout</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <i style="font-size:24px; color:white;" class="fa">&#xf015;</i><li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <li class="breadcrumb-item active" style="color:white;">Checkout</li>
                     </ul>
                 </div>
@@ -46,7 +44,7 @@ td, th {
                 <div class="col-sm-6 col-lg-6 mb-3"> 
                     <div class="checkout-address">
                         <div class="title-left">
-                            <center><h1 style="color:#EF9273;m">Customer Information</h1></center>
+                            <center><h1 style="color:#EF9273;">Customer Information</h1></center>
                         </div>          
                         <form class="needs">
                         <?php
@@ -279,6 +277,10 @@ td, th {
         </div>
         </form>
       <!-- </div> -->
+      <div class="tacbox">
+  <input id="checkbox" type="checkbox">
+  <label for="checkbox"> I agree to these  <a href="termscondition.php">Terms and Conditions</a>.</label>
+</div>
       <div class="modal-footer">
         <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn" style="background-color:#EF9273; color:white;"  id="saveBTNs">Save</button>

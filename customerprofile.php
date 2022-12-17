@@ -185,8 +185,8 @@
     <div class="modal fade" id="verifyMuna" tabindex="-1" role="dialog" aria-labelledby="verifyMunaTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="verifyMunaTitle">Modal title</h5>
+        <div class="modal-header" style="background-color:#EF9273;">
+            <h5 class="modal-title" id="verifyMunaTitle"></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -195,17 +195,17 @@
             <form method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
+                    <label for="inputEmail4" style="color:#8d7252; font-size:20px;">Email</label>
                     <input type="email" class="form-control" name="email" id="email" readyonly>
                     </div>
                     <div class="form-group col-md-6">
-                    <label for="inputPassword4">Verification Code</label>
+                    <label for="inputPassword4"  style="color:#8d7252; font-size:20px;">Verification Code</label>
                     <input type="text" class="form-control" id="verification_code" name="verification_code">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" name="verify_account">Save changes</button>
+                    <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn" style="background-color:#EF9273; color:white;" name="verify_account">Save changes</button>
                 </div>
             </form>
         </div>

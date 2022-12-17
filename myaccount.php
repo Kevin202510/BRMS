@@ -25,7 +25,7 @@
                 <div class="col-lg-12">
                     <h2>My Account</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <i style="font-size:24px; color:white;" class="fa">&#xf015;</i><li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <li class="breadcrumb-item active" style="color:white;"> Account</li>
                     </ul>
                 </div>

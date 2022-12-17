@@ -8,7 +8,7 @@
     <!-- Start Top Search -->
     <?php include('layouts/searchbar.php');?>   
     <!-- Start All Title Box -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="scriptquantity.css">
     <script src="script.js"></script>
@@ -22,7 +22,8 @@
                     <h2>Apparel</h2>
                 
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        
+                    <i style="font-size:24px; color:white;" class="fa">&#xf015;</i><li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <li class="breadcrumb-item active"  style="color:white; ">Apparel</li>
                     </ul>
                 </div>
