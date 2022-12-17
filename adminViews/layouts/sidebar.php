@@ -44,10 +44,6 @@
 
                     <i class="icon-clothes"></i><span>Customer Checkout</span>
                     </a> 
-                    <!-- <a class="waves-effect waves-dark" href="walkin_checkout.php">
-
-                    <i class=""></i><span>Customer Walk_in Checkout</span>
-                    </a>  -->
 
 
                     <!-- <a class="waves-effect waves-dark" href="tracking_walkin.php">

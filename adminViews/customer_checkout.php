@@ -35,8 +35,6 @@
                     <th scope="col">Apparel Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
-                    
-                    <th scope="col">CheckOut Date</th>
                     <th scope="col">Rent Date</th>
                     <th scope="col">Return Date</th>
                     <th scope="col">Action</th>
@@ -59,8 +57,6 @@
                     <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["price"]; ?></td>
                     <td><?php echo $data["quantity"]; ?></td>
-                    
-                    <td><?php echo date('M-d-Y', strtotime($data["checkout_date"])); ?></td>
                     <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_date"])); ?></td>
                     <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_return_date"])); ?></td>
                     <td>
@@ -161,7 +157,7 @@
       <!-- </div> -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="saveBTNs">Print</button>
+        <button type="button" class="btn btn-primary" id="saveBTNs">Save</button>
       </div>
     </div>
   </div>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2022 at 08:55 PM
+-- Generation Time: Dec 17, 2022 at 03:50 AM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,13 +35,6 @@ CREATE TABLE `cart` (
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `quantity`, `status`) VALUES
-(90, 49, 97, 5, '1');
-
 -- --------------------------------------------------------
 
 --
@@ -58,11 +51,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`category_id`, `cat_name`) VALUES
-(10, 'Barongs'),
 (12, 'Costumes'),
 (14, 'Gowns'),
 (15, 'Suit'),
-(16, 'accessories');
+(16, 'accessories'),
+(20, 'Barong');
 
 -- --------------------------------------------------------
 
@@ -81,13 +74,6 @@ CREATE TABLE `checkout` (
   `delivery_description` longtext DEFAULT NULL,
   `transaction_mode` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `checkout`
---
-
-INSERT INTO `checkout` (`checkout_id`, `checkout_cart_id`, `checkout_amount`, `checkout_payments`, `checkout_date`, `checkout_rent_date`, `checkout_rent_return_date`, `delivery_description`, `transaction_mode`) VALUES
-(21, 90, 3250, 3250, '2022-12-13 17:27:41', '2022-12-14', '2022-12-16', 'gfghdgdssdfgsf', 1);
 
 -- --------------------------------------------------------
 
@@ -110,7 +96,9 @@ CREATE TABLE `customer_walkin` (
 --
 
 INSERT INTO `customer_walkin` (`cw_id`, `customer_fname`, `customer_lname`, `customer_address`, `customer_product_id`, `customer_quantity`, `checkout_status`) VALUES
-(50, 'Kevin', 'Customer', 'asdasdasd', 97, 2, 1);
+(52, 'John', 'Javier', 'Concepcion', 99, 2, 1),
+(53, 'Kerby', 'Badillo', 'gulod', 98, 2, 1),
+(54, 'Jomari', 'Mallari', 'Sampaguita', 97, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -127,13 +115,6 @@ CREATE TABLE `customer_walkin_checkout` (
   `checkout_rent_date` varchar(50) NOT NULL,
   `checkout_rent_return_date` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `customer_walkin_checkout`
---
-
-INSERT INTO `customer_walkin_checkout` (`cwc_id`, `cwc_customer_id`, `total_checkout_amount`, `checkout_payment`, `checkout_Date`, `checkout_rent_date`, `checkout_rent_return_date`) VALUES
-(22, 50, 1300, 1301, '', '2022-12-14', '2022-12-16');
 
 -- --------------------------------------------------------
 
@@ -177,9 +158,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `image`, `name`, `price`, `variation`, `stocks`, `category_id`, `description`) VALUES
-(97, 'cos3.jpg', 'Costume Indiana Red with SIlver', 650, 'Medium', 0, 12, 'Costume Indiana Red with SIlver'),
-(98, 'cos5.jpg', 'Costume Darna ', 500, 'Small', 0, 12, 'Costume Darna '),
-(99, 'cos1.jpg', 'Blue and Green Costume', 400, 'Large', 5, 12, 'Blue and Green Costume');
+(97, 'cos3.jpg', 'Costume Indiana Red with SIlver', 650, 'Medium', 1, 12, 'Costume Indiana Red with SIlver'),
+(98, 'cos5.jpg', 'Costume Darna ', 500, 'Small', 4, 12, 'Costume Darna '),
+(99, 'cos1.jpg', 'Blue and Green Costume', 400, 'Large', 1, 12, 'Blue and Green Costume');
 
 -- --------------------------------------------------------
 
@@ -217,13 +198,6 @@ CREATE TABLE `tracking_orders` (
   `to_status` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tracking_orders`
---
-
-INSERT INTO `tracking_orders` (`tracking_orders_id`, `to_checkout_id`, `to_status`) VALUES
-(4, 90, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -235,13 +209,6 @@ CREATE TABLE `tracking_orders_customer_walkin_checkout` (
   `tocw_checkout_id` int(11) NOT NULL,
   `tocw_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tracking_orders_customer_walkin_checkout`
---
-
-INSERT INTO `tracking_orders_customer_walkin_checkout` (`tocw_id`, `tocw_checkout_id`, `tocw_status`) VALUES
-(12, 50, 0);
 
 -- --------------------------------------------------------
 
@@ -268,7 +235,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_permission_id`, `fname`, `lname`, `address`, `contact_num`, `verification_code`, `email`, `email_verified_at`, `password`) VALUES
 (27, 1, 'Gil', 'Bulacan', 'Concepcion', '09261364720', '298995', 'gilscreation@gmail.com', '2022-12-12 05:10:47', 'admin'),
-(49, 2, 'Kevin', 'Caluag', 'Purok Sagingan Nazareth General Tinio NE', '09261364720', '298995', 'kfc202510@gmail.com', '2022-12-12 05:13:08', 'password'),
 (51, 2, 'Kerby', 'Bandillo', 'Purok Sagingan Nazareth General Tinio NE', '09261364720', '298995', 'kerbyjohn18@gmail.com', '2022-12-12 05:13:08', 'password');
 
 --
@@ -367,31 +333,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `customer_walkin`
 --
 ALTER TABLE `customer_walkin`
-  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `cw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `customer_walkin_checkout`
 --
 ALTER TABLE `customer_walkin_checkout`
-  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `cwc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -403,7 +369,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `rents`
@@ -421,13 +387,13 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT for table `tracking_orders`
 --
 ALTER TABLE `tracking_orders`
-  MODIFY `tracking_orders_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `tracking_orders_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tracking_orders_customer_walkin_checkout`
 --
 ALTER TABLE `tracking_orders_customer_walkin_checkout`
-  MODIFY `tocw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `tocw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`
