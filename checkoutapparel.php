@@ -23,7 +23,7 @@ if(isset($_POST['cart_id'])){
 
 
     $newDBCRUD->insert('checkout',['checkout_cart_id'=>$checkout_cart_id,'checkout_rent_return_date'=>$checkout_rent_return_date,'checkout_rent_date'=>$checkout_rent_date,'checkout_amount'=>$checkout_amount,'transaction_mode'=>$transaction_mode,'delivery_description'=>$delivery_description]);
-        $newDBCRUD->updateStatus();
+        // $newDBCRUD->updateStatus();
         $newDBCRUD->update('cart',['status'=>'1'],"cart_id='$checkout_cart_id'");
 
     $prods_id = $_POST['prods_id'];

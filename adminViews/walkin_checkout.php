@@ -35,7 +35,6 @@
                     <th scope="col">Apparel Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
-                    
                     <th scope="col">CheckOut Date</th>
                     <th scope="col">Rent Date</th>
                     <th scope="col">Return Date</th>
@@ -46,28 +45,30 @@
                 <?php
                     include('../APIFUNCTION/DBCRUD.php');
                     $newDBCRUD = new DBCRUD();
-                    $newDBCRUD->select214("checkout","*",);
-                    $userLists = $newDBCRUD->sql;
+                    $newDBCRUD->select213();
+                    $productsLists = $newDBCRUD->sql;
             
                     $index = 1;
-                    while ($data = mysqli_fetch_assoc($userLists)){
+                    while ($data = mysqli_fetch_assoc($productsLists)){
+                     
                 ?>
-                    <tr>
+
+                  <tr>
                     <th scope="row"><?php echo $index; ?></th>
                    
-                    <td><?php echo $data["fname"]."".$data["lname"] ?></td>
+                    <td><?php echo $data["customer_fname"]."".$data["customer_lname"] ?></td>
                     <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["price"]; ?></td>
-                    <td><?php echo $data["quantity"]; ?></td>
-                    
-                    <td><?php echo date('M-d-Y', strtotime($data["checkout_date"])); ?></td>
+                    <td><?php echo $data["customer_quantity"]; ?></td>
+                    <td><?php echo $data["total_checkout_amount"]; ?></td>
                     <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_date"])); ?></td>
                     <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_return_date"])); ?></td>
                     <td>
-                        <div class="btn-group" role="group" aria-label="Basic example">                     
-                            
-                            <button type="button" class="btn btn-success" data-id="<?php echo $data['checkout_id']; ?>" id="paynow">Pay</button>
-                        </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                      <button type="button" class="btn btn-success" data-id="<?php echo $data['checkout_id']; ?>" id="paynow">Pay</button>
+                      </label>
+                    </div>
                     </td>
                     </tr>
                     <?php $index++; }?>
@@ -161,7 +162,7 @@
       <!-- </div> -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="saveBTNs">Print</button>
+        <button type="button" class="btn btn-primary" id="saveBTNs">Save</button>
       </div>
     </div>
   </div>

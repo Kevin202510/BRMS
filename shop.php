@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php include('layouts/head.php');?>
-
+   
     <!-- Start Main Top -->
     <?php include('layouts/header.php');?>
     <!-- End Main Top -->
@@ -76,11 +76,11 @@
                                                     <div class="mask-icon">
                                                     <?php if($data['stocks']==0){ ?>
                                                         <ul>
-                                                        <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        <li><a href="shopdetail.php?apparelId=<?php echo $data['product_id']; ?>" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                         </ul>
                                                     <?php }else{ ?>
                                                         <ul>
-                                                        <li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        <li><a href="shopdetail.php?apparelId=<?php echo $data['product_id']; ?>" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                         </ul>
 
                                                         <?php if(isset($_SESSION['PERMISSION_ID'])){ ?>
@@ -277,6 +277,7 @@
     $(document).ready(function(){
         $("body").on('click',"#addtc",function(e){
             let dataid = $(e.currentTarget).data("id");
+            // alert(dataid);
             $.post("addtocart.php",{PRODUCT_ID:dataid},function(data,status){
                 console.log(data);
                 let newdata = JSON.parse(data);
@@ -318,7 +319,7 @@
 
         //     // $("#categoriesModal").modal("show");
         // });
-
+        
         $("body").on('click',"#prodcat",function(e){
             let dataid = $(e.currentTarget).data("id");
             // alert(dataid);
@@ -339,7 +340,7 @@
                                                     '<li><a href="shopdetail.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>'+ 
                                                 '</ul>'+
                                                 '<div class= "pointed">'+
-                                                    '<a type="button" class="cart" data-id="'+value.image+'" id="addtc">Add to Cart</a>'+
+                                                    '<a type="button" class="cart" data-id="'+value.product_id+'" id="addtc">Add to Cart</a>'+
                                                 '</div>'+
                                             '</div>'+
                                         '</div>'+

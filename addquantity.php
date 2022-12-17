@@ -15,6 +15,17 @@
             return 0;
         }
     
+    }else if(isset($_POST['cart_id3'])){
+        $cart_id2 = $_POST["cart_id3"];
+        
+        $newDBCRUD->delete('cart',"cart_id='$cart_id2'");
+    
+        if($newDBCRUD){
+            return 1;
+        }else{
+            return 0;
+        }
+    
     }
 
 ?>

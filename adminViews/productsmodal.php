@@ -12,13 +12,13 @@
       <div class="modal-body">
       <form action="functions/productscrud.php" method="post" enctype="multipart/form-data">
         <input type="hidden" id="product_id" name="product_id">
-        <h5 style="color:#8d7252;  font-family:poppins;">Add Image</h5>
+        <h5 style="color:#8d7252;  font-family:poppins;">Choose Image</h5>
         <input type="file" name="fileToUpload" id="fileToUpload">
         <br>
         <br>
         <div class="form-group">
             <h5 style="color:#8d7252;  font-family:poppins;">Enter Apparel Name:</h5>
-            <input type="text"  class="form-control" style="font-size:18px;" id="name" name="name">
+            <input type="text"  class="form-control" style="font-size:18px; border-radius: 10px;" id="name" name="name">
         </div>
         <div class="form-group">
         <h5 style="color:#8d7252;  font-family:poppins;"> Choose Category:</h5>
@@ -43,7 +43,7 @@
             <input type="number"  class="form-control"  style="font-size:18px;"id="stocks" name="stocks">
         </div>
         <div class="form-group">
-        <h5 style="color:#8d7252;  font-family:poppins;">Enter Description:</h5>
+        <h5 style="color:#8d7252;  font-family:poppins;">Add Description:</h5>
             <input type="text" class="form-control" style="font-size:18px;" id="description" name="description">
         </div>
         <div class="form-group">

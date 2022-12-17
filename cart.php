@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php include('layouts/head.php');?>
+
     <!-- Start Main Top -->
     <?php include('layouts/header.php');?>
     <!-- End Main Top -->
@@ -47,7 +48,7 @@
                                  $newDBCRUD = new DBCRUD();
                                 if(isset($_SESSION['PERMISSION_ID'])){
                                 $ids=$_SESSION['ID'];
-                                $newDBCRUD->selectleftjoin3($ids);
+                                $newDBCRUD->selectleftjoin3000($ids);
                                 $userLists = $newDBCRUD->sql;
 
                                 // var_dump($userLists);
@@ -82,6 +83,7 @@
                                     <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                     <button type="button" id="addquantity" class="btn btn"  style="background-color:#8d7252; color:white;" data-id="<?php echo $data['cart_id']; ?>">Update</button>
+                                    <button type="button" id="removeincart" class="btn btn"  style="background-color:#8d7252; color:white;" data-id="<?php echo $data['cart_id']; ?>">Remove</button>
                                     </div></td>
                                 </tr>
                                 <?php $index++; }}?>
@@ -170,6 +172,19 @@
             data: {cart_id2:cart_ids,quantity:$("#changequantity").val()},
             success: function(datas){
                 alert("Added Success")
+                location.reload();
+            },
+          });
+        });
+
+        $("body").on("click","#removeincart",function(e){
+            var cart_ids = $(e.currentTarget).data("id");
+            $.ajax({
+            type: "POST",
+            url: "addquantity.php",
+            data: {cart_id3:cart_ids},
+            success: function(datas){
+                alert("Remove Success")
                 location.reload();
             },
           });

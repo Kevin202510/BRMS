@@ -18,7 +18,7 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-                  <h2  style=" font-family:poppins; color:#8d7252;">Costumer List</h2>
+                  <h2  style=" font-family:poppins; color:#8d7252;">Customer List</h2>
                </div>
             </div>
 
@@ -56,7 +56,7 @@
                     <td><?php echo $data["email"]; ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">                     
-                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['user_id']; ?>);">Ban</button>
+                            <button type="button" class="btn btn-danger" onclick="showformdelete(<?php echo $data['user_id']; ?>);"><i class="icon-lock"></i></button>
                             <button type="button" class="btn btn-success" onclick="showformview(<?php echo $data['user_id']; ?>);"><i class = "icon-eye"></i></button>
                         </div>
                     </td>

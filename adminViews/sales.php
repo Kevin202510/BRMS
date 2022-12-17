@@ -40,8 +40,9 @@
       <th scope="col">Full name</th>
       <th scope="col">Apprel name</th>
       <th scope="col">Amount</th>
-      <th scope="col">Date</th>
-      <th scope="col">Time</th>
+      <th scope="col">Rent Date</th>
+      <th scope="col">Rent Return Date</th>
+      
         
       </tr>
     </thead>
@@ -60,11 +61,11 @@
 
        <tr>
                     <th scope="row"><?php echo $index; ?></th>
-                    <td><?php echo $data["fname"]."".$data["lname"] ?></td>
+                    <td><?php echo $data["customer_fname"]."".$data["customer_lname"] ?></td>
                     <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["total_checkout_amount"]; ?></td>
-                    <td><?php echo $data["checkout_Date"]; ?></td>
-                    <td><?php echo $data["checkout_Time"]; ?></td>
+                    <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_date"])); ?></td>
+                    <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_return_date"])); ?></td>
                     </tr>
                     <?php $index++; }?>
                     

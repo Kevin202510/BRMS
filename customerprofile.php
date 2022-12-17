@@ -60,7 +60,7 @@
 				<h6 class="user-email"></h6>
 			</div>
 			<div >
-            <button type="file" name="fileToUpload" id="fileToUpload">Change Profile Picture</button>
+            <!-- <button type="file" name="fileToUpload" id="fileToUpload">Change Profile Picture</button> -->
 			</div>
 		</div>
 	</div>
@@ -107,7 +107,15 @@
 					<input type="text" name = "contact_num" class="form-control" style="font-size:19px; border:none;" id="phone" value = "<?php echo $data['contact_num'];?>" disabled>
 				</div>
 			</div>
-
+            <div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="text-right">
+            <button type="button" class="btn btn-primary btn-sm" data-id=<?php echo $data['user_id']; ?> id="editprof">
+                <i class="fas fa-pencil-alt"></i>
+            </button>
+            </div>
+			</div>
+		</div>
             <?php if($data['email_verified_at']===NULL){ ?>
 		    <button type="button" class="btn btn-info" id="verifyAccount" style="background-color:#8d7252;" data-id="<?php echo $data['email']; ?>">Verify Account</button>
 			<?php }else{  ?>
@@ -115,7 +123,7 @@
             <?php } ?>
 			<?php } ?>
 		</div>
-		<div class="row gutters">
+		<!-- <div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="text-right">
                     
@@ -124,7 +132,7 @@
                     </a>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 </div>
@@ -217,6 +225,25 @@
 
 <script>
     $(document).ready(function(){
+        $("body").on("click","#editprof",function(e){
+            var id = $(e.currentTarget).data("id");
+            $.ajax({
+            type: "POST",
+            url: "usersProfile.php",
+            data: {userId:id},
+            success: function(datas){
+                // console.log(datas);
+                var newdata = JSON.parse(datas);
+                console.log(newdata);
+                $("#fnames").val(newdata.fname);
+                $("#lnames").val(newdata.lname);
+                $("#addresss").val(newdata.address);
+                $("#contact_nums").val(newdata.contact_num);
+            }
+        });
+            $("#usersModal").modal("show");
+        });
+
         $("#verifyAccount").click(function(e){
             var email = $(e.currentTarget).data("id");
             $("#email").val(email);

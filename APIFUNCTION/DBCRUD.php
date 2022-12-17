@@ -85,6 +85,12 @@
         }
 
         public function selectleftjoin3($myid){
+            $sql = "SELECT * FROM `cart` LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id LEFT JOIN categories ON categories.category_id = products.category_id WHERE cart.status!=0 AND cart.status!=2 AND cart_user_id=$myid";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
+
+        public function selectleftjoin3000($myid){
             $sql = "SELECT * FROM `cart` LEFT JOIN users ON users.user_id=cart.cart_user_id LEFT JOIN products ON products.product_id = cart.cart_product_id LEFT JOIN categories ON categories.category_id = products.category_id WHERE (cart.status=0 OR cart.status=2) AND cart_user_id=$myid";
 
             $this->sql = $result = $this->mysqli->query($sql);

@@ -16,7 +16,7 @@
                     </a>
 
                     <a class="waves-effect waves-dark" href="customer.php" >
-                        <i class="icon-user"></i><span>Customer List</span>
+                        <i class="icon-people"></i><span>Customer List</span>
                     </a>
                         <a class="waves-effect waves-dark" href="categorieslist.php" >
                         <i class="icon-list"></i><span> Categories List</span>
@@ -44,6 +44,10 @@
 
                     <i class="icon-clothes"></i><span>Customer Checkout</span>
                     </a> 
+                    <!-- <a class="waves-effect waves-dark" href="walkin_checkout.php">
+
+                    <i class=""></i><span>Customer Walk_in Checkout</span>
+                    </a>  -->
 
 
                     <!-- <a class="waves-effect waves-dark" href="tracking_walkin.php">
