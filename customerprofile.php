@@ -107,11 +107,15 @@
 					<input type="text" name = "contact_num" class="form-control" style="font-size:19px; border:none;" id="phone" value = "<?php echo $data['contact_num'];?>" disabled>
 				</div>
 			</div>
-
+            <div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="text-right">
             <button type="button" class="btn btn-primary btn-sm" data-id=<?php echo $data['user_id']; ?> id="editprof">
                 <i class="fas fa-pencil-alt"></i>
             </button>
-
+            </div>
+			</div>
+		</div>
             <?php if($data['email_verified_at']===NULL){ ?>
 		    <button type="button" class="btn btn-info" id="verifyAccount" style="background-color:#8d7252;" data-id="<?php echo $data['email']; ?>">Verify Account</button>
 			<?php }else{  ?>
@@ -119,7 +123,16 @@
             <?php } ?>
 			<?php } ?>
 		</div>
-		
+		<!-- <div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="text-right">
+                    
+                    <p>Edit <button type="button" class="btn btn btn-sm" style="font-size: 25px; background-color:#EF9273; color:white;" data-toggle="modal" data-target="#usersmodal"></p>
+                        <i class="fas fa-pencil-alt"></i></button>
+                    </a>
+				</div>
+			</div>
+		</div> -->
 	</div>
 </div>
 </div>

@@ -64,15 +64,15 @@ td, th {
 
 <table>
   <tr>
-    <th style="color:#EF9273; letter-spacing: 3px;">Fullname: <input style="font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" disabled></th> 
+    <th style="color:#EF9273; letter-spacing: 3px;">Fullname:<center> <input style="font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="firstName" value="<?php echo $data['fname'].' '.$data['lname']; ?>" disabled></th>  </center>
   </tr>
 
   <tr>
-    <th style="color:#EF9273;  letter-spacing: 3px;">Address: <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="address" value="<?php echo $data['address'] ?>" disabled></th>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Address: <center><input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"   id="address" value="<?php echo $data['address'] ?>" disabled></th>  </center>
   </tr>
  
   <tr>
-    <th style="color:#EF9273;  letter-spacing: 3px;">Contact:  <input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th>
+    <th style="color:#EF9273;  letter-spacing: 3px;">Contact:   <center><input style=" font-size:19px; border:none; color:#8d7252; font-family:roman;"  id="address2" value="<?php echo $data['contact_num'] ?>" disabled></th> </center>
   </tr>
  </table>
 
@@ -216,7 +216,7 @@ td, th {
 <div class="modal fade" id="rentCheckoutModal" tabindex="-1" role="dialog" aria-labelledby="rentprodModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header"style="background-color:#EF9273;">
         <h5 class="modal-title" id="rentprodModalLabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -229,53 +229,53 @@ td, th {
         <input type="hidden" id="prods_id" name="prods_id">
         <div class="form-row">
         <div class="form-group col-md-12">
-            <label >FullName</label>
-            <input type="text" class="form-control"  readonly id="customer_fnames">
+            <h2 style="color:#8d7252; letter-spacing:1px;">FullName</h2>
+            <span type="text" class="form-control"  style="font-size:19px; border:none; background-color:transparent;" id="customer_fnames"></span>
         </div>
         </div>
         <div class="form-row">
         <div class="form-group col-md-6">
-            <label >Apprrel Name</label>
-            <input type="text" class="form-control"  readonly id="product_ids">
+            <h2 style="color:#8d7252; letter-spacing:1px;" >Apprrel Name</h2>
+            <span type="text" class="form-control" style="font-size:19px; border:none; background-color:transparent;" id="product_ids"></span>
         </div>
         <div class="form-group col-md-6">
-            <label >Apparel Quantity</label>
-            <input type="text" class="form-control"  readonly id="customer_quantitys">
+            <h2 style="color:#8d7252; letter-spacing:1px;" >Apparel Quantity</h2>
+            <span type="text" class="form-control"  style="font-size:19px; border:none; background-color:transparent;" id="customer_quantitys"></span>
             <input type="hidden" class="form-control"  readonly name="prod_stocks" id="prod_quant">
         </div>
         </div>
 
         <div class="form-row">
         <div class="form-group col-md-6">
-            <label >Apparel Price</label>
-            <input type="text" class="form-control"  readonly id="app_price">
+            <h2 style="color:#8d7252; letter-spacing:1px;">Apparel Price</h2>
+            <span type="text" class="form-control" style="font-size:19px; border:none; background-color:transparent;" id="app_price"></span>
         </div>
         <div class="form-group col-md-6">
-            <label >Total Amount</label>
-            <input type="text"  readonly class="form-control" id="app_total_amt" name="app_total_amt">
+            <h2 style="color:#8d7252; letter-spacing:1px;">Total Amount</h2>
+            <span type="text" class="form-control" style="font-size:19px; border:none; background-color:transparent;" id="app_total_amt" name="app_total_amt"></span>
         </div>
         </div>
 
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Mode Of Transaction</label>
-            <select class="form-control" name="transaction_mode" id="exampleFormControlSelect1">
-            <option value="1">COD</option>
-            <option value="2">On Shop</option>
+            <h3 style="color:#8d7252; letter-spacing:1px;" for="exampleFormControlSelect1">Mode Of Transaction</h3>
+            <select class="form-control" style="font-size: 20px;" name="transaction_mode" id="exampleFormControlSelect1">
+            <option value="1" style="font-size: 20px;">COD</option>
+            <option value="2" style="font-size: 20px;">Pick Up</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Rent Date</label>
-            <input type="date" class="form-control" id="checkout_rent_date" name="checkout_rent_date">
+            <h3 style="color:#8d7252; letter-spacing:1px;" for="exampleFormControlTextarea1">Rent Date</h3>
+            <input type="date" class="form-control" style="font-size: 20px;" id="checkout_rent_date" name="checkout_rent_date">
         </div>
 
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Return Date</label>
-            <input type="date" class="form-control" id="checkout_rent_return_date" name="checkout_rent_return_date">
+            <h3 style="color:#8d7252; letter-spacing:1px;" for="exampleFormControlTextarea1">Return Date</h3>
+            <input type="date" class="form-control" style="font-size: 20px;" id="checkout_rent_return_date" name="checkout_rent_return_date">
         </div>
 
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Delivery Address And Contact Number</label>
+            <h3 style="color:#8d7252; letter-spacing:1px;" for="exampleFormControlTextarea1">Delivery Address And Contact Number</h3>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="delivery_description" rows="3"></textarea>
         </div>
           
@@ -283,8 +283,8 @@ td, th {
       <!-- </div> -->
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="saveBTNs">Save</button>
+        <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn" style="background-color:#EF9273; color:white;"  id="saveBTNs">Save</button>
       </div>
     </div>
   </div>
@@ -315,12 +315,12 @@ td, th {
                 console.log(newdata);
                 $("#cart_ids").val(newdata[0].cart_id);
                 $("#user_ids").val(newdata[0].user_id);
-                $("#customer_fnames").val(newdata[0].fname+" "+newdata[0].lname);
+                $("#customer_fnames").text(newdata[0].fname+" "+newdata[0].lname);
                 $("#customer_addressss").val(newdata[0].address);
-                $("#product_ids").val(newdata[0].name);
-                $("#customer_quantitys").val(newdata[0].quantity);
-                $("#app_price").val(newdata[0].price);
-                $("#app_total_amt").val(parseInt(newdata[0].price)*parseInt(newdata[0].quantity));
+                $("#product_ids").text(newdata[0].name);
+                $("#customer_quantitys").text(newdata[0].quantity);
+                $("#app_price").text(newdata[0].price);
+                $("#app_total_amt").text(parseInt(newdata[0].price)*parseInt(newdata[0].quantity));
                 $("#prod_quant").val(parseInt(newdata[0].stocks)-parseInt(newdata[0].quantity)); 
                 $("#prods_id").val(newdata[0].product_id);
             },

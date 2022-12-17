@@ -36,7 +36,7 @@ window.onunload = function() { void (0) }
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
    <!-- Favicon icon -->
-   <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+   <link rel="icon" href="images/log1.png" type="image/png">
    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
    <!-- Google font-->

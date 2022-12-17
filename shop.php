@@ -205,7 +205,7 @@
         </div>
     </div>
     <!-- End Instagram Feed  -->
-
+    
 
         <!-- Start Footer  -->
         <?php include('layouts/footer.php');?>
@@ -241,6 +241,8 @@
                 </div>
             </div>
             <br>
+           <br>
+           <br>
            <br>
             <div class="form-group">
             <div class="row">
