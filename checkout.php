@@ -280,6 +280,10 @@ td, th {
       <div class="tacbox">
   <input id="checkbox" type="checkbox">
   <label for="checkbox"> I agree to these  <a href="termscondition.php">Terms and Conditions</a>.</label>
+  <h2>Terms And Conditions</h2>
+          
+          <p>Greetings User</p>
+          <p>A rental period is for a duration of 2 days, It means the rented item is due to be returned during the last day of the renting. Once a rental item has been collected in store, there are no returns or refunds for change of mind if the item is returned unworn within the rental peri-od or on the renting end date. If the item has been damaged or ripped it will charge or have a penalty to your rented stuff.</p>
 </div>
       <div class="modal-footer">
         <button type="button" class="btn btn" style="background-color:#8d7252; color:white;" data-dismiss="modal">Close</button>
