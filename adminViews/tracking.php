@@ -42,7 +42,6 @@
                     <th scope="col">Apparel Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
-                    <th scope="col">CheckOut Amount</th>
                     <th scope="col">Rent Date</th>
                     <th scope="col">Return Date</th>
                     <th scope="col">Action</th>
@@ -52,7 +51,7 @@
                 <?php
                     include('../APIFUNCTION/DBCRUD.php');
                     $newDBCRUD = new DBCRUD();
-                    $newDBCRUD->select213();
+                    $newDBCRUD->select214();
                     $productsLists = $newDBCRUD->sql;
             
                     $index = 1;
@@ -63,17 +62,16 @@
                   <tr>
                     <th scope="row"><?php echo $index; ?></th>
                    
-                    <td><?php echo $data["customer_fname"]."".$data["customer_lname"] ?></td>
+                    <td><?php echo $data["fname"]."".$data["lname"] ?></td>
                     <td><?php echo $data["name"]; ?></td>
                     <td><?php echo $data["price"]; ?></td>
-                    <td><?php echo $data["customer_quantity"]; ?></td>
-                    <td><?php echo $data["total_checkout_amount"]; ?></td>
+                    <td><?php echo $data["quantity"]; ?></td>
                     <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_date"])); ?></td>
                     <td><?php echo date('M-d-Y', strtotime($data["checkout_rent_return_date"])); ?></td>
                     <td>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                       <label class="btn btn-secondary active">
-                      <button type="button" class="btn btn-success" onclick="showformreturn(<?php echo $data['tocw_id']; ?>);">Return</button>
+                      <button type="button" class="btn btn-success" >Return</button>
                       </label>
                     </div>
                     </td>
